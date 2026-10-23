@@ -21,6 +21,7 @@ SKIP_SUFFIX = {".pyc", ".lock"}
 # (source relative to bt3041-plan, destination relative to the package)
 ITEMS = [
     ("project_plan.md", "project_plan.md"),
+    ("roll_numbers.json", "roll_numbers.json"),  # private, read by the report and slide builds; absent in the public repo
     ("scripts", "scripts"),
     ("step2_preprocessing", "step2_preprocessing"),
     ("step3_analysis", "step3_analysis"),

@@ -27,6 +27,7 @@ S2, S3 = PLAN / "step2_preprocessing", PLAN / "step3_analysis"
 FIG = HERE / "figures"
 OUT = HERE / "BT3041_final_report.docx"
 MAX_PAGES = 8
+TEAM = ["Vijayavallabh", "Vedant", "Harshit", "Navya", "Anitha"]
 
 # ================================================================================================ numbers
 J = lambda p: json.load(open(p))
@@ -385,12 +386,17 @@ page_numbers()
 b_er, b_h2, esr1, erbb2 = N["b_er"], N["b_h2"], N["esr1"], N["erbb2"]
 nes = N["nes"]
 t = doc.add_paragraph(); t.alignment = WD_ALIGN_PARAGRAPH.CENTER; t.paragraph_format.space_after = Pt(2)
-r = t.add_run("What tumour gene expression reveals about the clinical receptor groups of breast cancer: "
-              "a TCGA analysis checked in protein and an independent cohort")
+# Line breaks set by hand so no single word is left alone on the last line
+r = t.add_run("What tumour gene expression reveals about the clinical\nreceptor groups of breast cancer: a TCGA analysis\n"
+              "checked in protein and an independent cohort")
 r.bold = True; r.font.name, r.font.size = FONT, Pt(13)
-para("BT3041 Analysis and Interpretation of Biological Data · Term project report · IIT Madras · November 2026",
+para("BT3041 Analysis and Interpretation of Biological Data · Term project report\nIIT Madras · November 2026",
      align=WD_ALIGN_PARAGRAPH.CENTER, after=0)
-para("Team 16: Vijayavallabh [roll no.] · Vedant [roll no.] · Harshit [roll no.]\nNavya [roll no.] · Anitha [roll no.]",
+# Roll numbers live in roll_numbers.json at the project root, which is kept out of the public repository.
+ROLLS = PLAN / "roll_numbers.json"
+roll = J(ROLLS) if ROLLS.exists() else {}
+members = [f"{n} ({roll[n]})" if n in roll else n for n in TEAM]
+para("Team 16: " + (" · ".join(members[:3]) + "\n" + " · ".join(members[3:]) if roll else " · ".join(members)),
      align=WD_ALIGN_PARAGRAPH.CENTER, after=6)
 
 para(f"**Abstract.** Breast cancers are grouped for treatment by three clinical tests: oestrogen receptor (ER), progesterone "

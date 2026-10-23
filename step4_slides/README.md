@@ -30,7 +30,8 @@ Methods and results (slides 4–9) are 67% of the talk. Presenters follow the M1
 
 ## Before the talk
 
-- Team 16's names are on slide 1 and in the notes. Presenters follow the plan's workstreams in the order the
+- Team 16's names are on slide 1 and in the notes. Roll numbers on slide 1 come from `../roll_numbers.json`, which
+  is kept out of the public repository; without it the slide lists names only. Presenters follow the plan's workstreams in the order the
   names were given (M1 Vijayavallabh, M2 Vedant, M3 Harshit, M4 Navya, M5 Anitha); edit `TEAM` in
   `scripts/build_deck.py` to reassign.
 - Do two timed dry runs (8:00 hard limit); cut words, not slides.

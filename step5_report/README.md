@@ -1,7 +1,9 @@
 # Step 5: final report
 
-Course limits: at most 8 pages, Arial 11, single spacing. This is the pre-submission draft: the roll numbers in the
-title block are still placeholders.
+Course limits: at most 8 pages, Arial 11, single spacing. This is the pre-submission draft. The submitted copy also
+carries the team's roll numbers and the link to the AI-log supplement, which the build reads from files kept out of
+this repository (`../roll_numbers.json` and `supplement_link.txt`); without them it lists names only and says the
+AI logs are shared privately.
 
 ## Files
 

@@ -192,8 +192,18 @@ for j, (g, n) in enumerate([("HR+/HER2−", N["hr"]), ("HER2+", N["her2"]), ("TN
          color=RGBColor(255, 255, 255), align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 text(s, 7.85, 4.2, 4.9, 1.0, "Groups from clinical IHC/FISH tests (ER, PR, HER2), not from expression",
      size=15, color=INK2, anchor=MSO_ANCHOR.MIDDLE)
-text(s, 0.75, 6.3, 11.8, 0.4, "Team 16: Vijayavallabh · Vedant · Harshit · Navya · Anitha", size=16)
-text(s, 0.75, 6.72, 11.8, 0.4, "IIT Madras · November 2026 · Code: github.com/Vijayavallabh/BT3041_Project", size=14, color=MUTED)
+# Roll numbers live in roll_numbers.json at the project root, which is kept out of the public repository.
+ROLLS = PLAN / "roll_numbers.json"
+roll = J(ROLLS) if ROLLS.exists() else {}
+if roll:
+    text(s, 0.75, 5.62, 11.8, 0.35, "Team 16", size=14, color=INK2)
+    for j, n in enumerate(TEAM.values()):
+        text(s, 0.75 + j * 2.35, 5.95, 2.15, 0.6, [[(n, {})], [(roll.get(n, ""), {"size": 13, "color": MUTED})]], size=16)
+    foot_y = 6.78
+else:
+    text(s, 0.75, 6.3, 11.8, 0.4, "Team 16: " + " · ".join(TEAM.values()), size=16)
+    foot_y = 6.72
+text(s, 0.75, foot_y, 11.8, 0.4, "IIT Madras · November 2026 · Code: github.com/Vijayavallabh/BT3041_Project", size=14, color=MUTED)
 notes(s, "M1", "0:20", f"""
 Good morning. We ask what tumour gene expression reveals about the three clinical receptor groups of breast cancer.
 We use {c(N['n_tum'])} TCGA tumours, and we check every finding in protein from the same tumours and in an independent
