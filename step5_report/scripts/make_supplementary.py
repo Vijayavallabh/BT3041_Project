@@ -60,6 +60,7 @@ README = """# BT3041 term project: supplementary material
 Team project for BT3041 (Analysis and Interpretation of Biological Data, IIT Madras), 2026.
 Question: what TCGA breast tumour gene expression reveals about the clinical receptor groups (ER/PR/HER2),
 validated on TCGA RPPA protein data and the independent METABRIC cohort.
+Code repository (public, without the AI chat logs): https://github.com/Vijayavallabh/BT3041_Project
 
 ## Where to look
 

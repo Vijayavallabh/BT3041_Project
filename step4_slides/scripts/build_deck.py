@@ -191,7 +191,7 @@ for j, (g, n) in enumerate([("HR+/HER2−", N["hr"]), ("HER2+", N["her2"]), ("TN
 text(s, 7.85, 4.2, 4.9, 1.0, "Groups from clinical IHC/FISH tests (ER, PR, HER2), not from expression",
      size=15, color=INK2, anchor=MSO_ANCHOR.MIDDLE)
 text(s, 0.75, 6.3, 11.8, 0.4, "Team: [Name 1] · [Name 2] · [Name 3] · [Name 4] · [Name 5]", size=16)
-text(s, 0.75, 6.72, 11.8, 0.4, "IIT Madras · November 2026", size=14, color=MUTED)
+text(s, 0.75, 6.72, 11.8, 0.4, "IIT Madras · November 2026 · Code: github.com/Vijayavallabh/BT3041_Project", size=14, color=MUTED)
 notes(s, "M1", "0:20", f"""
 Good morning. We ask what tumour gene expression reveals about the three clinical receptor groups of breast cancer.
 We use {c(N['n_tum'])} TCGA tumours, and we check every finding in protein from the same tumours and in an independent
@@ -340,6 +340,7 @@ text(s, 7.1, 4.95, 5.6, 2.2, [
     [("Done: ", {"bold": True}), ("data preparation, exploration, clustering, DE, pathways, classification, RPPA and METABRIC validation.", {})],
     [("Report: ", {"bold": True}), ("survival in TCGA and METABRIC, label-rule sensitivity, comparison with 21 published numbers.", {})],
     [("Future: ", {"bold": True}), ("purity-adjusted DE; proteomic (CPTAC) labels.", {})],
+    [("Code: ", {"bold": True}), ("github.com/Vijayavallabh/BT3041_Project", {})],
 ], size=14, space_after=6)
 number(s, 10)
 notes(s, "M5", "0:45", f"""

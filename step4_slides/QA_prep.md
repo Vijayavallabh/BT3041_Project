@@ -97,4 +97,4 @@ with an amplicon, which is why expression separates them far less.
 
 **21. How did you use AI?** [M1]
 For planning, code and review; every prompt and chat log is in the supplementary material submitted with the report, as the guidelines
-ask.
+ask. All code is public at https://github.com/Vijayavallabh/BT3041_Project.

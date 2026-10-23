@@ -651,10 +651,10 @@ para("**Future directions.** Adjust DE for purity (e.g. ESTIMATE scores) or deco
      "_ERBB2_ mRNA can resolve IHC 2+ equivocal cases; extend the protein check to the CPTAC mass-spectrometry proteome; "
      "split the HR+/HER2− group into proliferative and immune subgroups and test their outcome in METABRIC.")
 para("**Data and code availability.** TCGA data from UCSC Xena (GDC and TCGA hubs); METABRIC data from the cBioPortal "
-     "datahub, used under the Open Database License (ODbL). Code, parameters, logs, AI prompts and AI chat histories are in "
-     "the supplementary material: [GitHub or Drive link]. **Use of AI:** an AI assistant helped plan the "
-     "analysis, write and run the code, review the results and draft this report; the team checked every number against "
-     "the result files and every reference against PubMed. Prompts and chat histories are in the supplement.", after=4)
+     "datahub, used under the Open Database License (ODbL). Code, parameters, results and logs: https://github.com/Vijayavallabh/BT3041_Project. AI prompts and "
+     "AI chat histories are in the supplementary material: [Drive link]. **Use of AI:** an AI assistant helped plan the "
+     "analysis, write and run the code, review the results and draft this report; every number was checked against the "
+     "result files and every reference against PubMed.", after=4)
 
 head("References")
 for i, k in enumerate(ORDER, 1):
