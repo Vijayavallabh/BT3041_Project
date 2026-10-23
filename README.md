@@ -14,8 +14,8 @@ computed from the same RNA-seq and would make the analysis circular. Results are
   tumours, against the rest. Assigning METABRIC tumours to the TCGA k = 2 centroids gives a similar basal-like group
   (15.5% of tumours, 91% ER-negative).
 - **Differential expression.** 2,741 genes differ between triple-negative and HR+/HER2− tumours (PyDESeq2,
-  |log2 fold change| > 1 tested directly, FDR 5%). The result is robust across sensitivity runs. In METABRIC, 86% of the
-  DEGs measured on its array (1,599 of 1,857, ER−/HER2− vs ER+/HER2−) replicate with the same sign.
+  |log2 fold change| > 1 tested directly, FDR 5%). In each sensitivity run, at least 87% of these genes stay
+  significant with the same sign. In METABRIC, 86% of the DEGs measured on its array (1,599 of 1,857, ER−/HER2− vs ER+/HER2−) replicate with the same sign.
 - **Classification.** Whole-transcriptome models match, but do not beat, the single receptor gene. For ER, ESR1
   alone gives AUC 0.959 and the best model (random forest) 0.954. For HER2, ERBB2 alone gives 0.845 and the best
   model 0.851 (nested cross-validation, Nadeau–Bengio corrected tests).

@@ -55,8 +55,8 @@ Counts are for the female supervised set under the current labels (HR+/HER2− 5
 
 **1. Differential expression (slide 6, fig11).** PyDESeq2 on STAR counts, `~ histology + group`, testing
 |log2FC| > 1 directly (`lfc_null = 1`, `greaterAbs`). TNBC (157) vs HR+/HER2− (591): **2,741 DEGs** at FDR 5%
-(1,484 higher, 1,257 lower in TNBC) of 23,439 genes; the plain Wald test calls 18,604 (79%), which is why the threshold
-is tested. Positive controls lead (ESR1 log2FC −5.1, PGR −4.4); beyond them the ER regulon is lower in TNBC (GATA3 −3.3,
+(1,484 higher, 1,257 lower in TNBC) of 23,439 genes; the plain Wald test calls 18,604 (79%), which is why we test the
+threshold itself. Positive controls lead (ESR1 log2FC −5.1, PGR −4.4); beyond them the ER regulon is lower in TNBC (GATA3 −3.3,
 AGR3 −4.8, FOXA1 −2.9, XBP1 −2.4) and basal transcription factors are higher (FOXC1 +3.1, EN1, SOX10; KRT5/KRT17 +2.4).
 MKI67 and BIRC5 are higher (log2FC ≈ 1.1–1.2) but not significantly beyond 2-fold.
 Robustness (share of main DEGs still DE with the same sign): + age 94%, IDC only 91% (so lobular biology is not being
@@ -67,24 +67,24 @@ METABRIC-matched contrast ER−/HER2− vs ER+/HER2− 96%. HER2+ vs HR+/HER2−
 **2. Pathways (slide 7, fig12).** GSEA prerank on the Wald statistic: 28 Hallmarks at FDR < 0.05. Up in TNBC:
 E2F targets (NES +3.11), G2M (+2.88), allograft rejection (+2.74), MYC V1 (+2.74), MYC V2 (+2.38), IFN-γ (+2.18),
 mTORC1 (+2.16). Down: estrogen response early (−3.08) and late (−2.40). Fisher ORA on the DEG lists agrees
-(estrogen early/late down; G2M, TNFα/NF-κB up at q < 0.05). **Caveat that strengthens the analysis:** two tests that
+(estrogen early/late down; G2M, TNFα/NF-κB up at q < 0.05). **Caveat:** two tests that
 respect co-expression, CAMERA (Wu & Smyth 2012; median inter-gene correlation 0.06, up to 0.25 for E2F) and
 phenotype-permutation GSEA, agree with the prerank direction for all 28 sets (NES ρ 0.92) but only **estrogen
-response early** stays at q < 0.05 (CAMERA). So the proliferation/MYC/immune programmes are strongly and consistently
-shifted, but "more shifted than the average gene" is not established once co-expression is accounted for; report NES
+response early** stays at q < 0.05 (CAMERA). So the proliferation/MYC/immune programmes are shifted consistently and
+with large effect sizes, but "more shifted than the average gene" is not established once co-expression is accounted for; report NES
 and leading edges, not q ≈ 0. Clinical TNBC vs PanCan PAM50 Basal: κ 0.78, 83% of TNBC are Basal (TCGA 2012: 86%),
 81% of Basal are TNBC (80%); clinical HER2+ called HER2-enriched 33% (κ 0.40).
 
 **3. Classification (slide 8, fig13).** Nested CV (outer 5-fold × 3, inner 5-fold), all filtering/scaling/selection
-inside the training folds. **No model beats the receptor gene alone**: ER — ESR1 AUC 0.959 vs best model (Random
-Forest) 0.954 (Nadeau-Bengio corrected t p = 0.69); HER2 — ERBB2 0.845 vs Random Forest 0.851 (p = 0.66). With
+inside the training folds. **No model beats the receptor gene alone.** ER: ESR1 AUC 0.959 vs best model (Random
+Forest) 0.954 (Nadeau-Bengio corrected t p = 0.69). HER2: ERBB2 0.845 vs Random Forest 0.851 (p = 0.66). With
 ESR1/PGR/ERBB2, every gene within 1.5 Mb of ERBB2 and the 50 PAM50 genes removed, **ER is unchanged** (0.948–0.953;
-paired tests vs all genes p ≥ 0.18): the ER signal is a regulon, not one gene (stable features AGR3, DACH1).
+paired tests vs all genes p ≥ 0.18), so the ER signal comes from a regulon, not one gene (stable features AGR3, DACH1).
 **HER2 drops** by 0.02–0.06 AUC (0.784–0.820; significant for L1-logistic and RF), identical at 2 Mb, so ~0.80 AUC of
 HER2 signal lies outside the amplicon (largely the ER-low/proliferative character of HER2+ tumours; call it
 "copy-number-independent signal" only with that caveat). Shuffled labels give MCC −0.01 (ER) and +0.04 (HER2).
 HER2 label sensitivity: dropping low-confidence HER2+ calls raises ERBB2 alone to 0.894 and models to 0.88; dropping
-all low-confidence calls gives 0.886 — the noisy status-text calls cost ~0.05 AUC, as step 2 predicted.
+all low-confidence calls gives 0.886. The noisy status-text calls cost ~0.05 AUC, as step 2 predicted.
 Secondary benchmark (circular, agreement with a centroid rule): 5-class PAM50 87.9% accuracy (87.2% without PAM50
 genes), 4-class 91.0%.
 
@@ -92,8 +92,8 @@ genes), 4-class 91.0%.
 DE log2FC vs RPPA median difference over 85 genes with a total-protein antibody: **Spearman ρ 0.80, permutation p =
 0.001** (null 95th percentile |ρ| 0.49); all 15 DEGs with an antibody agree in sign. HER2+ vs HR+/HER2−: ρ 0.58
 (p = 0.001). **Error analysis:** 15 IHC-ER− tumours are called ER+ out of fold; 8 of the 10 with RPPA have ERα above
-the 95th percentile of correctly called ER− tumours (median 1.87 vs −1.10) and most are PAM50 luminal — likely IHC
-false negatives. The 68 IHC-ER+ tumours called ER− are mostly PAM50 Basal/Her2 with low ERα (26/43 below the 5th
+the 95th percentile of correctly called ER− tumours (median 1.87 vs −1.10) and most are PAM50 luminal, so they are
+likely IHC false negatives. The 68 IHC-ER+ tumours called ER− are mostly PAM50 Basal/Her2 with low ERα (26/43 below the 5th
 percentile of correct ER+): ER-low tumours or IHC false positives.
 
 **5. METABRIC (slide 9, fig15).** Models frozen on TCGA before any METABRIC label was read (`CHANGELOG.md`).
@@ -109,7 +109,7 @@ sign at q < 0.05 (sign agreement 95%; effect ρ 0.79); Hallmark NES ρ 0.94, 26/
 Cox PFI ~ group + age + stage (884 tumours, 100 events, 5 parameters): **TNBC HR 2.69 (1.70–4.26)**, HER2+ 0.98.
 METABRIC, breast-cancer death within 10 years (cause-specific, 1,846 tumours, 492 deaths; age, grade, size): HER2
 gained HR 1.90, ER−/HER2 not gained 1.60, but PH fails for ER−/HER2−: split at 5 years the HR is **2.46 in years 0–5
-and 0.51 in years 5–10** — the known early-relapse pattern of ER-negative disease. The frozen TCGA classifier's
+and 0.51 in years 5–10**, the known early-relapse pattern of ER-negative disease. The frozen TCGA classifier's
 predicted ER−/HER2− group also separates METABRIC survival (log-rank p = 3e-8). Nielsen 2010 direction check (ER+
 endocrine-treated, 5-year breast-cancer death, METABRIC's published PAM50): HR vs LumA LumB 2.57, HER2E 3.37, Basal
 8.17 (published 1.99, 3.65, 17.71): same order.
@@ -125,8 +125,8 @@ endocrine-treated, 5-year breast-cancer death, METABRIC's published PAM50): HR v
      re-reviewed, which a public dataset cannot do, so leaving them out is the conservative reading.
    - *Low-confidence HER2 calls are kept in the main analysis* and dropped only in the sensitivity runs. Dropping them
      from the main set would mean removing labels because they disagree with ERBB2 expression, which biases the HER2
-     classifier upwards (the outcome we test). Reporting both (ERBB2 AUC 0.845 main, 0.894 without them) is the
-     stronger, more honest design.
+     classifier upwards (the outcome we test). Reporting both (ERBB2 AUC 0.845 main, 0.894 without them) avoids
+     that bias and shows its size.
    - *The 9 exclusions* are required: 5 sample-identity failures (the expression may belong to another patient) and
      redacted TCGA-CDR cases, which TCGA itself says not to analyse.
    - *Groups* use the standard clinical surrogate definitions (HR+ = ER+ or PR+; TNBC = ER−, PR−, HER2−) on female
@@ -146,7 +146,7 @@ endocrine-treated, 5-year breast-cancer death, METABRIC's published PAM50): HR v
 8. **METABRIC survival:** the plan's 10-year truncation plus a 5-year model; the group effect is additionally split at
    5 years because PH fails for ER−/HER2−.
 
-## Limitations a grader may raise
+## Limitations
 
 - TNBC vs HR+/HER2− differ in proliferation and immune infiltration, which are partly tumour-content effects; DE was
   not adjusted for purity.
@@ -157,6 +157,5 @@ endocrine-treated, 5-year breast-cancer death, METABRIC's published PAM50): HR v
   is the second check (both in `summary.tsv`).
 
 ## AI use
-
 The AI prompts and the AI working log for this step are submitted with the report as supplementary material (not in
 this repository).

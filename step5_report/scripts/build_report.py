@@ -399,55 +399,60 @@ members = [f"{n} ({roll[n]})" if n in roll else n for n in TEAM]
 para("Team 16: " + (" · ".join(members[:3]) + "\n" + " · ".join(members[3:]) if roll else " · ".join(members)),
      align=WD_ALIGN_PARAGRAPH.CENTER, after=6)
 
-para(f"**Abstract.** Breast cancers are grouped for treatment by three clinical tests: oestrogen receptor (ER), progesterone "
-     f"receptor (PR) and HER2. We asked what tumour RNA-seq reveals about these clinical groups, using the clinical labels "
-     f"(not the expression-derived PAM50 subtypes) to avoid circular reasoning. In {c(N['n_tum'])} TCGA tumours "
-     f"(clinical groups: HR+/HER2− {N['hr']}, HER2+ {N['her2']}, triple-negative {N['tnbc']}), label-free clustering recovered a basal-like "
-     f"group that held {N['k2_tn']} of {N['tnbc']} triple-negative tumours (ARI with ER status {f2(N['ari_er'].ARI)}). "
-     f"Against HR+/HER2− tumours, triple-negative tumours differed more than 2-fold in {c(N['deg'])} genes (FDR 5%), with the "
-     f"oestrogen-response programme down and proliferation, MYC and immune programmes up; only the oestrogen-response shift "
-     f"survived a correlation-aware gene-set test. Classifiers trained on the whole transcriptome matched, but did not beat, "
-     f"the receptor gene alone (ER: _ESR1_ AUC {f3(esr1.AUC_pooled)} vs best model {f3(b_er.AUC_pooled)}; HER2: _ERBB2_ "
-     f"{f3(erbb2.AUC_pooled)} vs {f3(b_h2.AUC_pooled)}). The findings held in protein from the same tumours (mRNA–protein "
-     f"effect correlation ρ = {f2(N['rho'])}) and in {c(N['mb_n'])} METABRIC tumours (frozen-model AUC {f2(N['mt_er']['AUC'])} for "
-     f"ER, {f2(N['mt_h2']['AUC'])} for HER2; {pc(N['rep'])} of differentially expressed genes replicated).", after=6)
+para(f"**Abstract.** Breast cancers are assigned to treatment groups by three clinical tests: oestrogen receptor (ER), "
+     f"progesterone receptor (PR) and HER2. We asked what tumour RNA-seq tells us about these clinical groups. We used the "
+     f"clinical labels as ground truth rather than the PAM50 subtypes, because PAM50 is itself derived from expression. In "
+     f"{c(N['n_tum'])} TCGA tumours (HR+/HER2− {N['hr']}, HER2+ {N['her2']}, triple-negative {N['tnbc']}), clustering without "
+     f"labels found a basal-like group that contained {N['k2_tn']} of the {N['tnbc']} triple-negative tumours (ARI with ER "
+     f"status {f2(N['ari_er'].ARI)}). Compared with HR+/HER2− tumours, triple-negative tumours differed more than 2-fold in "
+     f"{c(N['deg'])} genes (FDR 5%). The oestrogen-response programme was lower and the proliferation, MYC and immune "
+     f"programmes were higher, but only the oestrogen-response shift remained significant in a correlation-aware gene-set "
+     f"test. Classifiers trained on the whole transcriptome performed as well as the receptor gene alone, not better (ER: "
+     f"_ESR1_ AUC {f3(esr1.AUC_pooled)} vs best model {f3(b_er.AUC_pooled)}; HER2: _ERBB2_ {f3(erbb2.AUC_pooled)} vs "
+     f"{f3(b_h2.AUC_pooled)}). The results agreed with protein levels in the same tumours (mRNA–protein effect correlation "
+     f"ρ = {f2(N['rho'])}) and with {c(N['mb_n'])} METABRIC tumours, where the frozen models reached AUC "
+     f"{f2(N['mt_er']['AUC'])} for ER and {f2(N['mt_h2']['AUC'])} for HER2 and {pc(N['rep'])} of the differentially "
+     f"expressed genes replicated.", after=6)
 
 # ---------------------------------------------------------------------------------------------- 1
 head("1. Introduction and research questions")
 para(f"Pathologists test every invasive breast cancer for ER and PR by immunohistochemistry (IHC) and for HER2 by IHC or "
-     f"in-situ hybridisation (FISH) {cite('allison2020', 'wolff2018')}. The result chooses the therapy: endocrine drugs for "
-     f"hormone-receptor-positive (HR+) disease, anti-HER2 antibodies for HER2+ disease and chemotherapy for triple-negative "
-     f"breast cancer (TNBC), which has no targeted option. Expression profiling defined the intrinsic subtypes (luminal A/B, "
-     f"HER2-enriched, basal-like) {cite('sorlie2001', 'tcga2012')}, now assigned with the PAM50 centroids "
-     f"{cite('parker2009')}. Many machine-learning studies predict PAM50 from RNA-seq, but PAM50 is itself computed from "
-     f"RNA, so such accuracy partly measures agreement of an algorithm with itself. We therefore used the clinical IHC/FISH "
-     f"labels as the ground truth and PAM50 only as a comparator.")
-para("We asked three questions. **Q1:** Does label-free structure in tumour expression (PCA, UMAP, clustering) recover the "
-     "clinical receptor groups? **Q2:** Which genes and pathways differ between TNBC and HR+/HER2− tumours, and how robust "
-     "are they? **Q3:** Can whole-transcriptome classifiers predict clinical ER and HER2 status better than the receptor "
-     "gene alone? Every answer was checked in a second assay (protein, RPPA) on the same tumours, in an independent cohort "
-     "(METABRIC) with labels from other assays, and against published numbers.")
+     f"in-situ hybridisation (FISH) {cite('allison2020', 'wolff2018')}. These results decide the treatment: endocrine drugs "
+     f"for hormone-receptor-positive (HR+) disease, anti-HER2 antibodies for HER2+ disease, and chemotherapy for "
+     f"triple-negative breast cancer (TNBC), for which there is no targeted option. Expression profiling defined the "
+     f"intrinsic subtypes (luminal A/B, HER2-enriched, basal-like) {cite('sorlie2001', 'tcga2012')}, which are now assigned "
+     f"with the PAM50 centroids {cite('parker2009')}. Many machine-learning studies predict PAM50 from RNA-seq. Since PAM50 "
+     f"is computed from RNA in the first place, part of their accuracy simply reflects an algorithm agreeing with "
+     f"itself. For this reason we treated the clinical IHC/FISH labels as ground truth and used PAM50 "
+     f"only for comparison.")
+para("We set out to answer three questions. **Q1:** Does the structure of tumour expression, found without labels (PCA, "
+     "UMAP, clustering), recover the clinical receptor groups? **Q2:** Which genes and pathways differ between TNBC and "
+     "HR+/HER2− tumours, and how robust are these differences? **Q3:** Can whole-transcriptome classifiers predict clinical "
+     "ER and HER2 status better than the receptor gene on its own? We checked each answer in three ways: in a second assay "
+     "(RPPA protein) on the same tumours, in an independent cohort (METABRIC) whose labels come from other assays, and "
+     "against published numbers.")
 
 # ---------------------------------------------------------------------------------------------- 2
 head("2. Data acquisition and preprocessing")
 para(f"**Sources.** TCGA-BRCA RNA-seq (HiSeqV2, log2(RSEM+1)), STAR gene counts (GDC, GENCODE v36), clinical IHC/FISH "
      f"fields, reverse-phase protein arrays (RPPA) and PAM50 calls were downloaded from UCSC Xena {cite('goldman2020')}; "
      f"survival end points came from the TCGA Clinical Data Resource {cite('liu2018')}. METABRIC Illumina HT-12 expression "
-     f"and clinical tables {cite('curtis2012', 'pereira2016')} came from the cBioPortal datahub. Gene symbols in every data "
-     f"set (and the Hallmark gene sets {cite('liberzon2015')}) were mapped to current HGNC symbols. Raw files were checksummed "
-     f"at a data freeze.")
-para(f"**Cleaning and labels.** We kept one primary tumour per patient ({c(N['n_prim'])}) and excluded {N['n_excl']}: five "
-     f"whose HiSeqV2 and STAR profiles did not match each other (Spearman ρ below the 99th percentile of between-patient "
-     f"correlations) and five whose clinical record is redacted in the Clinical Data Resource (one tumour failed both), "
-     f"leaving {c(N['n_tum'])} tumours for all label-free work. HER2 followed ASCO/CAP 2018 {cite('wolff2018')}: FISH "
-     f"first, then the IHC score (3+ positive, 0/1+ negative, 2+ without FISH missing), using the status text only when no "
-     f"score was recorded. IHC 3+ with a negative FISH ({N['h2_disc']} tumours) was treated as discordant and left "
-     f"unlabelled, as were other conflicting records. This rule agrees with the TCGA 2012 HER2 calls at κ = {f2(N['kappa_h2'])}. The "
-     f"supervised set holds the {c(N['n_sup'])} female patients ({N['n_male']} male patients were kept only for label-free "
-     f"work). Groups were HR+/HER2− (ER or PR positive, HER2 negative), HER2+ (any ER/PR) and TNBC (all three negative); "
-     f"{N['inc']} tumours lacked one of the three results. For differential expression we kept STAR genes with ≥ 10 counts in "
-     f"at least {N['star_min']} tumours (the smallest group), {c(N['star_genes'])} genes. Matrices were left unscaled so that "
-     f"every scaling step could run inside cross-validation folds. Table 1 lists the data sets.")
+     f"and clinical tables {cite('curtis2012', 'pereira2016')} were taken from the cBioPortal datahub. Gene symbols in all "
+     f"data sets, including the Hallmark gene sets {cite('liberzon2015')}, were mapped to current HGNC symbols, and the raw "
+     f"files were checksummed at a data freeze.")
+para(f"**Cleaning and labels.** We kept one primary tumour per patient ({c(N['n_prim'])}) and excluded {N['n_excl']}. Five "
+     f"of these had HiSeqV2 and STAR profiles that did not match (Spearman ρ below the 99th percentile of between-patient "
+     f"correlations), and five have a redacted clinical record in the Clinical Data Resource; one tumour failed both checks. "
+     f"This left {c(N['n_tum'])} tumours for all label-free work. HER2 status followed ASCO/CAP 2018 {cite('wolff2018')}. "
+     f"FISH was used first, then the IHC score (3+ positive, 0/1+ negative, 2+ without FISH missing), and the status text "
+     f"only when no score was recorded. Tumours that were IHC 3+ but FISH-negative ({N['h2_disc']}) were treated as "
+     f"discordant and left unlabelled, as were other conflicting records. This rule agrees with the TCGA 2012 HER2 calls "
+     f"at κ = {f2(N['kappa_h2'])}. The supervised set contains the {c(N['n_sup'])} female patients; the {N['n_male']} male "
+     f"patients were used only in label-free work. The groups were HR+/HER2− (ER or PR positive, HER2 negative), HER2+ "
+     f"(any ER/PR) and TNBC (all three negative), and {N['inc']} tumours were missing one of the three results. For "
+     f"differential expression we kept the {c(N['star_genes'])} STAR genes with ≥ 10 counts in at least {N['star_min']} "
+     f"tumours (the size of the smallest group). We did not scale the matrices at this stage, so that every scaling step "
+     f"could be done inside the cross-validation folds. Table 1 lists the data sets.")
 table([["Data set", "Used for", "n", "HR+/HER2−", "HER2+", "TNBC"],
        ["TCGA HiSeqV2 (analysed)", "PCA, UMAP, clustering", c(N["n_tum"]), *[pre["clinical_group_final_all"][g] for g in ("HR+/HER2-", "HER2+", "TNBC")]],
        ["TCGA supervised set", "classifiers", c(N["n_sup"]), N["hr"], N["her2"], N["tnbc"]],
@@ -462,61 +467,68 @@ table([["Data set", "Used for", "n", "HR+/HER2−", "HER2+", "TNBC"],
 
 # ---------------------------------------------------------------------------------------------- 3
 head("3. Methods")
-para(f"All analyses used Python 3.12 (scikit-learn, PyDESeq2, GSEApy, lifelines) with seed 42; every parameter and "
-     f"package version is written to a params.json next to each result, and the code is in the supplementary material. "
-     f"Multiple tests were corrected by Benjamini–Hochberg (BH) FDR {cite('bh1995')}.")
-para(f"**Exploration and clustering (Q1).** PCA and UMAP {cite('mcinnes2018')} (15 neighbours) used the 2,000 most variable "
-     f"genes after removing sex-chromosome-specific genes. We tested marker genes between groups with Mann–Whitney U tests "
-     f"(rank-biserial r as effect size) and the share of PC variance explained by group and by tissue-source site (η², "
-     f"with a permutation chance level). k-means (k = 2–8, PAM50 genes left out) was run with consensus clustering "
-     f"{cite('monti2003')} (100 resamples of 80% of tumours); k was chosen before looking at the labels as the lowest "
-     f"proportion of ambiguous clustering (PAC) {cite('senbabaoglu2014')}. Agreement with labels was measured by the "
-     f"adjusted Rand index (ARI) with bootstrap 95% CIs and compared with the best ARI reachable by two clusters.")
-para(f"**Differential expression and pathways (Q2).** PyDESeq2 {cite('love2014', 'muzellec2023')} on raw STAR counts with "
-     f"design ~ histology + group tested |log2FC| > 1 directly (lfc_null = 1) rather than filtering by fold change after "
-     f"a test of zero change. Fold changes were shrunk for ranking and plotting. Sensitivity runs added age, kept invasive "
-     f"ductal tumours only, dropped every low-confidence HER2 call, or used the ER−/HER2− vs ER+/HER2− contrast that matches "
-     f"METABRIC. Hallmark enrichment used GSEA prerank on the Wald statistic {cite('subramanian2005', 'fang2023')} "
-     f"({c(epar['permutations'])} permutations), Fisher over-representation of the DEG lists, and two tests that account for inter-gene "
-     f"correlation: CAMERA {cite('wu2012')} and phenotype-permutation GSEA.")
+para(f"All analyses were run in Python 3.12 (scikit-learn, PyDESeq2, GSEApy, lifelines) with seed 42. Each result folder "
+     f"has a params.json that records every parameter and package version, and the code is in the supplementary material. "
+     f"P-values from multiple tests were corrected with the Benjamini–Hochberg (BH) FDR {cite('bh1995')}.")
+para(f"**Exploration and clustering (Q1).** PCA and UMAP {cite('mcinnes2018')} (15 neighbours) were computed on the 2,000 "
+     f"most variable genes after sex-chromosome-specific genes were removed. Marker genes were compared between groups with "
+     f"Mann–Whitney U tests, using rank-biserial r as the effect size. We also measured how much PC variance was explained "
+     f"by group and by tissue-source site (η², against a permutation chance level). k-means (k = 2–8, without the PAM50 "
+     f"genes) was combined with consensus clustering {cite('monti2003')} over 100 resamples of 80% of the tumours. We fixed "
+     f"k before looking at the labels, as the value with the lowest proportion of ambiguous clustering (PAC) "
+     f"{cite('senbabaoglu2014')}. Agreement with the labels was measured by the adjusted Rand index (ARI) with bootstrap "
+     f"95% CIs, and compared with the best ARI that two clusters can reach.")
+para(f"**Differential expression and pathways (Q2).** We ran PyDESeq2 {cite('love2014', 'muzellec2023')} on raw STAR "
+     f"counts with the design ~ histology + group. It tested |log2FC| > 1 directly (lfc_null = 1), instead of testing for "
+     f"zero change and filtering by fold change afterwards. Shrunk fold changes were used for ranking and plotting. In "
+     f"sensitivity runs we added age, kept only invasive ductal tumours, dropped every low-confidence HER2 call, or used "
+     f"the ER−/HER2− vs ER+/HER2− contrast that matches METABRIC. For Hallmark enrichment we used GSEA prerank on the Wald "
+     f"statistic {cite('subramanian2005', 'fang2023')} ({c(epar['permutations'])} permutations) and Fisher "
+     f"over-representation of the DEG lists. Two further tests take inter-gene correlation into account: CAMERA "
+     f"{cite('wu2012')} and phenotype-permutation GSEA.")
 para(f"**Classification (Q3).** Targets were clinical ER (n = {c(N['n_er'])}, {c(N['n_er_pos'])} positive) and HER2 "
-     f"(n = {N['n_h2']}, {N['n_h2_pos']} positive). L1-penalised logistic regression, a linear SVM, a Random Forest and PLS-DA "
-     f"were trained in nested cross-validation (outer 5 folds × 3 repeats, inner 5 folds, class-balanced weights). A "
-     f"variance filter (top 5,000 genes), scaling, univariate selection of k genes (k ∈ {{{', '.join(str(k) for k in cpar['k_grid'])}}}) "
-     f"and the hyper-parameters were all fitted inside the training folds. The "
-     f"baseline was the receptor gene alone (_ESR1_ or _ERBB2_), with a cut-off chosen inside the folds. Models were "
-     f"compared on pooled out-of-fold ROC-AUC with the Nadeau–Bengio corrected t-test {cite('nadeau2003')} and a paired "
-     f"bootstrap. An ablation removed _ESR1_, _PGR_, _ERBB2_, every gene within 1.5 Mb (and 2 Mb) of _ERBB2_ and the 50 "
-     f"PAM50 genes ({N['n_removed']} genes). Shuffled labels gave a negative control.")
-para(f"**Validation.** (i) Protein: Mann–Whitney tests on RPPA, and the Spearman correlation between DE fold changes and "
-     f"protein differences for the {N['rho_genes']} genes with a total-protein antibody, with a gene-label permutation null; "
-     f"the out-of-fold ER errors were compared with ERα protein. (ii) METABRIC: the ER, HER2 and ER−/HER2− models were "
-     f"refit on all TCGA tumours and frozen (with checksums logged) before any METABRIC label was read, then applied to "
-     f"METABRIC z-scored within cohort on the {c(N['mb_shared'])} shared genes. DE was replicated by OLS with age "
-     f"(ER-IHC−/HER2-not-gained {N['mb_tn']} vs ER-IHC+/HER2-not-gained {c(N['mb_hr'])}). (iii) Survival: Kaplan–Meier, "
-     f"log-rank and Cox models with Schoenfeld checks; TCGA progression-free interval (PFI) with group, age and stage "
-     f"({N['tcox']['events']} events, so 5 parameters), and METABRIC breast-cancer death within 10 years with group, age, "
-     f"grade and size. (iv) Literature: our numbers were placed next to published ones, each checked against PubMed.")
+     f"(n = {N['n_h2']}, {N['n_h2_pos']} positive). We trained L1-penalised logistic regression, a linear SVM, a Random "
+     f"Forest and PLS-DA in nested cross-validation (outer 5 folds × 3 repeats, inner 5 folds, class-balanced weights). The "
+     f"variance filter (top 5,000 genes), scaling, univariate selection of k genes "
+     f"(k ∈ {{{', '.join(str(k) for k in cpar['k_grid'])}}}) and the hyper-parameters were all fitted inside the training "
+     f"folds. The baseline was the receptor gene on its own (_ESR1_ or _ERBB2_), with its cut-off also chosen inside the "
+     f"folds. We compared models on pooled out-of-fold ROC-AUC, using the Nadeau–Bengio corrected t-test "
+     f"{cite('nadeau2003')} and a paired bootstrap. An ablation removed _ESR1_, _PGR_, _ERBB2_, every gene within 1.5 Mb "
+     f"(and 2 Mb) of _ERBB2_ and the 50 PAM50 genes ({N['n_removed']} genes in all). Models trained on shuffled labels "
+     f"served as a negative control.")
+para(f"**Validation.** (i) Protein. We ran Mann–Whitney tests on the RPPA data. For the {N['rho_genes']} genes with a "
+     f"total-protein antibody, we correlated DE fold changes with protein differences (Spearman) and compared the result "
+     f"with a gene-label permutation null. We also compared the out-of-fold ER errors with ERα protein levels. "
+     f"(ii) METABRIC. The ER, HER2 and ER−/HER2− models were refit on all TCGA tumours and frozen, with checksums logged, "
+     f"before any METABRIC label was read. They were then applied to METABRIC after z-scoring within the cohort on the "
+     f"{c(N['mb_shared'])} shared genes. DE was replicated by OLS with age as a covariate (ER-IHC−/HER2-not-gained "
+     f"{N['mb_tn']} vs ER-IHC+/HER2-not-gained {c(N['mb_hr'])}). (iii) Survival. We used Kaplan–Meier curves, log-rank "
+     f"tests and Cox models with Schoenfeld checks. The TCGA model of progression-free interval (PFI) included group, age "
+     f"and stage ({N['tcox']['events']} events, which allows 5 parameters); the METABRIC model of breast-cancer death "
+     f"within 10 years included group, age, grade and size. (iv) Literature. We placed our numbers next to published ones "
+     f"and checked each source against PubMed.")
 
 # ---------------------------------------------------------------------------------------------- 4
 head("4. Results and interpretation")
 head("4.1 Label-free structure follows ER, and recovers TNBC as a basal-like group (Q1)", 2)
-para(f"PC1 ({pc(N['pc1_var'])} of variance) was the ER axis: it separated IHC ER-positive from ER-negative tumours with "
-     f"AUC {f2(N['pc1_auc'])} and the clinical group explained η² = {f2(N['pc1_eta'])} of it, while tissue-source site "
-     f"explained ≤ {f2(N['site_max'])} of PC1–4. In the UMAP (Fig. 1a) a separate island of {N['isl']} tumours held "
-     f"{N['isl_a']} of {N['isl_b']} TNBC ({pc(N['isl_a'] / N['isl_b'])}); HER2+ tumours did not form their own island but sat at "
-     f"one edge of the HR+ mass. Marker genes behaved as expected: _ESR1_ was the strongest single difference between TNBC "
-     f"and HR+/HER2− (rank-biserial r = {f2(N['r_esr1'])}), the basal transcription factor _FOXC1_ was higher in TNBC "
-     f"(r = +{f2(N['r_foxc1'])}) and _ERBB2_ was higher in HER2+ (r = +{f2(N['r_erbb2'])}; all q < 10^−30^).")
-para(f"Consensus clustering was most stable at k = 2 (PAC {f2(N['pac2'])}; k = 5: {f2(N['pac5'])}). The smaller cluster of "
-     f"{N['k2']} tumours held {N['k2_tn']} of {N['tnbc']} TNBC (Fig. 1b) and agreed with IHC ER at ARI "
-     f"{f2(N['ari_er'].ARI)} ({f2(N['ari_er'].ARI_lo)}–{f2(N['ari_er'].ARI_hi)}) and with the three clinical groups at "
-     f"{f2(N['ari_cg'].ARI)}, against a ceiling of {f2(N['ceil_cg'])} for two clusters (Fig. 1c). k-means, consensus, Ward and "
-     f"average-linkage clusterings agreed at k = 2 (ARI {min(N['meth_ari'].values()):.2f}–{max(N['meth_ari'].values()):.2f}). "
-     f"At k = 5 a HER2-enriched cluster appeared, but it was the least reproducible across methods, and the luminal "
-     f"tumours split differently from PAM50 LumA/LumB (ARI {f2(N['ari5_pam'].ARI)}), in line with the luminal continuum "
-     f"described by Netanely et al. {cite('netanely2016')}. **Answer to Q1:** expression recovers the ER-negative, "
-     f"basal-like axis strongly and the HER2+ group only weakly.")
+para(f"PC1 ({pc(N['pc1_var'])} of variance) was the ER axis. It separated IHC ER-positive from ER-negative tumours with "
+     f"AUC {f2(N['pc1_auc'])}, and the clinical group explained η² = {f2(N['pc1_eta'])} of its variance. Tissue-source "
+     f"site, by contrast, explained ≤ {f2(N['site_max'])} of PC1–4. In the UMAP (Fig. 1a), a separate island of {N['isl']} "
+     f"tumours contained {N['isl_a']} of the {N['isl_b']} TNBC ({pc(N['isl_a'] / N['isl_b'])}). HER2+ tumours did not form "
+     f"an island of their own; they sat at one edge of the HR+ mass. The marker genes behaved as expected. _ESR1_ showed "
+     f"the largest single difference between TNBC and HR+/HER2− (rank-biserial r = {f2(N['r_esr1'])}), the basal "
+     f"transcription factor _FOXC1_ was higher in TNBC (r = +{f2(N['r_foxc1'])}), and _ERBB2_ was higher in HER2+ "
+     f"(r = +{f2(N['r_erbb2'])}; all q < 10^−30^).")
+para(f"Consensus clustering was most stable at k = 2 (PAC {f2(N['pac2'])}, compared with {f2(N['pac5'])} at k = 5). The "
+     f"smaller of the two clusters had {N['k2']} tumours and contained {N['k2_tn']} of the {N['tnbc']} TNBC (Fig. 1b). Its "
+     f"agreement with IHC ER was ARI {f2(N['ari_er'].ARI)} ({f2(N['ari_er'].ARI_lo)}–{f2(N['ari_er'].ARI_hi)}), and with "
+     f"the three clinical groups {f2(N['ari_cg'].ARI)}, where the ceiling for two clusters is {f2(N['ceil_cg'])} (Fig. 1c). "
+     f"k-means, consensus, Ward and average-linkage clustering gave the same picture at k = 2 "
+     f"(ARI {min(N['meth_ari'].values()):.2f}–{max(N['meth_ari'].values()):.2f}). A HER2-enriched cluster appeared at "
+     f"k = 5, but it was the least reproducible across methods. The luminal tumours also split differently from PAM50 "
+     f"LumA/LumB (ARI {f2(N['ari5_pam'].ARI)}), which fits the luminal continuum described by Netanely et al. "
+     f"{cite('netanely2016')}. **Answer to Q1:** expression recovers the ER-negative, basal-like axis strongly, but the "
+     f"HER2+ group only weakly.")
 figure("report_fig1_exploration.png",
        f"**Figure 1. Label-free structure.** (a) UMAP of {c(N['n_tum'])} tumours coloured by clinical group. (b) Share of each "
        f"clinical group in the smaller k-means cluster (k = 2). (c) Adjusted Rand index of k-means clusters with ER, the "
@@ -524,29 +536,31 @@ figure("report_fig1_exploration.png",
 
 head("4.2 TNBC is a distinct transcriptional state (Q2)", 2)
 para(f"Of {c(N['genes_tested'])} genes, {c(N['deg'])} differed more than 2-fold between TNBC and HR+/HER2− at FDR 5% "
-     f"({c(N['up'])} higher, {c(N['dn'])} lower in TNBC; Fig. 2a). A plain Wald test of zero change called "
-     f"{c(N['wald'])} genes ({pc(N['wald'] / N['genes_tested'])}), which shows why the threshold was tested rather than "
-     f"applied afterwards. _ESR1_ (log2FC {gn['ESR1']['log2FC_shrunk']:+.1f}) and _PGR_ ({gn['PGR']['log2FC_shrunk']:+.1f}) "
-     f"acted as positive controls. Beyond them, the ER-driven luminal programme was lower in TNBC (_GATA3_ "
+     f"({c(N['up'])} higher, {c(N['dn'])} lower in TNBC; Fig. 2a). A plain Wald test of zero change would have called "
+     f"{c(N['wald'])} genes ({pc(N['wald'] / N['genes_tested'])}); this is why we tested the threshold instead of applying "
+     f"it afterwards. _ESR1_ (log2FC {gn['ESR1']['log2FC_shrunk']:+.1f}) and _PGR_ ({gn['PGR']['log2FC_shrunk']:+.1f}) "
+     f"served as positive controls. Beyond these two, the ER-driven luminal programme was lower in TNBC (_GATA3_ "
      f"{gn['GATA3']['log2FC_shrunk']:+.1f}, _AGR3_ {gn['AGR3']['log2FC_shrunk']:+.1f}, _FOXA1_ {gn['FOXA1']['log2FC_shrunk']:+.1f}, "
      f"_XBP1_ {gn['XBP1']['log2FC_shrunk']:+.1f}) and basal transcription factors and keratins were higher (_FOXC1_ "
      f"{gn['FOXC1']['log2FC_shrunk']:+.1f}, as reported by Ray et al. {cite('ray2010')}; _KRT5_ {gn['KRT5']['log2FC_shrunk']:+.1f}). "
-     f"The list was robust: {pc(N['rob_age'])} of the DEGs stayed significant with the same sign after adding age, "
-     f"{pc(N['rob_idc'])} in ductal tumours only (so lobular biology is not being reported as HR+ biology), "
-     f"{pc(N['rob_strict'])} with strict labels and {pc(N['rob_match'])} in the ER−/HER2− contrast. HER2+ vs HR+/HER2− "
-     f"tumours differed in only {N['her2_deg']} genes, {N['her2_amp']} of them within 2 Mb of _ERBB2_ on the 17q12 amplicon.")
-para(f"GSEA found {N['gsea_n']} Hallmark sets at FDR < 0.05 (Fig. 2b): proliferation (E2F targets, NES "
+     f"The list held up in the sensitivity runs. Of the DEGs, {pc(N['rob_age'])} stayed significant with the same sign "
+     f"after adding age, {pc(N['rob_idc'])} in ductal tumours only (so lobular biology is not being reported as HR+ "
+     f"biology), {pc(N['rob_strict'])} with strict labels and {pc(N['rob_match'])} in the ER−/HER2− contrast. HER2+ and "
+     f"HR+/HER2− tumours differed in only {N['her2_deg']} genes, and {N['her2_amp']} of these lie within 2 Mb of _ERBB2_ "
+     f"on the 17q12 amplicon.")
+para(f"GSEA found {N['gsea_n']} Hallmark sets at FDR < 0.05 (Fig. 2b). Proliferation (E2F targets, NES "
      f"{nes['E2F_TARGETS']['NES']:+.2f}; G2M checkpoint {nes['G2M_CHECKPOINT']['NES']:+.2f}), MYC targets "
      f"({nes['MYC_TARGETS_V1']['NES']:+.2f}), interferon-γ ({nes['INTERFERON_GAMMA_RESPONSE']['NES']:+.2f}) and mTORC1 "
-     f"({nes['MTORC1_SIGNALING']['NES']:+.2f}) were higher in TNBC, and the early and late oestrogen responses lower "
+     f"({nes['MTORC1_SIGNALING']['NES']:+.2f}) were higher in TNBC. The early and late oestrogen responses were lower "
      f"({nes['ESTROGEN_RESPONSE_EARLY']['NES']:+.2f}, {nes['ESTROGEN_RESPONSE_LATE']['NES']:+.2f}), as in the TCGA and CPTAC "
-     f"proteogenomic studies {cite('tcga2012', 'krug2020')}. Gene-permutation q-values are optimistic when genes in a set are "
-     f"co-expressed (median inter-gene correlation {f2(N['cam_corr'])}, up to {f2(N['cam_e2f'])} for E2F targets). Both "
-     f"correlation-aware tests agreed with the prerank direction for all {N['gsea_n']} sets (NES ρ = {f2(N['ph_rho'])}), but "
-     f"only the early oestrogen response stayed significant (CAMERA q < 0.05). We therefore report the proliferation, MYC "
-     f"and immune programmes as consistent shifts with large effect sizes, not as proven to be more shifted than the "
-     f"average gene. **Answer to Q2:** TNBC switches off the oestrogen-response programme and switches on basal and "
-     f"proliferative genes; HER2+ tumours differ far less, mainly at the amplicon.")
+     f"proteogenomic studies {cite('tcga2012', 'krug2020')}. Gene-permutation q-values are too optimistic when the genes in "
+     f"a set are co-expressed, and here the median inter-gene correlation was {f2(N['cam_corr'])} (up to "
+     f"{f2(N['cam_e2f'])} for E2F targets). Both correlation-aware tests gave the same direction as prerank for all "
+     f"{N['gsea_n']} sets (NES ρ = {f2(N['ph_rho'])}), but only the early oestrogen response remained significant (CAMERA "
+     f"q < 0.05). We therefore describe the proliferation, MYC and immune programmes as consistent shifts with large effect "
+     f"sizes. We do not claim that they are shifted more than the average gene. **Answer to Q2:** in TNBC the "
+     f"oestrogen-response programme is turned down and basal and proliferative genes are turned up. HER2+ tumours differ "
+     f"much less, mainly at the amplicon.")
 figure("report_fig2_de_pathways.png",
        f"**Figure 2. TNBC vs HR+/HER2− ({N['tnbc']} vs {N['hr']}).** (a) Volcano plot: shrunk log2 fold change against FDR "
        f"of the |log2FC| > 1 test (y capped at 150). (b) Hallmark sets at prerank FDR < 0.05 (the 13 strongest positive and "
@@ -555,43 +569,47 @@ figure("report_fig2_de_pathways.png",
 
 head("4.3 Whole-transcriptome models match, but do not beat, the receptor gene (Q3)", 2)
 para(f"For ER, _ESR1_ alone reached AUC {f3(esr1.AUC_pooled)} and the best model (Random Forest) {f3(b_er.AUC_pooled)} "
-     f"(corrected t-test p = {f2(b_er.NB_p)}); for HER2, _ERBB2_ alone {f3(erbb2.AUC_pooled)} and the best model "
-     f"{f3(b_h2.AUC_pooled)} (p = {f2(b_h2.NB_p)}) (Fig. 3a–b). All four model types gave similar AUCs (Fig. 3c), shuffled "
-     f"labels gave MCC {N['mcc_er']:+.2f} (ER) and {N['mcc_h2']:+.2f} (HER2), and accuracy of the single gene "
-     f"({N['acc_er']} for _ESR1_, {N['acc_h2']} for _ERBB2_) matched the 88–96% reported for arrays by Gong et al. {cite('gong2007')}. The "
-     f"ablation separates the two receptors. Without the receptor genes, the amplicon and the PAM50 genes, ER was "
-     f"predicted as well as before (AUC {f3(N['abl_e_lo'])}–{f3(N['abl_e_hi'])}): ER status is written across a whole "
-     f"regulon, not one gene. HER2 fell to {f3(N['abl_h_lo'])}–{f3(N['abl_h_hi'])}, the same at 2 Mb, so most HER2 signal "
-     f"sits in the amplicon and the remainder largely reflects the lower-ER, proliferative character of HER2+ tumours. "
-     f"Label quality limits HER2: dropping the {N['h2_text']} HER2+ calls based on status text alone raised _ERBB2_ alone "
-     f"to {f3(N['sens_pos'])} and the best model to {f3(N['sens_pos_best'])}. Only for the combined ER−/HER2− target did "
-     f"a model beat one gene ({f3(N['tn_best'].AUC_pooled)} vs {f3(N['tn_base'].AUC_pooled)} for _ESR1_; p = "
-     f"{f3(N['tn_best'].NB_p)}), because no single gene encodes both receptors. As a secondary, circular benchmark, the "
-     f"same pipeline reproduced 5-class PAM50 calls with {pc(N['pam5'])} accuracy ({pc(N['pam5_no'])} without the PAM50 "
-     f"genes). **Answer to Q3:** no; the receptor gene already carries almost all the information about clinical status.")
+     f"(corrected t-test p = {f2(b_er.NB_p)}). For HER2, _ERBB2_ alone reached {f3(erbb2.AUC_pooled)} and the best model "
+     f"{f3(b_h2.AUC_pooled)} (p = {f2(b_h2.NB_p)}) (Fig. 3a–b). The four model types gave similar AUCs (Fig. 3c), and "
+     f"shuffled labels gave MCC {N['mcc_er']:+.2f} (ER) and {N['mcc_h2']:+.2f} (HER2). The single-gene accuracy "
+     f"({N['acc_er']} for _ESR1_, {N['acc_h2']} for _ERBB2_) matched the 88–96% that Gong et al. reported for arrays "
+     f"{cite('gong2007')}. The ablation treated the two receptors very differently. With the receptor genes, the amplicon "
+     f"and the PAM50 genes removed, ER was predicted as well as before (AUC {f3(N['abl_e_lo'])}–{f3(N['abl_e_hi'])}), so "
+     f"the ER signal is spread across a whole regulon rather than carried by one gene. HER2 dropped to "
+     f"{f3(N['abl_h_lo'])}–{f3(N['abl_h_hi'])}, and the 2 Mb ablation gave the same result. Most of the HER2 signal "
+     f"therefore sits in the amplicon, and what remains largely reflects the lower ER expression and higher proliferation "
+     f"of HER2+ tumours. Label quality also limits HER2. When we dropped the {N['h2_text']} HER2+ calls that rest on "
+     f"status text alone, _ERBB2_ alone rose to {f3(N['sens_pos'])} and the best model to {f3(N['sens_pos_best'])}. The "
+     f"combined ER−/HER2− target was the only one where a model beat a single gene ({f3(N['tn_best'].AUC_pooled)} vs "
+     f"{f3(N['tn_base'].AUC_pooled)} for _ESR1_; p = {f3(N['tn_best'].NB_p)}), since no single gene encodes both "
+     f"receptors. As a secondary (and circular) benchmark, the same pipeline reproduced the 5-class PAM50 calls with "
+     f"{pc(N['pam5'])} accuracy ({pc(N['pam5_no'])} without the PAM50 genes). **Answer to Q3:** no. The receptor gene on "
+     f"its own already carries almost all the information about clinical status.")
 figure("report_fig3_classification.png",
        f"**Figure 3. Classification of clinical status (nested CV, pooled out-of-fold).** (a, b) ROC curves for the receptor "
        f"gene alone, the best model with all genes and the best ablated model. (c) AUC (95% CI) of every model: dark, all "
        f"genes; orange, ablated (±1.5 Mb); open, ablated (±2 Mb). Blue line and band: receptor gene alone.")
 
 head("4.4 Validation in protein, in METABRIC and against published studies", 2)
-para(f"**Protein.** {N['rppa_q']} of {N['rppa_ab']} RPPA antibodies differed between TNBC and HR+/HER2− (q < 0.05). Across "
-     f"the {N['rho_genes']} genes with a total-protein antibody, the mRNA fold change predicted the protein difference with "
-     f"ρ = {f2(N['rho'])} (permutation p = {f3(N['rho_p'])}; 95th percentile of the null {f2(N['rho_null'])}; Fig. 4a), and "
-     f"all {N['rho_deg']} DEGs with an antibody agreed in sign. The ER errors are informative (Fig. 4b): of the {N['fn_n']} "
-     f"IHC ER-negative tumours called ER-positive, {N['fn_prot'].replace('/', ' of ')} with RPPA had ERα protein above the "
-     f"95th percentile of correctly called ER-negative tumours, which suggests IHC false negatives rather than model "
-     f"errors. Of the {N['fp_n']} IHC ER-positive tumours called negative, {N['fp_basal'] + N['fp_h2']} were PAM50 Basal "
-     f"or HER2-enriched and {N['fp_low'].replace('/', ' of ')} with RPPA had ERα below the 5th percentile of correctly "
-     f"called ER-positive tumours, consistent with ER-low tumours or IHC false positives.")
-para(f"**METABRIC.** The frozen TCGA models transferred without loss (Fig. 4c): ER AUC {f3(N['mt_er']['AUC'])} "
-     f"({f3(N['mt_er']['AUC_CI'][0])}–{f3(N['mt_er']['AUC_CI'][1])}) against {f3(N['mt_er']['TCGA_CV_AUC'])} in TCGA "
-     f"cross-validation, HER2 (copy-number gain) {f3(N['mt_h2']['AUC'])} against {f3(N['mt_h2']['TCGA_CV_AUC'])}, and "
-     f"ER−/HER2− vs rest {f3(N['mt_tn']['AUC'])}. HER2 transferred better than it cross-validated because METABRIC's "
-     f"copy-number label tracks mRNA more closely than clinical IHC/FISH. As in TCGA, the models did not beat the gene "
-     f"alone (_ESR1_ {f3(N['mb_esr1'])}, _ERBB2_ {f3(N['mb_erbb2'])}). Of the {c(N['rep_b'])} TCGA DEGs measured on the "
-     f"array, {c(N['rep_a'])} ({pc(N['rep'])}) replicated with the same sign at q < 0.05 (effect-size ρ = "
-     f"{f2(N['rep_rho'])}), and Hallmark NES agreed with ρ = {f2(N['rep_nes'])}.")
+para(f"**Protein.** Of the {N['rppa_ab']} RPPA antibodies, {N['rppa_q']} differed between TNBC and HR+/HER2− (q < 0.05). "
+     f"For the {N['rho_genes']} genes with a total-protein antibody, the mRNA fold change predicted the protein difference "
+     f"with ρ = {f2(N['rho'])} (permutation p = {f3(N['rho_p'])}; 95th percentile of the null {f2(N['rho_null'])}; "
+     f"Fig. 4a), and all {N['rho_deg']} DEGs with an antibody agreed in sign. The ER errors are informative (Fig. 4b). "
+     f"{N['fn_n']} IHC ER-negative tumours were called ER-positive, and {N['fn_prot'].replace('/', ' of ')} of them with "
+     f"RPPA had ERα protein above the 95th percentile of correctly called ER-negative tumours. This points to IHC false "
+     f"negatives rather than model errors. Of the {N['fp_n']} IHC ER-positive tumours called negative, "
+     f"{N['fp_basal'] + N['fp_h2']} were PAM50 Basal or HER2-enriched, and {N['fp_low'].replace('/', ' of ')} with RPPA "
+     f"had ERα below the 5th percentile of correctly called ER-positive tumours. These fit ER-low tumours or IHC false "
+     f"positives.")
+para(f"**METABRIC.** The frozen TCGA models lost no performance in METABRIC (Fig. 4c). ER reached AUC "
+     f"{f3(N['mt_er']['AUC'])} ({f3(N['mt_er']['AUC_CI'][0])}–{f3(N['mt_er']['AUC_CI'][1])}) against "
+     f"{f3(N['mt_er']['TCGA_CV_AUC'])} in TCGA cross-validation, HER2 (copy-number gain) {f3(N['mt_h2']['AUC'])} against "
+     f"{f3(N['mt_h2']['TCGA_CV_AUC'])}, and ER−/HER2− vs rest {f3(N['mt_tn']['AUC'])}. HER2 did better in METABRIC than in "
+     f"cross-validation, most likely because a copy-number label follows mRNA more closely than clinical IHC/FISH does. "
+     f"As in TCGA, the models did not beat the single gene (_ESR1_ {f3(N['mb_esr1'])}, _ERBB2_ {f3(N['mb_erbb2'])}). Of "
+     f"the {c(N['rep_b'])} TCGA DEGs measured on the array, {c(N['rep_a'])} ({pc(N['rep'])}) replicated with the same "
+     f"sign at q < 0.05 (effect-size ρ = {f2(N['rep_rho'])}), and the Hallmark NES values agreed with "
+     f"ρ = {f2(N['rep_nes'])}.")
 lit = [["Quantity", "This study", "Published"],
        ["TNBC called PAM50 Basal", f"{pctf(N['tnb_pct'])} ({N['tnb_a']}/{N['tnb_b']})", f"86% (65/76) {cite('tcga2012')}"],
        ["PAM50 Basal that are TNBC", f"{pctf(N['bt_pct'])} ({N['tnb_a']}/{N['bt_b']})", f"80% (65/81) {cite('tcga2012')}"],
@@ -609,26 +627,29 @@ if N["niel"]:
 table(lit, widths=[6.6, 4.4, 5.0],
       caption="**Table 2.** Our numbers next to published ones (each checked against PubMed). TCGA 2012 analysed a subset "
               "of the same tumours (a consistency check); the other studies used different cohorts or assays.")
-para(f"**Published studies.** Table 2 shows that the clinical–PAM50 concordance, the single-gene accuracy and the subtype "
-     f"order of risk agree with the literature. Clinical HER2+ tumours were called HER2-enriched less often than in TCGA "
-     f"2012; with the 2012 HER2 labels and PAM50 calls the same tumours give {pc(N['lfl'])}, so the gap comes from the larger cohort, "
-     f"the newer PAM50 calls and the HER2 rule, not from an error. Unlike the 13–22% loss reported for a multimodal model "
-     f"moved from TCGA to CPTAC {cite('shah2026')}, our simpler mRNA models lost nothing in METABRIC.")
+para(f"**Published studies.** The clinical–PAM50 concordance, the single-gene accuracy and the order of risk across "
+     f"subtypes all agree with the literature (Table 2). Clinical HER2+ tumours were called HER2-enriched less often than "
+     f"in TCGA 2012. With the 2012 HER2 labels and PAM50 calls, the same tumours give {pc(N['lfl'])}, so the gap comes from "
+     f"the larger cohort, the newer PAM50 calls and the HER2 rule rather than from an error. Shah and Patel reported a "
+     f"13–22% loss when a multimodal model was moved from TCGA to CPTAC {cite('shah2026')}; our simpler mRNA models lost "
+     f"nothing in METABRIC.")
 
 figure("report_fig4_validation.png",
        f"**Figure 4. Validation.** (a) DE log2FC vs RPPA median difference (TNBC vs HR+/HER2−); coloured, DEGs. (b) RPPA ERα "
        f"by IHC ER status and out-of-fold call, coloured by PAM50. (c) AUC in TCGA cross-validation and in METABRIC for the "
        f"frozen models, with the receptor gene alone in METABRIC.")
 head("4.5 Survival (beyond the talk)", 2)
-para(f"In TCGA (median follow-up {N['fu']:.1f} years) PFI differed by group (log-rank p = {fp(N['pfi_p'])}; Fig. 5a). "
-     f"Adjusted for age and stage, TNBC had a hazard ratio (HR) of {ci(N['tc_tn'])} against HR+/HER2−, while HER2+ did not "
-     f"differ (HR {N['tc_h2'][0]:.2f}, 95% CI {N['tc_h2'][1]:.2f}–{N['tc_h2'][2]:.2f}; Fig. 5c); the group effect met the proportional-hazards assumption (p = {f2(N['tc_tn_ph'])}), "
-     f"age did not (p = {f2(N['tc_age_ph'])}). In METABRIC ({c(N['mcox']['n'])} tumours, {N['mcox']['events']} breast-cancer "
-     f"deaths within 10 years; Fig. 5b) HER2 gain carried HR {ci(N['mc_h2'])}. The ER−/HER2− effect violated proportional "
-     f"hazards; split at 5 years it was {N['sp_early']:.2f} in years 0–5 and {N['sp_late']:.2f} in years 5–10 (interaction "
-     f"p = {fp(N['sp_p'])}), the known early-relapse pattern of ER-negative disease. The frozen TCGA classifier's predicted "
-     f"ER−/HER2− group also separated METABRIC survival (log-rank p = {fp(N['mb_pred_p'])}), and METABRIC's PAM50 subtypes "
-     f"reproduced the risk order reported by Nielsen et al. {cite('nielsen2010')} (Table 2).")
+para(f"In TCGA (median follow-up {N['fu']:.1f} years), PFI differed between the groups (log-rank p = {fp(N['pfi_p'])}; "
+     f"Fig. 5a). After adjusting for age and stage, TNBC had a hazard ratio (HR) of {ci(N['tc_tn'])} against HR+/HER2−, "
+     f"whereas HER2+ did not differ (HR {N['tc_h2'][0]:.2f}, 95% CI {N['tc_h2'][1]:.2f}–{N['tc_h2'][2]:.2f}; Fig. 5c). The "
+     f"group effect met the proportional-hazards assumption (p = {f2(N['tc_tn_ph'])}), but age did not "
+     f"(p = {f2(N['tc_age_ph'])}). In METABRIC ({c(N['mcox']['n'])} tumours, {N['mcox']['events']} breast-cancer deaths "
+     f"within 10 years; Fig. 5b), HER2 gain carried an HR of {ci(N['mc_h2'])}. The ER−/HER2− effect violated proportional "
+     f"hazards. Split at 5 years, it was {N['sp_early']:.2f} in years 0–5 and {N['sp_late']:.2f} in years 5–10 "
+     f"(interaction p = {fp(N['sp_p'])}), which is the known early-relapse pattern of ER-negative disease. The ER−/HER2− "
+     f"group predicted by the frozen TCGA classifier also separated survival in METABRIC (log-rank "
+     f"p = {fp(N['mb_pred_p'])}), and the METABRIC PAM50 subtypes followed the risk order reported by Nielsen et al. "
+     f"{cite('nielsen2010')} (Table 2).")
 figure("report_fig5_survival.png",
        "**Figure 5. Outcome by group.** Kaplan–Meier curves for (a) TCGA progression-free interval and (b) METABRIC "
        "breast-cancer death within 10 years (n, events). (c) Adjusted Cox hazard ratios (95% CI) against HR+/HER2−; "
@@ -636,28 +657,31 @@ figure("report_fig5_survival.png",
 
 # ---------------------------------------------------------------------------------------------- 5
 head("5. Conclusion and discussion")
-para(f"**Summary.** (1) The dominant structure in breast tumour expression is the ER axis; label-free methods recover TNBC "
-     f"as a basal-like group but not HER2+ tumours as a group. (2) TNBC is a distinct transcriptional state, with "
-     f"{c(N['deg'])} genes more than 2-fold different from HR+/HER2− tumours, robust to covariates, histology and label "
-     f"noise. (3) Whole-transcriptome classifiers match but do not beat _ESR1_ and _ERBB2_ alone. (4) The results hold in "
-     f"protein, in an independent cohort with labels from other assays, and against published numbers.")
-para("**Biological interpretation.** ER status is a regulon-wide state: removing _ESR1_ and every PAM50 gene leaves the "
-     "prediction intact, because _GATA3_, _FOXA1_, _AGR3_ and _XBP1_ move together with it. TNBC tumours replace this "
-     "programme with basal transcription factors (_FOXC1_, _EN1_, _SOX10_) and high proliferation and MYC activity, and "
-     "they relapse early, as the time-dependent METABRIC hazard shows. HER2 positivity, in contrast, is mostly a local "
-     "genomic event: the amplicon dominates both the DE list and the classifier, and the rest of the transcriptome "
-     "resembles HR+ disease. Practically, an expression assay adds little to IHC for ER and HER2 calls, but tumours where "
-     "mRNA and IHC disagree are worth a second look: our ER error analysis suggests that some IHC calls, not the model, "
-     "are wrong.")
+para(f"**Summary.** (1) The main structure in breast tumour expression is the ER axis. Methods that do not use labels "
+     f"recover TNBC as a basal-like group, but they do not recover HER2+ tumours as a group. (2) TNBC is a distinct "
+     f"transcriptional state: {c(N['deg'])} genes differ more than 2-fold from HR+/HER2− tumours, and this list is stable "
+     f"to covariates, histology and label noise. (3) Whole-transcriptome classifiers perform as well as _ESR1_ and _ERBB2_ "
+     f"alone, but not better. (4) The results agree with protein data, with an independent cohort whose labels come from "
+     f"other assays, and with published numbers.")
+para("**Biological interpretation.** ER status behaves as a state of the whole regulon. Removing _ESR1_ and every PAM50 "
+     "gene leaves the prediction intact, because _GATA3_, _FOXA1_, _AGR3_ and _XBP1_ move together with it. In TNBC this "
+     "programme is replaced by basal transcription factors (_FOXC1_, _EN1_, _SOX10_) and high proliferation and MYC "
+     "activity, and these tumours relapse early, as the time-dependent hazard in METABRIC shows. HER2 positivity, on the "
+     "other hand, is mostly a local genomic event. The amplicon dominates both the DE list and the classifier, and the "
+     "rest of the transcriptome resembles HR+ disease. In practice, an expression assay adds little to IHC for ER and HER2 "
+     "calls. Tumours in which mRNA and IHC disagree are still worth a second look, since our ER error analysis suggests "
+     "that some of the IHC calls, not the model, are wrong.")
 para(f"**Limitations.** (i) TNBC and HR+ tumours differ in tumour purity and immune infiltration, which contribute to the "
-     "proliferation and immune signals; DE was not adjusted for purity. (ii) Pathway significance shrinks once inter-gene "
-     "correlation is counted, so pathway findings are effect sizes, not tests. (iii) HER2 labels are noisy (some rest on "
-     "status text alone) and the TCGA HER2 rule is our own. (iv) METABRIC lacks PR and uses copy-number HER2, so its "
-     f"groups are not identical to the clinical ones. (v) TCGA survival is short (median {N['fu']:.1f} years) and treatment was not "
-     "modelled. (vi) Classifier comparisons rest on overlapping folds, which the corrected test handles conservatively.")
-para("**Future directions.** Adjust DE for purity (e.g. ESTIMATE scores) or deconvolve the immune signal; test whether "
-     "_ERBB2_ mRNA can resolve IHC 2+ equivocal cases; extend the protein check to the CPTAC mass-spectrometry proteome; "
-     "split the HR+/HER2− group into proliferative and immune subgroups and test their outcome in METABRIC.")
+     "proliferation and immune signals, and DE was not adjusted for purity. (ii) Pathway significance shrinks once "
+     "inter-gene correlation is taken into account, so the pathway findings should be read as effect sizes rather than "
+     "tests. (iii) The HER2 labels are noisy (some rest on status text alone), and the TCGA HER2 rule is our own. "
+     "(iv) METABRIC has no PR data and uses copy-number HER2, so its groups are not identical to the clinical ones. "
+     f"(v) TCGA follow-up is short (median {N['fu']:.1f} years), and treatment was not modelled. (vi) The classifier "
+     "comparisons rest on overlapping folds; the corrected test handles this conservatively.")
+para("**Future directions.** DE could be adjusted for purity (e.g. with ESTIMATE scores), or the immune signal could be "
+     "deconvolved. It would be useful to test whether _ERBB2_ mRNA can resolve equivocal IHC 2+ cases, and to extend the "
+     "protein check to the CPTAC mass-spectrometry proteome. Finally, the HR+/HER2− group could be split into "
+     "proliferative and immune subgroups and their outcome tested in METABRIC.")
 # The private link to the AI-log supplement lives in supplement_link.txt, which is kept out of the public repository.
 SUPP = HERE / "supplement_link.txt"
 supp = (f"AI prompts and AI chat histories are in the supplementary material: {SUPP.read_text().strip()}."
