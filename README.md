@@ -1,6 +1,7 @@
 # BT3041 term project: what tumour gene expression reveals about breast cancer receptor groups
 
 Term project for BT3041 (Analysis and Interpretation of Biological Data), IIT Madras, 2026.
+Team 16: Vijayavallabh, Vedant, Harshit, Navya and Anitha.
 
 We ask what TCGA breast tumour RNA-seq shows about the **clinical receptor groups** (ER, PR and HER2 by IHC/FISH:
 HR+/HER2−, HER2+ and triple-negative). We use those clinical labels rather than PAM50 subtypes, because PAM50 is
@@ -37,7 +38,7 @@ which accounts for gene–gene correlation. The report says so.
 | `step2_preprocessing/` | Download with checksums, sample QC, receptor labels, normalisation, PCA/UMAP, clustering, METABRIC projection. Its `README.md` is the data dictionary and lists every decision. |
 | `step3_analysis/` | Differential expression, pathway enrichment, classifiers, METABRIC transfer, RPPA protein validation, survival. `config.json` holds the label choices. |
 | `step4_slides/` | Presentation (`BT3041_talk.pptx` / `.pdf`), its build script, speaker script and Q&A prep. |
-| `step5_report/` | Final report, pre-submission draft (`BT3041_final_report.docx` / `.pdf`; author names and the link to the private AI-log supplement are still placeholders), figure and report build scripts, `report_numbers.md` (the key numbers used in the report, generated from the result files). |
+| `step5_report/` | Final report, pre-submission draft (`BT3041_final_report.docx` / `.pdf`; roll numbers are still placeholders), figure and report build scripts, `report_numbers.md` (the key numbers used in the report, generated from the result files). |
 
 `step2_preprocessing/` and `step3_analysis/` each have `scripts/`, `results/` (with a `params.json` of every parameter
 and package version), `figures/`, `logs/` from the last run, a README and a CHANGELOG.

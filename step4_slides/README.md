@@ -13,16 +13,16 @@
 
 | # | Slide | Presenter | Time |
 |---|---|---|---|
-| 1 | Title and question, group sizes | M1 | 0:20 |
-| 2 | Background, 3 research questions, validation design (why not PAM50) | M1 | 0:45 |
-| 3 | Data and preparation (sample flow) | M1 | 0:45 |
-| 4 | Exploration: UMAP + marker violins | M2 | 0:40 |
-| 5 | Clustering vs labels (k = 2 stable, ARI) | M2 | 0:45 |
-| 6 | Differential expression (2,741 DEGs, robustness) | M3 | 0:50 |
-| 7 | Pathways (GSEA with correlation-aware checks), TNBC vs Basal | M3 | 0:50 |
-| 8 | Classification: models match, not beat, ESR1/ERBB2; ablation | M4 | 1:05 |
-| 9 | Validation: RPPA, ER error analysis, METABRIC transfer | M5 | 1:00 |
-| 10 | Conclusions, limitations, done / for the final report | M5 | 0:45 |
+| 1 | Title and question, group sizes | Vijayavallabh (M1) | 0:20 |
+| 2 | Background, 3 research questions, validation design (why not PAM50) | Vijayavallabh (M1) | 0:45 |
+| 3 | Data and preparation (sample flow) | Vijayavallabh (M1) | 0:45 |
+| 4 | Exploration: UMAP + marker violins | Vedant (M2) | 0:40 |
+| 5 | Clustering vs labels (k = 2 stable, ARI) | Vedant (M2) | 0:45 |
+| 6 | Differential expression (2,741 DEGs, robustness) | Harshit (M3) | 0:50 |
+| 7 | Pathways (GSEA with correlation-aware checks), TNBC vs Basal | Harshit (M3) | 0:50 |
+| 8 | Classification: models match, not beat, ESR1/ERBB2; ablation | Navya (M4) | 1:05 |
+| 9 | Validation: RPPA, ER error analysis, METABRIC transfer | Anitha (M5) | 1:00 |
+| 10 | Conclusions, limitations, done / for the final report | Anitha (M5) | 0:45 |
 
 Methods and results (slides 4–9) are 67% of the talk. Presenters follow the M1–M5 workstreams in the team plan
 (contiguous blocks, 4 handovers). Survival is not in the 10 slides; if the instructor allows a backup slide, use
@@ -30,7 +30,9 @@ Methods and results (slides 4–9) are 67% of the talk. Presenters follow the M1
 
 ## Before the talk
 
-- Replace `[Name 1] … [Name 5]` on slide 1, and M1–M5 in the notes, with real names.
+- Team 16's names are on slide 1 and in the notes. Presenters follow the plan's workstreams in the order the
+  names were given (M1 Vijayavallabh, M2 Vedant, M3 Harshit, M4 Navya, M5 Anitha); edit `TEAM` in
+  `scripts/build_deck.py` to reassign.
 - Do two timed dry runs (8:00 hard limit); cut words, not slides.
 - Edits made by hand in the .pptx are lost if the deck is rebuilt; make wording changes in `scripts/build_deck.py`
   until the last rebuild (the labels were signed off on 23 Oct, so the numbers are final).

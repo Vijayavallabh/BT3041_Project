@@ -10,3 +10,5 @@ __pycache__/
 .ipynb_checkpoints/
 # AI prompts and chat logs are submitted with the report, not published here
 **/ai_logs/
+# Private link to the AI-log supplement (used by build_report.py; not published)
+step5_report/supplement_link.txt

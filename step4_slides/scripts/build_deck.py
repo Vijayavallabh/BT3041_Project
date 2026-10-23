@@ -99,6 +99,8 @@ COL = {"HR+/HER2−": RGBColor.from_string("2A78D6"), "HER2+": RGBColor.from_str
        "TNBC": RGBColor.from_string("1BAF7A")}
 ACCENT = RGBColor.from_string("3D3C38")
 FONT = "Arial"
+# Presenter for each plan workstream (M1–M5); edit here to reassign slides
+TEAM = {"M1": "Vijayavallabh", "M2": "Vedant", "M3": "Harshit", "M4": "Navya", "M5": "Anitha"}
 W, H = Inches(40 / 3), Inches(7.5)
 
 prs = Presentation()
@@ -156,7 +158,7 @@ def number(slide, i):
 
 def notes(slide, who, time, body):
     tf = slide.notes_slide.notes_text_frame
-    tf.text = f"[{who} · {time}]\n" + body.strip()
+    tf.text = f"[{TEAM.get(who, who)} · {time}]\n" + body.strip()
 
 
 def figure_slide(i, png, alt, who, time, body):
@@ -190,7 +192,7 @@ for j, (g, n) in enumerate([("HR+/HER2−", N["hr"]), ("HER2+", N["her2"]), ("TN
          color=RGBColor(255, 255, 255), align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 text(s, 7.85, 4.2, 4.9, 1.0, "Groups from clinical IHC/FISH tests (ER, PR, HER2), not from expression",
      size=15, color=INK2, anchor=MSO_ANCHOR.MIDDLE)
-text(s, 0.75, 6.3, 11.8, 0.4, "Team: [Name 1] · [Name 2] · [Name 3] · [Name 4] · [Name 5]", size=16)
+text(s, 0.75, 6.3, 11.8, 0.4, "Team 16: Vijayavallabh · Vedant · Harshit · Navya · Anitha", size=16)
 text(s, 0.75, 6.72, 11.8, 0.4, "IIT Madras · November 2026 · Code: github.com/Vijayavallabh/BT3041_Project", size=14, color=MUTED)
 notes(s, "M1", "0:20", f"""
 Good morning. We ask what tumour gene expression reveals about the three clinical receptor groups of breast cancer.

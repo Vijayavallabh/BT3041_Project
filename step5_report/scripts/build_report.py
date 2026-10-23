@@ -390,7 +390,7 @@ r = t.add_run("What tumour gene expression reveals about the clinical receptor g
 r.bold = True; r.font.name, r.font.size = FONT, Pt(13)
 para("BT3041 Analysis and Interpretation of Biological Data · Term project report · IIT Madras · November 2026",
      align=WD_ALIGN_PARAGRAPH.CENTER, after=0)
-para("Team: [Name 1, roll no.] · [Name 2, roll no.] · [Name 3, roll no.] · [Name 4, roll no.] · [Name 5, roll no.]",
+para("Team 16: Vijayavallabh [roll no.] · Vedant [roll no.] · Harshit [roll no.]\nNavya [roll no.] · Anitha [roll no.]",
      align=WD_ALIGN_PARAGRAPH.CENTER, after=6)
 
 para(f"**Abstract.** Breast cancers are grouped for treatment by three clinical tests: oestrogen receptor (ER), progesterone "
@@ -652,11 +652,16 @@ para(f"**Limitations.** (i) TNBC and HR+ tumours differ in tumour purity and imm
 para("**Future directions.** Adjust DE for purity (e.g. ESTIMATE scores) or deconvolve the immune signal; test whether "
      "_ERBB2_ mRNA can resolve IHC 2+ equivocal cases; extend the protein check to the CPTAC mass-spectrometry proteome; "
      "split the HR+/HER2− group into proliferative and immune subgroups and test their outcome in METABRIC.")
+# The private link to the AI-log supplement lives in supplement_link.txt, which is kept out of the public repository.
+SUPP = HERE / "supplement_link.txt"
+supp = (f"AI prompts and AI chat histories are in the supplementary material: {SUPP.read_text().strip()}."
+        if SUPP.exists() else
+        "AI prompts and AI chat histories are shared privately with the course instructors as supplementary material.")
 para("**Data and code availability.** TCGA data from UCSC Xena (GDC and TCGA hubs); METABRIC data from the cBioPortal "
-     "datahub, used under the Open Database License (ODbL). Code, parameters, results and logs: https://github.com/Vijayavallabh/BT3041_Project. AI prompts and "
-     "AI chat histories are in the supplementary material: [Drive link]. **Use of AI:** an AI assistant helped plan the "
+     "datahub, used under the Open Database License (ODbL). Code, parameters, results and logs: "
+     f"https://github.com/Vijayavallabh/BT3041_Project. {supp} **Use of AI:** an AI assistant helped plan the "
      "analysis, write and run the code, review the results and draft this report; every number was checked against the "
-     "result files and every reference against PubMed.", after=4)
+     "result files and every reference against PubMed.", after=4, align=WD_ALIGN_PARAGRAPH.LEFT)
 
 head("References")
 for i, k in enumerate(ORDER, 1):

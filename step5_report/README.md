@@ -1,7 +1,7 @@
 # Step 5: final report
 
-Course limits: at most 8 pages, Arial 11, single spacing. This is the pre-submission draft: author names and the
-link to the private AI-log supplement are still placeholders.
+Course limits: at most 8 pages, Arial 11, single spacing. This is the pre-submission draft: the roll numbers in the
+title block are still placeholders.
 
 ## Files
 
