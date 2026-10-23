@@ -33,9 +33,9 @@ Methods and results (slides 4–9) are 67% of the talk. Presenters follow the M1
 - Replace `[Name 1] … [Name 5]` on slide 1, and M1–M5 in the notes, with real names.
 - Do two timed dry runs (8:00 hard limit); cut words, not slides.
 - Edits made by hand in the .pptx are lost if the deck is rebuilt; make wording changes in `scripts/build_deck.py`
-  once the labels are signed off, or stop rebuilding after the freeze.
+  until the last rebuild (the labels were signed off on 23 Oct, so the numbers are final).
 
-## If the team changes the labels (HER2 rule, exclusions, groups)
+## If the labels ever change (HER2 rule, exclusions, groups)
 
 1. Rerun step 2 if its labels change, then step 3: set `../step3_analysis/config.json` and `bash run_all.sh`
    (figures 6–9 and every report number regenerate).

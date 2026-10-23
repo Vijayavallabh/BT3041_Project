@@ -5,8 +5,9 @@ and 4): differential expression with FDR, pathway enrichment, classification of 
 validation against protein (RPPA), an independent cohort (METABRIC), survival and published numbers. It reads step 2's
 `data/processed/` and never writes to it. Slides 6–9 (and a survival backup slide) follow step 2's slides 3–5.
 
-**Labels are parameterised.** The team has not yet signed off step 2's HER2 rule, exclusions and group counts (freeze
-23 Oct). Every script gets its labels from `src/common3.py::load_labels`, driven by `config.json`
+**Labels are frozen (23 Oct 2026).** Step 2's HER2 rule v1, the 9 exclusions and the groups 591/160/157 were reviewed
+against ASCO/CAP 2018 HER2 guidance (Wolff et al. 2018, doi 10.1200/JCO.2018.77.8738) and kept unchanged; the reasons are
+in "Decisions and deviations" item 0. Labels stay parameterised for the sensitivity runs: every script gets its labels from `src/common3.py::load_labels`, driven by `config.json`
 (`her2_rule`: `v1` step 2 rule | `v0` plan rule; `her2_filter`: `none` | `drop_low_pos` | `drop_low_all`) or by the
 environment variables `BT3041_HER2_RULE` / `BT3041_HER2_FILTER`. If step 2 changes `tcga_labels.tsv`, `bash run_all.sh`
 reruns everything; figure titles and headlines are computed from the result files, so nothing typed by hand goes stale.
@@ -115,8 +116,21 @@ endocrine-treated, 5-year breast-cancer death, METABRIC's published PAM50): HR v
 
 **7. Literature table:** `results/literature_table.md` (21 rows, each with a DOI checked against PubMed on 21 Oct).
 
-## Decisions and deviations from the plan (for the team to confirm)
+## Decisions and deviations from the plan
 
+0. **Label sign-off (23 Oct 2026): current labels confirmed, no change.**
+   - *HER2 rule v1 follows ASCO/CAP 2018:* IHC 3+ positive, 0/1+ negative, 2+ equivocal and decided by ISH (FISH);
+     the lab's final status is used only when no score or FISH is recorded. The one departure is that IHC 3+ with a
+     negative FISH (5 tumours) is set to missing rather than positive: ASCO/CAP asks for such discordant cases to be
+     re-reviewed, which a public dataset cannot do, so leaving them out is the conservative reading.
+   - *Low-confidence HER2 calls are kept in the main analysis* and dropped only in the sensitivity runs. Dropping them
+     from the main set would mean removing labels because they disagree with ERBB2 expression, which biases the HER2
+     classifier upwards (the outcome we test). Reporting both (ERBB2 AUC 0.845 main, 0.894 without them) is the
+     stronger, more honest design.
+   - *The 9 exclusions* are required: 5 sample-identity failures (the expression may belong to another patient) and
+     redacted TCGA-CDR cases, which TCGA itself says not to analyse.
+   - *Groups* use the standard clinical surrogate definitions (HR+ = ER+ or PR+; TNBC = ER−, PR−, HER2−) on female
+     patients, so they match the published comparators in the literature table.
 1. **Counts differ from the plan** (step 2's final labels): DE 157 vs 591, not 160 vs 605; Cox set 100 events, not 173,
    so the TCGA Cox model has 5 parameters (20 events each).
 2. **Two correlation-aware enrichment checks.** The plan asked for one phenotype-permutation check; CAMERA was added

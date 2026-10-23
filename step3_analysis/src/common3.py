@@ -3,7 +3,7 @@
 Step 3 reads step 2's processed data and never writes to it. Plotting style, colours and the exclusion rule come from
 step 2's `src/common.py`, so the figures of both steps look the same.
 
-Label inputs are parameterised (the team has not yet signed off the HER2 rule, the exclusions or the group counts).
+Label inputs are parameterised (the team signed off HER2 rule v1, the exclusions and the group counts on 23 Oct 2026).
 Change them in one place, `config.json` next to this folder, or per run with environment variables:
     BT3041_HER2_RULE   = v1 (default; step 2 rule) | v0 (plan rule, `clinical_group_v0`)
     BT3041_HER2_FILTER = none (default) | drop_low_pos (drop HER2+ called on status text only) | drop_low_all

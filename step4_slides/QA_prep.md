@@ -1,8 +1,7 @@
 # Q&A prep (2 minutes after the talk)
 
-Answer in one or two sentences, then stop. Numbers are for the current labels (HER2 rule v1, no filter: HR+/HER2− 591,
-HER2+ 160, TNBC 157); if the team changes the labels and reruns step 3, recheck the numbers marked with † against the
-step 3 README. Suggested owner in brackets (M4 takes methods questions, per the plan).
+Answer in one or two sentences, then stop. Numbers are for the final labels, signed off on 23 Oct (HER2 rule v1 following
+ASCO/CAP 2018, no filter: HR+/HER2− 591, HER2+ 160, TNBC 157); † marks numbers that would move if the labels changed. Suggested owner in brackets (M4 takes methods questions, per the plan).
 
 ## Design and labels
 
@@ -11,8 +10,9 @@ PAM50 is computed from the same expression data, so asking whether expression se
 clinical IHC/FISH results as labels and PAM50 only as a comparator (TNBC vs Basal κ 0.78, close to the 2012 TCGA paper).
 
 **2. How did you define HER2 status?** [M1]
-FISH first; otherwise the IHC score (3+ positive, 0/1+ negative); 2+ without FISH, and any contradiction between
-status and score, set to missing. It agrees with the TCGA 2012 calls at κ 0.88. Calls based only on the status text
+Following ASCO/CAP 2018: FISH first; otherwise the IHC score (3+ positive, 0/1+ negative); 2+ without FISH, IHC 3+
+with a negative FISH (5 tumours, which ASCO/CAP says to re-review) and any contradiction between status and score,
+set to missing. It agrees with the TCGA 2012 calls at κ 0.88. Calls based only on the status text
 are the noisy ones: dropping the low-confidence HER2+ calls raises ERBB2 alone from 0.845 to 0.894 AUC †.
 
 **3. Why were 9 tumours excluded?** [M1]

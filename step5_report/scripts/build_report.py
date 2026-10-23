@@ -1,12 +1,12 @@
 """Step 5: build the final report (A4, Arial 11 pt, single spacing, max 8 pages) as .docx, plus a PDF export.
 
 Every number in the text is read from the step 2 / step 3 result files (dictionary N below) and the figures come from
-report_figures.py, so if the team changes the labels:
+report_figures.py. The labels were signed off on 23 Oct 2026 (no change); if they ever change:
     rerun step 2 / step 3 (step3_analysis/config.json, then bash run_all.sh)
     python scripts/report_figures.py
     python scripts/build_report.py      # writes BT3041_final_report.docx, .pdf and report_numbers.md; checks <= 8 pages
-Hand edits made in the .docx are lost when it is rebuilt: edit the wording here until the labels are frozen, then
-stop rebuilding and edit the .docx directly.
+Hand edits made in the .docx are lost when it is rebuilt: edit the wording here until the last rebuild, then edit
+the .docx directly.
 Needs: python-docx, pandas (step 3 environment). LibreOffice (soffice) and pdfinfo for the PDF and the page check.
 """
 import json, re, shutil, subprocess, sys
@@ -121,6 +121,7 @@ N = dict(
     h2_fish=pre["HER2_source_of_HER2pos_supervised"]["FISH"], h2_ihc=pre["HER2_source_of_HER2pos_supervised"]["IHC score"],
     h2_text=pre["HER2_source_of_HER2pos_supervised"]["IHC status (no score)"],
     kappa_h2=pre["kappa_HER2_v1_vs_nature2012"]["kappa"],
+    h2_disc=pre["HER2_label_source"]["IHC 3+ vs FISH negative -> missing"],
     star_genes=pre["star_genes_passing_filter"], star_min=pre["star_min_samples"],
     rppa_n=rp["rppa_tumours_supervised"], rppa_ab=rp["mw_TNBC_vs_HR"]["antibodies"],
     mb_n=pre["metabric_samples_with_expression"], mb_shared=pre["genes_shared_tcga_hiseq_and_metabric"],
@@ -432,9 +433,10 @@ para(f"**Sources.** TCGA-BRCA RNA-seq (HiSeqV2, log2(RSEM+1)), STAR gene counts 
 para(f"**Cleaning and labels.** We kept one primary tumour per patient ({c(N['n_prim'])}) and excluded {N['n_excl']}: five "
      f"whose HiSeqV2 and STAR profiles did not match each other (Spearman ρ below the 99th percentile of between-patient "
      f"correlations) and five whose clinical record is redacted in the Clinical Data Resource (one tumour failed both), "
-     f"leaving {c(N['n_tum'])} tumours for all label-free work. HER2 was called from FISH first, then the IHC score (3+ "
-     f"positive, 0/1+ negative, 2+ without FISH missing), using the status text only when no score was recorded; conflicting "
-     f"records were set to missing. This rule agrees with the TCGA 2012 HER2 calls at κ = {f2(N['kappa_h2'])}. The "
+     f"leaving {c(N['n_tum'])} tumours for all label-free work. HER2 followed ASCO/CAP 2018 {cite('wolff2018')}: FISH "
+     f"first, then the IHC score (3+ positive, 0/1+ negative, 2+ without FISH missing), using the status text only when no "
+     f"score was recorded. IHC 3+ with a negative FISH ({N['h2_disc']} tumours) was treated as discordant and left "
+     f"unlabelled, as were other conflicting records. This rule agrees with the TCGA 2012 HER2 calls at κ = {f2(N['kappa_h2'])}. The "
      f"supervised set holds the {c(N['n_sup'])} female patients ({N['n_male']} male patients were kept only for label-free "
      f"work). Groups were HR+/HER2− (ER or PR positive, HER2 negative), HER2+ (any ER/PR) and TNBC (all three negative); "
      f"{N['inc']} tumours lacked one of the three results. For differential expression we kept STAR genes with ≥ 10 counts in "
@@ -448,7 +450,7 @@ table([["Data set", "Used for", "n", "HR+/HER2−", "HER2+", "TNBC"],
        ["TCGA RPPA (131 antibodies)", "protein validation", N["rppa_n"], rp["n"]["HR+/HER2-"], rp["n"]["HER2+"], rp["n"]["TNBC"]],
        ["METABRIC (HT-12 arrays)", "external validation", c(N["mb_n"]), f"{c(N['mb_hr'])}*", f"{N['mb_h2g']}*", f"{N['mb_tn']}*"]],
       widths=[4.4, 3.9, 1.5, 2.5, 1.8, 1.6],
-      caption=f"**Table 1.** Data sets and group sizes under the current labels (HER2 rule {cfg['her2_rule']}). "
+      caption=f"**Table 1.** Data sets and group sizes under the final labels (HER2 rule {cfg['her2_rule']}). "
               f"*METABRIC groups use IHC ER and SNP6 copy-number HER2 (gain vs no gain); PR is not available, so the "
               f"ER−/HER2-not-gained group is not called TNBC.")
 

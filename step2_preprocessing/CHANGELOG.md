@@ -3,7 +3,13 @@
 Every change to `data/processed/` after the data freeze gets an entry here, with the reason and the files affected.
 Checksums of the processed files for each version are in `data/processed/SHA256SUMS` (written by `scripts/07_data_dictionary.py`).
 
-## data-freeze-v1 (proposed 20 Oct 2026; team sign-off due Fri 23 Oct)
+## data-freeze-v1 signed off (23 Oct 2026)
+
+The HER2 rule v1, the 9 exclusions and the supervised groups (591 / 160 / 157) were reviewed against ASCO/CAP 2018 HER2
+guidance and kept unchanged. `data/processed/` is not modified; checksums below still apply. Reasons:
+`../step3_analysis/README.md`, "Decisions and deviations" item 0.
+
+## data-freeze-v1 (proposed 20 Oct 2026)
 
 First complete version of the processed data, built by `bash run_all.sh` from the raw files listed in
 `data/SHA256SUMS.freeze`.

@@ -122,7 +122,7 @@ A Cox model on the supervised set with a complete clinical group and known age a
 model to about 7–10 parameters.
 
 
-## Decisions and deviations from the plan (for the team to confirm before the freeze)
+## Decisions and deviations from the plan (signed off on 23 Oct 2026, unchanged; see `CHANGELOG.md`)
 
 Each item changes a number in the plan or adds a rule the plan did not have. The plan's preliminary counts were
 computed before QC, so every count downstream should come from `results/preprocess/preprocess_report.json`
