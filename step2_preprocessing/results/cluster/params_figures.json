@@ -1,0 +1,63 @@
+{
+  "params": {
+    "purity_proxies": {
+      "adipocyte": [
+        "ADIPOQ",
+        "PLIN1",
+        "LEP",
+        "CIDEA",
+        "FABP4",
+        "LPL",
+        "CD36"
+      ],
+      "stromal": [
+        "COL1A1",
+        "COL1A2",
+        "COL3A1",
+        "DCN",
+        "LUM",
+        "FAP",
+        "PDGFRB"
+      ],
+      "immune": [
+        "PTPRC",
+        "CD3E",
+        "CD8A",
+        "MS4A1",
+        "CD68",
+        "CD2",
+        "LCK"
+      ],
+      "proliferation": [
+        "MKI67",
+        "TOP2A",
+        "CCNB1",
+        "BIRC5",
+        "MYBL2",
+        "AURKA"
+      ]
+    },
+    "purity_proxy_score": "mean z-score (across the analysed tumours) of the proxy genes present",
+    "site_pooling": "tissue source sites with < 10 tumours pooled as 'other'; Cramer's V from the chi-squared test of cluster x site",
+    "ari_ceiling": "maximum ARI over all partitions of the reference classes into k* = 2 blocks (exhaustive set-partition enumeration)",
+    "pam50_two_groups": "PAM50 collapsed to luminal (LumA, LumB) vs Basal+Her2, Normal-like left out; scored on the tumours each reference labels",
+    "cluster_stability": "for each k-means cluster, the best-match Jaccard index (|A and B| / |A or B|) with any cluster of each alternative run at the same k (Ward, average-linkage, consensus, and the gene-set sensitivity runs); Jaccard < 0.5 is commonly read as a cluster that dissolves (Hennig 2007)",
+    "netanely_mapping": "heuristic by majority PAM50 class: basal if top class Basal with share >= 0.8; HER2-enriched if top class Her2; homogeneous LumA if top class LumA with share >= 0.75; else mixed LumA/LumB"
+  },
+  "run": {
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "umap-learn": "0.5.12",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "pyarrow": "26.0.0"
+    },
+    "seed": 42,
+    "run_utc": "2026-10-21T00:36:38Z"
+  }
+}

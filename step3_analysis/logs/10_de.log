@@ -1,0 +1,7 @@
+main {'n_test': 157, 'n_ref': 591, 'genes_tested': 23439, 'DE_lfc1_padj05': 2741, 'DE_up': 1484, 'DE_down': 1257, 'wald_padj05_no_threshold': 18604, 'seconds': 139}
+idc_only {'n_test': 134, 'n_ref': 393, 'genes_tested': 22707, 'DE_lfc1_padj05': 2518, 'DE_up': 1269, 'DE_down': 1249, 'wald_padj05_no_threshold': 17743, 'seconds': 98}
+age {'n_test': 157, 'n_ref': 591, 'genes_tested': 23439, 'DE_lfc1_padj05': 2689, 'DE_up': 1474, 'DE_down': 1215, 'wald_padj05_no_threshold': 18573, 'seconds': 126}
+strict_conf {'n_test': 111, 'n_ref': 431, 'genes_tested': 23487, 'DE_lfc1_padj05': 2536, 'DE_up': 1363, 'DE_down': 1173, 'wald_padj05_no_threshold': 17691, 'seconds': 111}
+matched_erher2 {'n_test': 170, 'n_ref': 582, 'genes_tested': 23212, 'DE_lfc1_padj05': 2735, 'DE_up': 1516, 'DE_down': 1219, 'wald_padj05_no_threshold': 18508, 'seconds': 170}
+her2 {'n_test': 160, 'n_ref': 591, 'genes_tested': 23276, 'DE_lfc1_padj05': 148, 'DE_up': 96, 'DE_down': 52, 'wald_padj05_no_threshold': 11029, 'seconds': 221}
+her2_drop_low_pos {'n_test': 130, 'n_ref': 591, 'genes_tested': 23809, 'DE_lfc1_padj05': 189, 'DE_up': 108, 'DE_down': 81, 'wald_padj05_no_threshold': 10718, 'seconds': 205}

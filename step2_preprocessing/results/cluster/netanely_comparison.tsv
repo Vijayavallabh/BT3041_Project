@@ -1,0 +1,6 @@
+cluster	n	PAM50	HR+/HER2-	HER2+	TNBC	ILC_share	ER_neg_share	closest_Netanely2016_cluster	proxy_z_adipocyte	proxy_z_stromal	proxy_z_immune	proxy_z_proliferation	note	top_genes_up
+C0	320	LumA 68%; LumB 29%; Her2 2%	0.796	0.204	0.0	0.156	0.017	mixed LumA/LumB	-0.16	0.41	-0.29	-0.05		COL10A1, COL11A1, AGR3, SLC24A2, CA12, GRPR, SYNDIG1, LRRC17, NPNT, SERPINA11
+C1	276	LumA 88%; Normal 10%; LumB 2%	0.869	0.097	0.034	0.467	0.037	homogeneous LumA	0.79	0.42	0.43	-0.74	high adipocyte/stromal/immune proxies, low proliferation: lower tumour content is possible	CAVIN2, SLC7A3, FXYD1, ABCA10, CLDN19, TMEM132C, CCL14, ECRG4, CD300LG, NGFR
+C2	190	Basal 97%; Normal 3%	0.137	0.056	0.807	0.011	0.879	basal	-0.29	-0.58	0.23	0.81		ROPN1, ART3, SRSF12, HORMAD1, CT83, LEMD1, FZD9, CHODL, ROPN1B, VGLL1
+C3	167	LumA 51%; LumB 49%	0.895	0.105	0.0	0.078	0.006	mixed LumA/LumB	-0.44	-0.91	-0.82	-0.02		MYT1, TMEM145, SPTBN4, KCNJ3, TLCD3B, RUNDC3A, CACNA2D2, CPLX2, ASCL1, SEZ6L
+C4	135	Her2 55%; LumB 28%; LumA 9%; Normal 4%; Basal 4%	0.294	0.546	0.16	0.052	0.461	HER2-enriched	-0.28	0.11	0.51	0.52		SILC1, KMO, CLCA2, KYNU, SPINK8, C2CD4A, MAB21L4, S100A8, ABCC2, PADI3

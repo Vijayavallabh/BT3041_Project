@@ -1,0 +1,22 @@
+                                    file          row_key  n_rows  n_cols
+                erbb2_amplicon_genes.tsv       Ensembl_ID     215      11
+              gencode_v36_annotation.tsv       Ensembl_ID   60660       7
+                            gene_map.tsv dataset + row_id  101843       7
+                  h.all.v2024.1.hgnc.gmt             None      50    <NA>
+                   metabric_clusters.tsv           sample    1980       7
+                     metabric_labels.tsv           sample    1980      26
+                   metabric_log2.parquet           sample    1980   20193
+                pam50_centroids_hgnc.tsv             gene      50       6
+                   rppa_antibody_map.tsv         antibody     131       7
+                  sex_specific_genes.txt             None     564    <NA>
+                       tcga_clusters.tsv           sample    1088      29
+          tcga_hiseq_normal_log2.parquet           sample     113   20201
+          tcga_hiseq_tumour_log2.parquet           sample    1088   20201
+          tcga_kmeans_k2_centroids_z.tsv             gene    2000       3
+          tcga_kmeans_k4_centroids_z.tsv             gene    2000       5
+          tcga_kmeans_k5_centroids_z.tsv             gene    2000       6
+                         tcga_labels.tsv           sample    1097      45
+                       tcga_rppa.parquet           sample     742     131
+            tcga_star_counts_all.parquet           sample    1207   60660
+tcga_star_counts_tumour_filtered.parquet           sample    1087   24660
+done

@@ -1,0 +1,78 @@
+ER z_within_cohort AUC 0.959
+ER quantile_map_to_TCGA AUC 0.958
+ER_ablated z_within_cohort AUC 0.952
+ER_ablated quantile_map_to_TCGA AUC 0.952
+HER2 z_within_cohort AUC 0.906
+HER2 quantile_map_to_TCGA AUC 0.906
+HER2_ablated z_within_cohort AUC 0.763
+HER2_ablated quantile_map_to_TCGA AUC 0.752
+ERneg_HER2neg z_within_cohort AUC 0.935
+ERneg_HER2neg quantile_map_to_TCGA AUC 0.931
+{
+ "base": {
+  "ER": {
+   "gene": "ESR1",
+   "AUC": 0.9603450006234585,
+   "AUC_CI": [
+    0.9492300902753956,
+    0.9707225103724836
+   ]
+  },
+  "HER2": {
+   "gene": "ERBB2",
+   "AUC": 0.9002029096591534,
+   "AUC_CI": [
+    0.8791073235990572,
+    0.9196531363888905
+   ]
+  },
+  "ERneg_HER2neg": {
+   "gene": "ESR1",
+   "AUC": 0.9141211158222093,
+   "AUC_CI": [
+    0.895899790321837,
+    0.930879123002041
+   ]
+  }
+ },
+ "fixed_de": {
+  "n_genes": 1857,
+  "C": 0.1,
+  "nonzero": 88,
+  "AUC": 0.9293795511900007,
+  "AUC_CI": [
+   0.9098826725100729,
+   0.9466833640498153
+  ],
+  "frozen_0.5": {
+   "threshold": 0.5,
+   "called_pos": 350,
+   "balanced_acc": 0.8738539710593174,
+   "MCC": 0.6894339472747075,
+   "F1": 0.7358490566037735
+  }
+ },
+ "repl": {
+  "n_ERneg": 286,
+  "n_ERpos": 1220,
+  "genes_shared": 16031,
+  "TCGA_DEGs_on_array": 1857,
+  "replicated_same_sign_q05": 1599,
+  "fraction": 0.8610662358642972,
+  "sign_agreement": 0.9526117393645666,
+  "spearman_effect_all_shared": 0.7857204595542142,
+  "spearman_effect_TCGA_DEGs": 0.7341469645660812,
+  "metabric_genes_q05": 12026,
+  "metabric_genes_q05_abs_beta_gt1": 344,
+  "fraction_up": 0.8575418994413407,
+  "fraction_down": 0.8659003831417624,
+  "hallmark_NES_spearman": 0.935078031212485,
+  "hallmark_TCGA_FDR05_same_sign_in_METABRIC": "26/26",
+  "hallmark_TCGA_FDR05_same_sign_and_FDR05_in_METABRIC": 23
+ },
+ "pam": {
+  "accuracy": 0.806592039800995,
+  "macro_F1": 0.7884418323994565,
+  "kappa": 0.7080431062717067
+ }
+}

@@ -1,0 +1,8 @@
+	run	formula	contrast	n_test	n_ref	genes_tested	gene_filter_min_samples	DE_lfc1_padj05	DE_up	DE_down	wald_padj05_no_threshold	wald_padj05_and_absLFC_gt1_post_hoc	histology_counts	cooks_refit_genes	seconds
+age	age	~age_z + histology + group	TNBC vs HRpos	157	591	23439	157	2689	1474	1215	18573	4388	{'IDC': 527, 'ILC': 147, 'Other': 74}		126
+her2_drop_low_pos	her2_drop_low_pos	~histology + group	HER2pos vs HRpos	130	591	23809	130	189	108	81	10718	851	{'IDC': 504, 'ILC': 157, 'Other': 60}		205
+her2	her2	~histology + group	HER2pos vs HRpos	160	591	23276	160	148	96	52	11029	685	{'IDC': 524, 'ILC': 162, 'Other': 65}		221
+idc_only	idc_only	~group	TNBC vs HRpos	134	393	22707	134	2518	1269	1249	17743	4271	{'IDC': 527}		98
+main	main	~histology + group	TNBC vs HRpos	157	591	23439	157	2741	1484	1257	18604	4412	{'IDC': 527, 'ILC': 147, 'Other': 74}		139
+matched_erher2	matched_erher2	~histology + group	ERneg vs ERpos	170	582	23212	170	2735	1516	1219	18508	4355	{'IDC': 530, 'ILC': 148, 'Other': 74}		170
+strict_conf	strict_conf	~histology + group	TNBC vs HRpos	111	431	23487	111	2536	1363	1173	17691	4496	{'IDC': 394, 'ILC': 106, 'Other': 42}		111

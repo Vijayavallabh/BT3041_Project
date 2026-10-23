@@ -1,0 +1,5 @@
+Speaker notes / footnotes for slide 3 (not drawn on the slide):
+
+HER2 rule: FISH first; otherwise IHC score (3+ positive, 0/1+ negative, 2+ without FISH = missing, IHC 3+ with negative FISH = missing); IHC status text only when no score; status/score contradictions = missing. Groups need ER, PR and HER2 known.
+
+Identity check: a tumour's HiSeqV2 and STAR profiles must correlate at ρ ≥ 0.80, above the 99th percentile of between-patient ρ (0.87), and be each other's best match. *Recorded sex, or XIST/RPS4Y1 expression when blank (n=2). METABRIC's ER−/HER2-not-gained group is not called TNBC (no IHC PR).

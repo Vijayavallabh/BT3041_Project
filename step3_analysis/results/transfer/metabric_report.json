@@ -1,0 +1,382 @@
+{
+  "shared_genes": 18936,
+  "transfer": [
+    {
+      "model": "ER",
+      "scaling": "z_within_cohort",
+      "n": 1937,
+      "n_pos": 1498,
+      "prevalence": 0.773,
+      "AUC": 0.9587179261034454,
+      "AUC_CI": [
+        0.9465921633949135,
+        0.9698452117485453
+      ],
+      "TCGA_CV_AUC": 0.9498296613902149,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 1288,
+        "balanced_acc": 0.890142817606467,
+        "MCC": 0.6920882860880995,
+        "F1": 0.905240488155061
+      },
+      "prevalence_matched": {
+        "threshold": 0.22659299529693508,
+        "called_pos": 1498,
+        "balanced_acc": 0.908690706819419,
+        "MCC": 0.8173814136388381,
+        "F1": 0.9586114819759679
+      }
+    },
+    {
+      "model": "ER",
+      "scaling": "quantile_map_to_TCGA",
+      "n": 1937,
+      "n_pos": 1498,
+      "prevalence": 0.773,
+      "AUC": 0.9584502951543592,
+      "AUC_CI": [
+        0.9467056676651348,
+        0.9691074638400657
+      ],
+      "TCGA_CV_AUC": 0.9498296613902149,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 1372,
+        "balanced_acc": 0.9122892786433543,
+        "MCC": 0.7594845162187144,
+        "F1": 0.9344947735191638
+      },
+      "prevalence_matched": {
+        "threshold": 0.29267460033229786,
+        "called_pos": 1498,
+        "balanced_acc": 0.9116361678897604,
+        "MCC": 0.8232723357795207,
+        "F1": 0.9599465954606141
+      }
+    },
+    {
+      "model": "ER_ablated",
+      "scaling": "z_within_cohort",
+      "n": 1937,
+      "n_pos": 1498,
+      "prevalence": 0.773,
+      "AUC": 0.9522582881959546,
+      "AUC_CI": [
+        0.9384908466678,
+        0.964036459912827
+      ],
+      "TCGA_CV_AUC": 0.9478611043694776,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 1425,
+        "balanced_acc": 0.9049431132170153,
+        "MCC": 0.7688998341292469,
+        "F1": 0.9421826890181321
+      },
+      "prevalence_matched": {
+        "threshold": 0.3348531871364995,
+        "called_pos": 1498,
+        "balanced_acc": 0.8954361320028832,
+        "MCC": 0.7908722640057663,
+        "F1": 0.9526034712950601
+      }
+    },
+    {
+      "model": "ER_ablated",
+      "scaling": "quantile_map_to_TCGA",
+      "n": 1937,
+      "n_pos": 1498,
+      "prevalence": 0.773,
+      "AUC": 0.9519191876184192,
+      "AUC_CI": [
+        0.9392917400152289,
+        0.963503222858724
+      ],
+      "TCGA_CV_AUC": 0.9478611043694776,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 1451,
+        "balanced_acc": 0.9047849676561915,
+        "MCC": 0.7817910558150721,
+        "F1": 0.9474398101051204
+      },
+      "prevalence_matched": {
+        "threshold": 0.34471618030777734,
+        "called_pos": 1498,
+        "balanced_acc": 0.8969088625380538,
+        "MCC": 0.7938177250761076,
+        "F1": 0.9532710280373832
+      }
+    },
+    {
+      "model": "HER2",
+      "scaling": "z_within_cohort",
+      "n": 1975,
+      "n_pos": 438,
+      "prevalence": 0.222,
+      "AUC": 0.9063199080222102,
+      "AUC_CI": [
+        0.8856144440950176,
+        0.9250361271563657
+      ],
+      "TCGA_CV_AUC": 0.8380440288974054,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 413,
+        "balanced_acc": 0.851178539704043,
+        "MCC": 0.7174909254553234,
+        "F1": 0.7779083431257344
+      },
+      "prevalence_matched": {
+        "threshold": 0.4823378380211902,
+        "called_pos": 438,
+        "balanced_acc": 0.8489132598342854,
+        "MCC": 0.697826519668571,
+        "F1": 0.7648401826484018
+      }
+    },
+    {
+      "model": "HER2",
+      "scaling": "quantile_map_to_TCGA",
+      "n": 1975,
+      "n_pos": 438,
+      "prevalence": 0.222,
+      "AUC": 0.9064090337875776,
+      "AUC_CI": [
+        0.886354881943235,
+        0.9250638329762637
+      ],
+      "TCGA_CV_AUC": 0.8380440288974054,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 440,
+        "balanced_acc": 0.8482626417471026,
+        "MCC": 0.6953930510828392,
+        "F1": 0.7630979498861048
+      },
+      "prevalence_matched": {
+        "threshold": 0.501663675251023,
+        "called_pos": 438,
+        "balanced_acc": 0.8474463982792786,
+        "MCC": 0.6948927965585571,
+        "F1": 0.7625570776255708
+      }
+    },
+    {
+      "model": "HER2_ablated",
+      "scaling": "z_within_cohort",
+      "n": 1975,
+      "n_pos": 438,
+      "prevalence": 0.222,
+      "AUC": 0.7632522585954373,
+      "AUC_CI": [
+        0.7334294811876552,
+        0.791693525428843
+      ],
+      "TCGA_CV_AUC": 0.7835695564072066,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 466,
+        "balanced_acc": 0.7180550975481501,
+        "MCC": 0.4267098324669872,
+        "F1": 0.5575221238938053
+      },
+      "prevalence_matched": {
+        "threshold": 0.5242347258556003,
+        "called_pos": 438,
+        "balanced_acc": 0.7168957198836612,
+        "MCC": 0.4337914397673223,
+        "F1": 0.5593607305936074
+      }
+    },
+    {
+      "model": "HER2_ablated",
+      "scaling": "quantile_map_to_TCGA",
+      "n": 1975,
+      "n_pos": 438,
+      "prevalence": 0.222,
+      "AUC": 0.7520580624652781,
+      "AUC_CI": [
+        0.7224094241620241,
+        0.7808589607697748
+      ],
+      "TCGA_CV_AUC": 0.7835695564072066,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 476,
+        "balanced_acc": 0.7133351455572292,
+        "MCC": 0.4144404154414726,
+        "F1": 0.5492341356673961
+      },
+      "prevalence_matched": {
+        "threshold": 0.5298685851358967,
+        "called_pos": 438,
+        "balanced_acc": 0.7066276889986126,
+        "MCC": 0.4132553779972252,
+        "F1": 0.54337899543379
+      }
+    },
+    {
+      "model": "ERneg_HER2neg",
+      "scaling": "z_within_cohort",
+      "n": 1932,
+      "n_pos": 286,
+      "prevalence": 0.148,
+      "AUC": 0.9346774125024429,
+      "AUC_CI": [
+        0.9179198930850752,
+        0.948934868249542
+      ],
+      "TCGA_CV_AUC": 0.9637941969240528,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 422,
+        "balanced_acc": 0.874554971152784,
+        "MCC": 0.6438708949366291,
+        "F1": 0.692090395480226
+      },
+      "prevalence_matched": {
+        "threshold": 0.7617163195577846,
+        "called_pos": 286,
+        "balanced_acc": 0.8440465973880311,
+        "MCC": 0.6880931947760623,
+        "F1": 0.7342657342657343
+      }
+    },
+    {
+      "model": "ERneg_HER2neg",
+      "scaling": "quantile_map_to_TCGA",
+      "n": 1932,
+      "n_pos": 286,
+      "prevalence": 0.148,
+      "AUC": 0.9309493665508246,
+      "AUC_CI": [
+        0.9136275370681991,
+        0.9457382960730878
+      ],
+      "TCGA_CV_AUC": 0.9637941969240528,
+      "frozen_0.5": {
+        "threshold": 0.5,
+        "called_pos": 409,
+        "balanced_acc": 0.8702958645242971,
+        "MCC": 0.6438210675444589,
+        "F1": 0.6935251798561151
+      },
+      "prevalence_matched": {
+        "threshold": 0.7799785306081712,
+        "called_pos": 286,
+        "balanced_acc": 0.8378905420217693,
+        "MCC": 0.6757810840435384,
+        "F1": 0.7237762237762237
+      }
+    }
+  ],
+  "single_gene_baselines": {
+    "ER": {
+      "gene": "ESR1",
+      "AUC": 0.9603450006234585,
+      "AUC_CI": [
+        0.9492300902753956,
+        0.9707225103724836
+      ]
+    },
+    "HER2": {
+      "gene": "ERBB2",
+      "AUC": 0.9002029096591534,
+      "AUC_CI": [
+        0.8791073235990572,
+        0.9196531363888905
+      ]
+    },
+    "ERneg_HER2neg": {
+      "gene": "ESR1",
+      "AUC": 0.9141211158222093,
+      "AUC_CI": [
+        0.895899790321837,
+        0.930879123002041
+      ]
+    }
+  },
+  "fixed_DE_feature_set": {
+    "n_genes": 1857,
+    "C": 0.1,
+    "nonzero": 88,
+    "AUC": 0.9293795511900007,
+    "AUC_CI": [
+      0.9098826725100729,
+      0.9466833640498153
+    ],
+    "frozen_0.5": {
+      "threshold": 0.5,
+      "called_pos": 350,
+      "balanced_acc": 0.8738539710593174,
+      "MCC": 0.6894339472747075,
+      "F1": 0.7358490566037735
+    }
+  },
+  "agreement_with_array_derived_calls": {
+    "ER_vs_ER_STATUS": {
+      "n": 1980,
+      "agreement": 0.9005050505050505,
+      "kappa": 0.7608449336354808,
+      "AUC": 0.9981900807459333
+    },
+    "HER2_vs_HER2_STATUS": {
+      "n": 1980,
+      "agreement": 0.9121212121212121,
+      "kappa": 0.6884286683246665,
+      "AUC": 0.9966779659433105
+    }
+  },
+  "pam50_secondary": {
+    "n": 1608,
+    "accuracy": 0.806592039800995,
+    "macro_F1": 0.7884418323994565,
+    "kappa": 0.7080431062717067,
+    "confusion": {
+      "Basal": {
+        "Basal": 160,
+        "Her2": 1,
+        "LumA": 0,
+        "LumB": 0
+      },
+      "Her2": {
+        "Basal": 36,
+        "Her2": 145,
+        "LumA": 3,
+        "LumB": 9
+      },
+      "LumA": {
+        "Basal": 9,
+        "Her2": 37,
+        "LumA": 685,
+        "LumB": 159
+      },
+      "LumB": {
+        "Basal": 4,
+        "Her2": 41,
+        "LumA": 12,
+        "LumB": 307
+      }
+    }
+  },
+  "de_replication": {
+    "n_ERneg": 286,
+    "n_ERpos": 1220,
+    "genes_shared": 16031,
+    "TCGA_DEGs_on_array": 1857,
+    "replicated_same_sign_q05": 1599,
+    "fraction": 0.8610662358642972,
+    "sign_agreement": 0.9526117393645666,
+    "spearman_effect_all_shared": 0.7857204595542142,
+    "spearman_effect_TCGA_DEGs": 0.7341469645660812,
+    "metabric_genes_q05": 12026,
+    "metabric_genes_q05_abs_beta_gt1": 344,
+    "fraction_up": 0.8575418994413407,
+    "fraction_down": 0.8659003831417624,
+    "hallmark_NES_spearman": 0.935078031212485,
+    "hallmark_TCGA_FDR05_same_sign_in_METABRIC": "26/26",
+    "hallmark_TCGA_FDR05_same_sign_and_FDR05_in_METABRIC": 23
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "run": "idc_only",
+  "formula": "~group",
+  "contrast": "TNBC vs HRpos",
+  "n_test": 134,
+  "n_ref": 393,
+  "genes_tested": 22707,
+  "gene_filter_min_samples": 134,
+  "DE_lfc1_padj05": 2518,
+  "DE_up": 1269,
+  "DE_down": 1249,
+  "wald_padj05_no_threshold": 17743,
+  "wald_padj05_and_absLFC_gt1_post_hoc": 4271,
+  "histology_counts": {
+    "IDC": 527
+  },
+  "cooks_refit_genes": null,
+  "seconds": 98
+}

@@ -1,0 +1,12 @@
+# Large inputs and intermediates: re-created by step2_preprocessing/run_all.sh (00_download.sh checks SHA-256)
+step2_preprocessing/data/raw/
+step2_preprocessing/data/processed/
+# Local builds and environments
+step5_report/supplementary/
+step4_slides/previews/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# AI prompts and chat logs are submitted with the report, not published here
+**/ai_logs/

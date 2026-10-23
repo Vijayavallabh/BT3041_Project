@@ -1,0 +1,21 @@
+{
+  "run": "matched_erher2",
+  "formula": "~histology + group",
+  "contrast": "ERneg vs ERpos",
+  "n_test": 170,
+  "n_ref": 582,
+  "genes_tested": 23212,
+  "gene_filter_min_samples": 170,
+  "DE_lfc1_padj05": 2735,
+  "DE_up": 1516,
+  "DE_down": 1219,
+  "wald_padj05_no_threshold": 18508,
+  "wald_padj05_and_absLFC_gt1_post_hoc": 4355,
+  "histology_counts": {
+    "IDC": 530,
+    "ILC": 148,
+    "Other": 74
+  },
+  "cooks_refit_genes": null,
+  "seconds": 170
+}

@@ -1,0 +1,5 @@
+dataset	alias	approved	ensembl	entrez	previous	unmapped
+GENCODEv36_STAR	63	38252	3991	0	105	18249
+HiSeqV2	136	17129	0	458	2579	228
+METABRIC	4	19394	0	801	25	379
+PAM50_centroids	0	47	0	0	3	0

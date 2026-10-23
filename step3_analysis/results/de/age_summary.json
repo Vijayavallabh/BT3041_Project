@@ -1,0 +1,21 @@
+{
+  "run": "age",
+  "formula": "~age_z + histology + group",
+  "contrast": "TNBC vs HRpos",
+  "n_test": 157,
+  "n_ref": 591,
+  "genes_tested": 23439,
+  "gene_filter_min_samples": 157,
+  "DE_lfc1_padj05": 2689,
+  "DE_up": 1474,
+  "DE_down": 1215,
+  "wald_padj05_no_threshold": 18573,
+  "wald_padj05_and_absLFC_gt1_post_hoc": 4388,
+  "histology_counts": {
+    "IDC": 527,
+    "ILC": 147,
+    "Other": 74
+  },
+  "cooks_refit_genes": null,
+  "seconds": 126
+}

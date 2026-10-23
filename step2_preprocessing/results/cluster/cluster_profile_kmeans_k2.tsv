@@ -1,0 +1,3 @@
+cluster	n	n_with_clinical_group	HR+/HER2-	HER2+	TNBC	top_PAM50	top_PAM50_share	PAM50	ILC_share	ER_neg_share	top_genes_up
+C0	871	738	0.772	0.202	0.026	LumA	0.643	LumA 64%; LumB 25%; Her2 8%; Normal 3%; Basal 0%	0.227	0.067	GATA3, AGR3, PRR15, TBC1D9, CA12, AGR2, SPDEF, SLC44A4, TFF3, CT62
+C1	217	181	0.144	0.094	0.762	Basal	0.866	Basal 87%; Her2 7%; Normal 6%; LumB 0%	0.014	0.869	ART3, FZD9, ROPN1, CT83, SRSF12, LEMD1, HORMAD1, VGLL1, A2ML1, CHODL

@@ -1,0 +1,37 @@
+n_tumours: 1088
+clinical_group_all: {'HR+/HER2-': 596, 'Incomplete': 169, 'HER2+': 166, 'TNBC': 157}
+clinical_group_supervised: {'HR+/HER2-': 591, 'Incomplete': 168, 'HER2+': 160, 'TNBC': 157}
+pca_variance_explained_PC1_10: [0.1441, 0.0875, 0.0414, 0.0337, 0.027, 0.0226, 0.0199, 0.0177, 0.015, 0.0129]
+pca_top_loadings: {'PC1': {'positive': ['FOXA1', 'ESR1', 'TBC1D9', 'GATA3', 'MLPH', 'AGR3', 'THSD4', 'CA12', 'CT62', 'CCDC170'], 'negative': ['FOXC1', 'BCL11A', 'VGLL1', 'PSAT1', 'PPP1R14C', 'ROPN1', 'ART3', 'SRSF12', 'A2ML1', 'FZD9']}, 'PC2': {'positive': ['MFAP4', 'ABCA8', 'FREM1', 'IGF1', 'C7', 'TMEM132C', 'ABCA9', 'COL14A1', 'ADAM33', 'ACKR1'], 'negative': ['MYBL2', 'VGF', 'PRR11', 'SEPTIN3', 'RCOR2', 'CA9', 'IBSP', 'KIAA0319', 'CBX2', 'ACTL8']}, 'PC3': {'positive': ['CXCL9', 'ICOS', 'GBP5', 'CD2', 'TIGIT', 'CXCR3', 'SLAMF6', 'SIRPG', 'ZBED2', 'SH2D1A'], 'negative': ['ENTREP1', 'SOX10', 'SHC4', 'MIA', 'IRX1', 'TFCP2L1', 'SLC27A6', 'SOSTDC1', 'ROPN1B', 'SMYD1']}, 'PC4': {'positive': ['CORIN', 'COL11A1', 'PLPP4', 'ITGB6', 'GJB2', 'COL10A1', 'SYNDIG1', 'CLCA2', 'ARHGEF38', 'MMP13'], 'negative': ['CARMIL2', 'ENHO', 'RAB39B', 'NEURL1', 'ANK1', 'RUNDC3A', 'NIBAN3', 'RGS9', 'GNAO1', 'BLK']}, 'PC5': {'positive': ['CDKL5', 'CACNA2D1', 'PLXNC1', 'BICC1', 'EDIL3', 'ITGA8', 'PRR11', 'IL6ST', 'PREX2', 'RASEF'], 'negative': ['LOC100271831', 'METRN', 'SYCE1L', 'CCDC78', 'INE2', 'RHBDL1', 'SNCG', 'ZNHIT2', 'CITED4', 'CLIC3']}}
+pca_outliers_flagged: []
+eta2_null99: {'Tissue source site': 0.031, 'Clinical group': 0.01, 'PAM50 (PanCan)': 0.012, 'Histology': 0.008, 'Stage': 0.009}
+eta2_PC1_PC5: {'PC1\n(14.4%)': {'Tissue source site': 0.035, 'Clinical group': 0.593, 'PAM50 (PanCan)': 0.818, 'Histology': 0.019, 'Stage': 0.007}, 'PC2\n(8.7%)': {'Tissue source site': 0.084, 'Clinical group': 0.058, 'PAM50 (PanCan)': 0.333, 'Histology': 0.192, 'Stage': 0.023}, 'PC3\n(4.1%)': {'Tissue source site': 0.067, 'Clinical group': 0.091, 'PAM50 (PanCan)': 0.249, 'Histology': 0.02, 'Stage': 0.005}, 'PC4\n(3.4%)': {'Tissue source site': 0.049, 'Clinical group': 0.064, 'PAM50 (PanCan)': 0.117, 'Histology': 0.008, 'Stage': 0.0}, 'PC5\n(2.7%)': {'Tissue source site': 0.175, 'Clinical group': 0.001, 'PAM50 (PanCan)': 0.013, 'Histology': 0.029, 'Stage': 0.002}}
+saved figS1_pc_variance_by_factor
+PC1_AUC_for_IHC_ER: 0.951
+saved fig2_pca_clinical_group
+saved figS2_pca_pam50_facets
+site_contribution_to_eta2_on_site_PC: {'PC': 5, 'LL': 0.033, 'other': 0.028, 'OL': 0.022, 'AR': 0.022, 'D8': 0.014, 'GM': 0.014, 'B6': 0.009, 'BH': 0.009}
+saved figS1b_pca_histology_site
+saved figS3_pca_tumour_normal
+.venv/lib/python3.12/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+saved fig3_umap_nn15
+.venv/lib/python3.12/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+saved figS4_umap_nn30
+umap_island: {15: {'n_island': 189, 'TNBC_in_island': '129/157', 'HR+/HER2- in island': 22, 'HER2+ in island': 9, 'Incomplete in island': 29, 'PAM50 Basal in island': '183/189'}, 30: {'n_island': 189, 'TNBC_in_island': '129/157', 'HR+/HER2- in island': 22, 'HER2+ in island': 9, 'Incomplete in island': 29, 'PAM50 Basal in island': '183/189'}}
+saved fig4_marker_violins
+mrna_vs_clinical_status: {'ESR1_vs_ER': {'n': 1024, 'auc': 0.959, 'auc_95ci': [0.942, 0.974], 'spearman': 0.668, 'spearman_ceiling_at_this_prevalence': 0.728}, 'PGR_vs_PR': {'n': 1021, 'auc': 0.923, 'auc_95ci': [0.904, 0.939], 'spearman': 0.69, 'spearman_ceiling_at_this_prevalence': 0.816}, 'ERBB2_vs_HER2': {'n': 913, 'auc': 0.845, 'auc_95ci': [0.803, 0.888], 'spearman': 0.456, 'spearman_ceiling_at_this_prevalence': 0.66}}
+ERBB2_auc_with_HER2_v0_rule: 0.82
+ERBB2_auc_by_HER2_source: {'FISH': {'n': 398, 'positives': 73, 'auc': 0.81}, 'IHC score': {'n': 276, 'positives': 58, 'auc': 0.968}, 'IHC status (no score)': {'n': 239, 'positives': 30, 'auc': 0.696}}
+.venv/lib/python3.12/site-packages/seaborn/matrix.py:560: UserWarning: Clustering large matrix with scipy. Installing `fastcluster` may give better performance.
+  warnings.warn(msg)
+saved fig5_pam50_heatmap
+TNBC_vs_Basal: {'TNBC_called_Basal': '130/157 (82.8%)', 'Basal_that_are_TNBC': '130/160 (81.2%)', 'odds_ratio': 117.5, 'OR_95CI_woolf': [67.6, 204.1], 'kappa': 0.783, 'TCGA2012_reference': '65/76 (86%) TNBC basal-like; 65/81 (80%) basal-like TNBC (Nature 2012, doi 10.1038/nature11412; TCGA 2012 analysed a subset of these same tumours, so this is not an independent cohort)'}
+HER2pos_vs_HER2E: {'HER2+_called_Her2E': '53/166 (31.9%)', 'Her2E_that_are_HER2+': '53/69', 'HER2+_PAM50_distribution': {'LumA': 58, 'Her2': 53, 'LumB': 42, 'Basal': 10, 'Normal': 3}, 'like_for_like': {'TCGA2012_HER2_x_TCGA2012_PAM50': '39/75', 'TCGA2012_HER2_x_PanCan_PAM50': '47/114', 'v1_HER2pos_with_a_2012_PAM50_call_x_PanCan': '32/82', 'v1_HER2pos_with_a_2012_PAM50_call_x_TCGA2012_PAM50': '37/82', 'v1_HER2pos_by_HER2_source': {'IHC status (no score)': '4/30', 'FISH': '16/77', 'IHC score': '33/59'}}, 'TCGA2012_reference': "'only ~50% of clinically HER2-positive tumors fall into this HER2E-mRNA-subtype' (doi 10.1038/nature11412)"}
+ERpos_called_nonluminal: {'Basal_or_Her2E': '50/801 (6.2%)', 'Basal_Her2E_or_Normal': '73/801 (9.1%)', 'Nielsen2010_reference': '786 ER+ tamoxifen-treated tumours, qRT-PCR PAM50: HER2E 8.1% + Basal 0.6% = 8.7%; with Normal-like 2.0% = 10.7% (doi 10.1158/1078-0432.CCR-10-1282)'}
+saved fig6_clinical_vs_pam50
+mrna_protein_spearman: {'n_tumours': 738, 'n_pairs_unambiguous': 85, 'median': 0.387, 'selected': {'ERALPHA': 0.89, 'PR': 0.77, 'HER2': 0.64, 'GATA3': 0.79, 'AR': 0.67, 'BCL2': 0.84, 'CYCLINB1': 0.73, 'ECADHERIN': 0.54, 'EGFR': 0.49}}
+saved figS5_mrna_protein
+star_vs_hiseq_pc_score_abs_correlation_PC1_5: {'n_tumours': 1087, 'genes': 1936, 'r': [0.993, 0.976, 0.986, 0.98, 0.881]}
+done

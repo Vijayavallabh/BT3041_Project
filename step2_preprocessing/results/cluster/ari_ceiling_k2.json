@@ -1,0 +1,18 @@
+{
+  "Clinical group": {
+    "n_classes": 3,
+    "best_ARI_with_2_merged_groups": 0.877
+  },
+  "PAM50 (no Normal-like)": {
+    "n_classes": 4,
+    "best_ARI_with_2_merged_groups": 0.729
+  },
+  "TCGA 2012 SigClust": {
+    "n_classes": 13,
+    "best_ARI_with_2_merged_groups": 0.432
+  },
+  "ER status (IHC)": {
+    "n_classes": 2,
+    "best_ARI_with_2_merged_groups": 1.0
+  }
+}

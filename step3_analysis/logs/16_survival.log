@@ -1,0 +1,4 @@
+TCGA Cox PFI {'HER2pos': 0.9773, 'TNBC': 2.6867, 'age_per10y': 1.0868, 'stage_II': 1.3551, 'stage_III_IV': 5.3484} PH: {'HER2pos': 0.0892, 'TNBC': 0.4879, 'age_per10y': 0.0308, 'stage_II': 0.3849, 'stage_III_IV': 0.384}
+TCGA Cox OS {'HER2pos': 1.2187, 'TNBC': 2.5725, 'age_per10y': 1.5285, 'stage_II': 1.4809, 'stage_III_IV': 5.5348} PH: {'HER2pos': 0.6884, 'TNBC': 0.1464, 'age_per10y': 0.1738, 'stage_II': 0.6588, 'stage_III_IV': 0.0762}
+METABRIC cox: {'HER2_gained': 1.9023, 'ERneg_HER2notgained': 1.602, 'age_per10y': 1.0738, 'grade3': 1.6998, 'size_per10mm': 1.1699} PH fails: ['ERneg_HER2notgained', 'grade3']
+Nielsen check: {'LumB': 2.57, 'Her2': 3.366, 'Basal': 8.169}

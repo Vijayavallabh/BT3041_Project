@@ -1,0 +1,4 @@
+comparison	both	only_clinical	only_PAM50	neither	pct_clinical_called_PAM50	pct_PAM50_with_clinical	odds_ratio	OR_CI	kappa	fisher_p	n_ER_pos	non_luminal	pct	pct_incl_Normal_like
+TNBC vs PAM50 Basal	130.0	27.0	30.0	721.0	82.8	81.2	112.3	[np.float64(64.9), np.float64(194.2)]	0.782	4.6870115704493194e-99				
+clinical HER2+ vs PAM50 HER2-enriched	53.0	107.0	16.0	732.0	33.1	76.8	22.1	[np.float64(12.3), np.float64(39.8)]	0.399	6.941130554728576e-30				
+ER+ tumours called non-luminal (Basal or Her2)											789.0	50.0	6.3	9.3

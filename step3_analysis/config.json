@@ -1,0 +1,2 @@
+{"her2_rule": "v1", "her2_filter": "none",
+ "_comment": "Label inputs for every step 3 script. her2_rule: v1 (step 2 rule) or v0 (plan rule). her2_filter: none | drop_low_pos | drop_low_all. Env vars BT3041_HER2_RULE / BT3041_HER2_FILTER override per run."}

@@ -1,0 +1,47 @@
+genes removed per ablation (present in HiSeqV2): {'a_all_genes': 0, 'b_no_receptor_amplicon1.5Mb_PAM50': 135, 'c_no_receptor_amplicon2Mb_PAM50': 157}
+== ER / a_all_genes
+  main ER a_all_genes L1-logistic: AUC 0.956 (64s)
+  main ER a_all_genes linear SVM: AUC 0.954 (63s)
+  main ER a_all_genes Random Forest: AUC 0.955 (203s)
+  main ER a_all_genes PLS-DA: AUC 0.953 (54s)
+== ER / b_no_receptor_amplicon1.5Mb_PAM50
+  main ER b_no_receptor_amplicon1.5Mb_PAM50 L1-logistic: AUC 0.950 (56s)
+  main ER b_no_receptor_amplicon1.5Mb_PAM50 linear SVM: AUC 0.954 (59s)
+  main ER b_no_receptor_amplicon1.5Mb_PAM50 Random Forest: AUC 0.954 (226s)
+  main ER b_no_receptor_amplicon1.5Mb_PAM50 PLS-DA: AUC 0.949 (54s)
+== HER2 / a_all_genes
+  main HER2 a_all_genes L1-logistic: AUC 0.848 (52s)
+  main HER2 a_all_genes linear SVM: AUC 0.843 (52s)
+  main HER2 a_all_genes Random Forest: AUC 0.854 (181s)
+  main HER2 a_all_genes PLS-DA: AUC 0.841 (47s)
+== HER2 / b_no_receptor_amplicon1.5Mb_PAM50
+  main HER2 b_no_receptor_amplicon1.5Mb_PAM50 L1-logistic: AUC 0.785 (48s)
+  main HER2 b_no_receptor_amplicon1.5Mb_PAM50 linear SVM: AUC 0.821 (53s)
+  main HER2 b_no_receptor_amplicon1.5Mb_PAM50 Random Forest: AUC 0.804 (184s)
+  main HER2 b_no_receptor_amplicon1.5Mb_PAM50 PLS-DA: AUC 0.807 (48s)
+== HER2 / c_no_receptor_amplicon2Mb_PAM50
+  main HER2 c_no_receptor_amplicon2Mb_PAM50 L1-logistic: AUC 0.787 (50s)
+  main HER2 c_no_receptor_amplicon2Mb_PAM50 linear SVM: AUC 0.821 (52s)
+  main HER2 c_no_receptor_amplicon2Mb_PAM50 Random Forest: AUC 0.805 (181s)
+  main HER2 c_no_receptor_amplicon2Mb_PAM50 PLS-DA: AUC 0.807 (49s)
+control ER {'shuffled_labels_L1_logistic': {'AUC': np.float64(0.506015874676854), 'MCC': np.float64(-0.008311122240370105), 'MCC_sd': np.float64(0.1169259914358862), 'balanced_acc': np.float64(0.49644140659174774)}, 'majority_class': {'accuracy': 0.7705078125, 'balanced_acc': 0.5, 'MCC': 0.0, 'AUC': 0.5}}
+control HER2 {'shuffled_labels_L1_logistic': {'AUC': np.float64(0.505944101612148), 'MCC': np.float64(0.039828951340033905), 'MCC_sd': np.float64(0.05480420825411124), 'balanced_acc': np.float64(0.5221084437086093)}, 'majority_class': {'accuracy': 0.823658269441402, 'balanced_acc': 0.5, 'MCC': 0.0, 'AUC': 0.5}}
+== sensitivity drop_low_pos HER2 / a_all_genes
+  sens_drop_low_pos HER2 a_all_genes L1-logistic: AUC 0.886 (46s)
+  sens_drop_low_pos HER2 a_all_genes linear SVM: AUC 0.885 (48s)
+== sensitivity drop_low_pos HER2 / b_no_receptor_amplicon1.5Mb_PAM50
+  sens_drop_low_pos HER2 b_no_receptor_amplicon1.5Mb_PAM50 L1-logistic: AUC 0.826 (47s)
+  sens_drop_low_pos HER2 b_no_receptor_amplicon1.5Mb_PAM50 linear SVM: AUC 0.861 (50s)
+== sensitivity drop_low_all HER2 / a_all_genes
+  sens_drop_low_all HER2 a_all_genes L1-logistic: AUC 0.882 (33s)
+  sens_drop_low_all HER2 a_all_genes linear SVM: AUC 0.879 (33s)
+== sensitivity drop_low_all HER2 / b_no_receptor_amplicon1.5Mb_PAM50
+  sens_drop_low_all HER2 b_no_receptor_amplicon1.5Mb_PAM50 L1-logistic: AUC 0.803 (32s)
+  sens_drop_low_all HER2 b_no_receptor_amplicon1.5Mb_PAM50 linear SVM: AUC 0.846 (34s)
+== ER-/HER2- vs rest
+  transfer_target ERneg_HER2neg a_all_genes L1-logistic: AUC 0.966 (48s)
+PAM50 4 a_all_genes {'n': 1036, 'accuracy': 0.9102471200297287, 'macro_F1': 0.8977452641697792, 'kappa': 0.861430187581323, 'accuracy_sd': np.float64(0.02272197442704901)}
+PAM50 4 no_PAM50_genes {'n': 1036, 'accuracy': 0.909290226681531, 'macro_F1': 0.8940607759369457, 'kappa': 0.860087408146901, 'accuracy_sd': np.float64(0.021820921134804487)}
+PAM50 5 a_all_genes {'n': 1076, 'accuracy': 0.8792075796726959, 'macro_F1': 0.8273774656191735, 'kappa': 0.8222258869038643, 'accuracy_sd': np.float64(0.029803737004502343)}
+PAM50 5 no_PAM50_genes {'n': 1076, 'accuracy': 0.871774332472007, 'macro_F1': 0.820388429298152, 'kappa': 0.8116446034000445, 'accuracy_sd': np.float64(0.03801489893647503)}
+done in 46.4 min

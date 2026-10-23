@@ -1,0 +1,284 @@
+{
+  "created_utc": "2026-10-21T02:04:04Z",
+  "n_shared_genes": 18936,
+  "threshold": 0.5,
+  "models": {
+    "ER": {
+      "target": "ER",
+      "ablation": "a_all_genes",
+      "k": 50,
+      "C": 0.01,
+      "n_train": 1024,
+      "n_pos": 789,
+      "genes_after_filter": 5000,
+      "nonzero_weights": 6,
+      "top_negative": {
+        "ZMYND10": 0.014,
+        "DNALI1": 0.036,
+        "C5AR2": 0.053,
+        "CA12": 0.096,
+        "AGR3": 0.378,
+        "ESR1": 0.88
+      },
+      "top_positive": {
+        "ZMYND10": 0.014,
+        "DNALI1": 0.036,
+        "C5AR2": 0.053,
+        "CA12": 0.096,
+        "AGR3": 0.378,
+        "ESR1": 0.88
+      },
+      "fold_choice_frequency": [
+        {
+          "select__k": 50,
+          "model__C": 0.01,
+          "n": 4
+        },
+        {
+          "select__k": 50,
+          "model__C": 0.1,
+          "n": 4
+        },
+        {
+          "select__k": 200,
+          "model__C": 0.01,
+          "n": 1
+        },
+        {
+          "select__k": 1000,
+          "model__C": 0.01,
+          "n": 4
+        },
+        {
+          "select__k": 1000,
+          "model__C": 0.1,
+          "n": 2
+        }
+      ],
+      "sha256": "615e0a5f3097f0cf5c4dfe563eccc9a82af2bf8451cd7aa89ca5c123fc0fd2b0"
+    },
+    "ER_ablated": {
+      "target": "ER",
+      "ablation": "b_no_receptor_amplicon1.5Mb_PAM50",
+      "k": 50,
+      "C": 0.1,
+      "n_train": 1024,
+      "n_pos": 789,
+      "genes_after_filter": 5000,
+      "nonzero_weights": 20,
+      "top_negative": {
+        "VGLL1": -0.151,
+        "B3GNT5": -0.114,
+        "PPP1R14C": -0.073,
+        "PSAT1": -0.015,
+        "GFRA1": 0.034,
+        "GATA3": 0.044,
+        "CELSR1": 0.068,
+        "CA12": 0.077,
+        "DEGS2": 0.077,
+        "GREB1": 0.097
+      },
+      "top_positive": {
+        "DNALI1": 0.101,
+        "LMX1B": 0.104,
+        "CCDC170": 0.149,
+        "FSIP1": 0.166,
+        "ZMYND10": 0.207,
+        "ABAT": 0.219,
+        "C5AR2": 0.245,
+        "DACH1": 0.255,
+        "CYP2B7P": 0.366,
+        "AGR3": 0.548
+      },
+      "fold_choice_frequency": [
+        {
+          "select__k": 50,
+          "model__C": 0.1,
+          "n": 8
+        },
+        {
+          "select__k": 200,
+          "model__C": 0.1,
+          "n": 1
+        },
+        {
+          "select__k": 1000,
+          "model__C": 0.01,
+          "n": 1
+        },
+        {
+          "select__k": 1000,
+          "model__C": 0.1,
+          "n": 5
+        }
+      ],
+      "sha256": "b9d1983a843094bf2af425672066f82b2dca8d5a558591a7e8a3af9a706041f3"
+    },
+    "HER2": {
+      "target": "HER2",
+      "ablation": "a_all_genes",
+      "k": 50,
+      "C": 0.1,
+      "n_train": 913,
+      "n_pos": 161,
+      "genes_after_filter": 5000,
+      "nonzero_weights": 19,
+      "top_negative": {
+        "RIC3": -0.349,
+        "TMEM101": -0.272,
+        "FCGBP": -0.237,
+        "ANKRD20A3P": -0.181,
+        "MAB21L4": -0.155,
+        "HMGCLL1": -0.133,
+        "CELSR2": -0.046,
+        "CA11": -0.027,
+        "CBLC": -0.025,
+        "FA2H": -0.007
+      },
+      "top_positive": {
+        "FA2H": -0.007,
+        "SLC25A18": -0.004,
+        "PAX7": 0.001,
+        "LRFN2": 0.019,
+        "MNX1": 0.04,
+        "CDC6": 0.079,
+        "ABCC2": 0.155,
+        "MIEN1": 0.379,
+        "ERBB2": 0.63,
+        "PGAP3": 0.664
+      },
+      "fold_choice_frequency": [
+        {
+          "select__k": 50,
+          "model__C": 0.01,
+          "n": 1
+        },
+        {
+          "select__k": 50,
+          "model__C": 0.1,
+          "n": 6
+        },
+        {
+          "select__k": 200,
+          "model__C": 0.1,
+          "n": 1
+        },
+        {
+          "select__k": 1000,
+          "model__C": 0.1,
+          "n": 7
+        }
+      ],
+      "sha256": "fec973a0eb99d9f651d8298c9dc198e5c576de465f54c6b9bc5e07ef5fb7f010"
+    },
+    "HER2_ablated": {
+      "target": "HER2",
+      "ablation": "b_no_receptor_amplicon1.5Mb_PAM50",
+      "k": 1000,
+      "C": 0.1,
+      "n_train": 913,
+      "n_pos": 161,
+      "genes_after_filter": 5000,
+      "nonzero_weights": 143,
+      "top_negative": {
+        "STYXL2": -0.358,
+        "WFIKKN1": -0.252,
+        "IL36R": -0.249,
+        "AHI1-DT": -0.21,
+        "POLR2J2": -0.198,
+        "SEZ6L2": -0.193,
+        "GRIA2": -0.174,
+        "TMCC2": -0.169,
+        "TMEM74": -0.167,
+        "TMEM121B": -0.158
+      },
+      "top_positive": {
+        "CD163L1": 0.167,
+        "CYS1": 0.175,
+        "OSR1": 0.183,
+        "SLC2A10": 0.193,
+        "POM121L10P": 0.207,
+        "CCDC158": 0.226,
+        "SGPP2": 0.249,
+        "SLC6A16": 0.251,
+        "ARSI": 0.256,
+        "INSYN1": 0.332
+      },
+      "fold_choice_frequency": [
+        {
+          "select__k": 50,
+          "model__C": 0.1,
+          "n": 3
+        },
+        {
+          "select__k": 200,
+          "model__C": 0.1,
+          "n": 3
+        },
+        {
+          "select__k": 1000,
+          "model__C": 0.1,
+          "n": 8
+        },
+        {
+          "select__k": 1000,
+          "model__C": 1.0,
+          "n": 1
+        }
+      ],
+      "sha256": "2e728ecb5e97c30eb272b9f4ffaf9f0153056840ec26889a3b2820b6be2a9fb6"
+    },
+    "ERneg_HER2neg": {
+      "target": "ERneg_HER2neg",
+      "ablation": "a_all_genes",
+      "k": 50,
+      "C": 0.1,
+      "n_train": 912,
+      "n_pos": 170,
+      "genes_after_filter": 5000,
+      "nonzero_weights": 13,
+      "top_negative": {
+        "ESR1": -0.769,
+        "AK8": -0.713,
+        "BCAS1": -0.57,
+        "FSIP1": -0.205,
+        "LMX1B": -0.138,
+        "CA12": -0.115,
+        "DRAIC": -0.005,
+        "CT83": 0.001,
+        "LINC02872": 0.015,
+        "FAM171A1": 0.058
+      },
+      "top_positive": {
+        "FSIP1": -0.205,
+        "LMX1B": -0.138,
+        "CA12": -0.115,
+        "DRAIC": -0.005,
+        "CT83": 0.001,
+        "LINC02872": 0.015,
+        "FAM171A1": 0.058,
+        "B3GNT5": 0.117,
+        "PPP1R14C": 0.151,
+        "SRSF12": 0.379
+      },
+      "fold_choice_frequency": [
+        {
+          "select__k": 50,
+          "model__C": 0.1,
+          "n": 7
+        },
+        {
+          "select__k": 200,
+          "model__C": 0.1,
+          "n": 6
+        },
+        {
+          "select__k": 1000,
+          "model__C": 0.1,
+          "n": 2
+        }
+      ],
+      "sha256": "3c9af0c5156897e2d0d7d21a23db3c2e5dbff5cf2dcef05dd944bab5d08c0b23"
+    }
+  }
+}

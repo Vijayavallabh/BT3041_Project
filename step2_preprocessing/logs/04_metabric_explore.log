@@ -1,0 +1,14 @@
+main_cluster_genes_present_in_metabric: 1919/2000
+eta2_PC1_PC3: {'PC1\n(9.0%)': {'Cohort (batch)': 0.005, 'ER (IHC)': 0.523, 'HER2 gain (SNP6)': 0.018, 'PAM50+claudin-low': 0.704}, 'PC2\n(4.5%)': {'Cohort (batch)': 0.057, 'ER (IHC)': 0.06, 'HER2 gain (SNP6)': 0.011, 'PAM50+claudin-low': 0.356}, 'PC3\n(3.3%)': {'Cohort (batch)': 0.011, 'ER (IHC)': 0.005, 'HER2 gain (SNP6)': 0.084, 'PAM50+claudin-low': 0.254}}
+cohort_eta2_max: {'PC': 6, 'eta2': 0.233, 'PC1_3_max': 0.057}
+PC1_AUC_for_ER_IHC: 0.94
+saved fig10_metabric_pca
+ER_negative_share_by_cohort: {'TCGA_clustered_tumours_ER_IHC_known': 0.227, 'METABRIC_ER_IHC_known': 0.227}
+centroid_k2: {'sizes_METABRIC': [1673, 307], 'share_METABRIC': [0.845, 0.155], 'share_TCGA': [0.801, 0.199], 'ARI_vs_PAM50_4class': 0.199, 'ARI_vs_ER_IHC': 0.58, 'ER_neg_share_METABRIC': {0: 0.101, 1: 0.907}, 'ER_neg_share_TCGA': {0: 0.067, 1: 0.869}, 'pearson_sensitivity': {'sizes': [1313, 667], 'ARI_vs_euclidean': 0.373}, 'quantile_mapping_sensitivity': {'share_METABRIC': [0.839, 0.161], 'ER_neg_share_METABRIC': {0: 0.096, 1: 0.904}, 'ARI_vs_main': 0.964}}
+saved figS9_metabric_centroids_k2
+centroid_k4: {'sizes_METABRIC': [476, 643, 623, 238], 'share_METABRIC': [0.24, 0.325, 0.315, 0.12], 'share_TCGA': [0.309, 0.297, 0.219, 0.176], 'ARI_vs_PAM50_4class': 0.231, 'ARI_vs_ER_IHC': 0.157, 'ER_neg_share_METABRIC': {0: 0.058, 1: 0.009, 2: 0.311, 3: 0.927}, 'ER_neg_share_TCGA': {0: 0.037, 1: 0.01, 2: 0.256, 3: 0.885}, 'pearson_sensitivity': {'sizes': [500, 751, 419, 310], 'ARI_vs_euclidean': 0.655}, 'quantile_mapping_sensitivity': {'share_METABRIC': [0.284, 0.309, 0.285, 0.122], 'ER_neg_share_METABRIC': {0: 0.062, 1: 0.012, 2: 0.324, 3: 0.924}, 'ARI_vs_main': 0.843}}
+saved figS9_metabric_centroids_k4
+centroid_k5: {'sizes_METABRIC': [890, 311, 233, 178, 368], 'share_METABRIC': [0.449, 0.157, 0.118, 0.09, 0.186], 'share_TCGA': [0.294, 0.254, 0.175, 0.153, 0.124], 'ARI_vs_PAM50_4class': 0.276, 'ARI_vs_ER_IHC': 0.235, 'ER_neg_share_METABRIC': {0: 0.027, 1: 0.066, 2: 0.926, 3: 0.006, 4: 0.508}, 'ER_neg_share_TCGA': {0: 0.017, 1: 0.037, 2: 0.879, 3: 0.006, 4: 0.461}, 'pearson_sensitivity': {'sizes': [507, 394, 277, 430, 372], 'ARI_vs_euclidean': 0.51}, 'quantile_mapping_sensitivity': {'share_METABRIC': [0.404, 0.197, 0.12, 0.102, 0.178], 'ER_neg_share_METABRIC': {0: 0.028, 1: 0.068, 2: 0.927, 3: 0.005, 4: 0.512}, 'ARI_vs_main': 0.815}}
+saved figS9_metabric_centroids_k5
+projection_rule_self_check_on_TCGA: {'k2': {'ARI_all_genes': 1.0, 'ARI_shared_genes': 1.0}, 'k4': {'ARI_all_genes': 1.0, 'ARI_shared_genes': 1.0}, 'k5': {'ARI_all_genes': 1.0, 'ARI_shared_genes': 0.9952}}
+done

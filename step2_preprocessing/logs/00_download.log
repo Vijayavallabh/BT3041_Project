@@ -1,0 +1,27 @@
+have data/raw/tcga/HiSeqV2.gz
+have data/raw/tcga/BRCA_clinicalMatrix.tsv
+have data/raw/tcga/TCGA-BRCA.star_counts.tsv.gz
+have data/raw/ref/gencode.v36.probemap.tsv
+have data/raw/tcga/BRCA_survival.tsv
+have data/raw/tcga/TCGASubtype.20170308.tsv.gz
+have data/raw/tcga/RPPA_RBN.gz
+have data/raw/ref/h.all.v2024.1.Hs.symbols.gmt
+have data/raw/ref/pam50_centroids.txt
+have data/raw/ref/hgnc_complete_set.txt
+have data/raw/metabric/data_clinical_patient.txt
+have data/raw/metabric/data_clinical_sample.txt
+have data/raw/metabric/data_mrna_illumina_microarray.txt
+ok       data/raw/tcga/BRCA_clinicalMatrix.tsv
+ok       data/raw/tcga/BRCA_survival.tsv
+ok       data/raw/tcga/HiSeqV2.gz
+ok       data/raw/tcga/RPPA_RBN.gz
+ok       data/raw/tcga/TCGA-BRCA.star_counts.tsv.gz
+ok       data/raw/tcga/TCGASubtype.20170308.tsv.gz
+ok       data/raw/ref/gencode.v36.probemap.tsv
+ok       data/raw/ref/h.all.v2024.1.Hs.symbols.gmt
+ok       data/raw/ref/hgnc_complete_set.txt
+ok       data/raw/ref/pam50_centroids.txt
+ok       data/raw/metabric/data_clinical_patient.txt
+ok       data/raw/metabric/data_clinical_sample.txt
+ok       data/raw/metabric/data_mrna_illumina_microarray.txt
+done

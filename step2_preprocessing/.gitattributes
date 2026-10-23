@@ -1,0 +1,11 @@
+*.parquet binary
+*.png binary
+*.pdf binary
+*.tsv text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+data/raw_small/** -text
+data/processed/*.gmt text eol=lf
+data/processed/*.txt text eol=lf
+data/SHA256SUMS.freeze text eol=lf
+data/processed/SHA256SUMS text eol=lf

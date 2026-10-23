@@ -1,0 +1,30 @@
+{
+  "params": {
+    "rule": "modal inner-CV choice of (k, C) across 15 outer folds, L1-logistic; refit on all TCGA",
+    "shared_genes": 18936,
+    "filter": "mean log2 >= 1.0, top 5000 variance on TCGA",
+    "scaling": "z-score within cohort",
+    "threshold": 0.5
+  },
+  "run": {
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "pyarrow": "26.0.0",
+      "pydeseq2": "0.5.4",
+      "gseapy": "1.3.1",
+      "lifelines": "0.30.3",
+      "anndata": "0.13.4"
+    },
+    "seed": 42,
+    "label_rule": "v1",
+    "her2_filter": "none",
+    "run_utc": "2026-10-21T02:04:10Z"
+  }
+}

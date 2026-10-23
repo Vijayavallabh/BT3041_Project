@@ -1,0 +1,21 @@
+{
+  "run": "her2",
+  "formula": "~histology + group",
+  "contrast": "HER2pos vs HRpos",
+  "n_test": 160,
+  "n_ref": 591,
+  "genes_tested": 23276,
+  "gene_filter_min_samples": 160,
+  "DE_lfc1_padj05": 148,
+  "DE_up": 96,
+  "DE_down": 52,
+  "wald_padj05_no_threshold": 11029,
+  "wald_padj05_and_absLFC_gt1_post_hoc": 685,
+  "histology_counts": {
+    "IDC": 524,
+    "ILC": 162,
+    "Other": 65
+  },
+  "cooks_refit_genes": null,
+  "seconds": 221
+}

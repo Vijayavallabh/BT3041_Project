@@ -1,0 +1,29 @@
+{
+  "params": {
+    "samples": "all 1,980 METABRIC tumours with expression (Illumina HT-12, log2 intensity as distributed by cBioPortal)",
+    "genes": "the TCGA main clustering genes (top 2,000 non-PAM50, sex genes removed) that are present in METABRIC",
+    "scaling": "z-score per gene within METABRIC (each cohort standardised separately). This removes platform offsets but assumes the two cohorts have a broadly similar subtype mix, because a cohort with more ER-negative tumours would have its gene means shifted; the ER-IHC negative share is logged per cohort to check this (ER_negative_share_by_cohort)",
+    "quantile_mapping_sensitivity": "each METABRIC gene mapped onto the TCGA distribution of the same gene (rank -> TCGA quantile), then z-scored with the TCGA mean and SD and assigned by the same nearest-centroid rule; reported per k as cluster shares, ER-negative shares and ARI vs the main assignment. Not used for the main result",
+    "pc1_orientation": "PC1 sign chosen so that PC1 correlates positively with ESR1 expression",
+    "batch_check": "eta-squared of PC1-10 on METABRIC COHORT (1-5, known processing batches), ER_IHC, HER2 gain, CLAUDIN_SUBTYPE (NC dropped)",
+    "centroid_projection": "each METABRIC tumour assigned to the nearest TCGA k-means centroid by Euclidean distance in z-units over the shared genes (the k-means rule itself); checked by re-applying the rule to TCGA, where it must reproduce the k-means labels",
+    "centroid_projection_sensitivity": "Pearson-correlation nearest centroid, reported but not used",
+    "ER_negative_share": "share of ER-IHC negative among tumours with a known ER-IHC result"
+  },
+  "run": {
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "umap-learn": "0.5.12",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "pyarrow": "26.0.0"
+    },
+    "seed": 42,
+    "run_utc": "2026-10-21T00:36:50Z"
+  }
+}

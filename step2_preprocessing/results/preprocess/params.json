@@ -1,0 +1,49 @@
+{
+  "params": {
+    "tumour_sample_code": "01 = primary solid tumour (used); 11 = adjacent normal (kept separately); 06 = metastatic (dropped)",
+    "vial_dedup_rule": "if a patient has >1 primary-tumour vial in STAR counts, keep vial 01A (checked: 01A is the better match to HiSeqV2 in 11/11; 4 of these 11 patients still fail the identity QC and are excluded)",
+    "ER_PR_source": "EMR fields breast_carcinoma_{estrogen,progesterone}_receptor_status; Indeterminate/blank = missing",
+    "HER2_rule": "v1 (used): (1) ISH/FISH Positive -> pos, FISH Negative -> neg (FISH has precedence). (2) Without a conclusive FISH, IHC score her2_immunohistochemistry_level_result: 3+ -> pos, 0/1+ -> neg, 2+ -> missing (equivocal). (3) If the score is blank, fall back to the IHC status text (Positive/Negative). (4) If status text and score contradict (status Positive with score 0/1+, or Negative with 3+) and there is no FISH -> missing. (5) IHC 3+ with a negative FISH is discordant (IHC 3+ alone is positive under ASCO/CAP) -> missing. HER2_confidence = low for calls that rest on the IHC status text alone (no score, no FISH). v0 (team plan, kept as HER2_v0 for sensitivity): FISH overrides IHC status text; IHC equivocal without FISH = missing.",
+    "clinical_group_rule": "needs ER, PR and HER2 all known; HER2+ if HER2 pos; else HR+/HER2- if ER or PR pos; else TNBC",
+    "ERneg_HER2neg_rule": "ER neg and HER2 neg (PR ignored, to match METABRIC)",
+    "exclusions_all_analyses": "(a) sample identity not confirmed: same-tumour Spearman between HiSeqV2 and STAR log2-CPM < 0.8, or below the 99th percentile of between-patient Spearman, or the tumour's own STAR profile is not its best match in both directions; (b) case flagged 'Redacted' in TCGA-CDR (Liu 2018); the adjacent normals of redacted cases are dropped too",
+    "identity_qc_genes": "HGNC genes present on both platforms with HiSeqV2 mean log2 > 2; STAR as log2(CPM + 1), Ensembl IDs collapsed per HGNC symbol by maximum; Spearman via ranks",
+    "expression_sex": "Male if RPS4Y1 > 6 and XIST < 6; Female if XIST >= 6; otherwise unclear (used only when the recorded sex is blank)",
+    "supervised_set": "tumours not excluded AND female (recorded sex, or XIST/RPS4Y1 expression when the record is blank); the 12 male patients are kept for unsupervised analyses only (male breast cancer differs in biology; too few to model)",
+    "histology_collapse": "IDC = Infiltrating Ductal; ILC = Infiltrating Lobular; Other = everything else incl. mixed and blank",
+    "stage_collapse": "Stage I/IA/IB -> I; II/IIA/IIB -> II; III*/IV -> III-IV; X, blank, [Discrepancy] -> missing",
+    "pam50_main": "PanCanAtlas TCGASubtype.20170308 Subtype_mRNA (Xena PAM50Call_RNAseq is a subset of the same calls)",
+    "hiseq_gene_filter_at_freeze": "drop genes with zero variance across the analysed tumours (no other filter at freeze)",
+    "star_count_conversion": "counts = round(2**x - 1) from Xena log2(count+1), np.rint (half to even). Non-integers are exact .5 values confined to a few 01A columns that the hub stored as the mean of two aliquots (flagged star_averaged_aliquots)",
+    "star_gene_filter": ">= 10 counts in >= n_min analysed primary tumours, n_min = size of the smallest clinical group in the supervised set with STAR counts (computed at run time, logged as star_min_samples)",
+    "gene_harmonisation": "HGNC complete set: approved symbol > Entrez ID (incl. IDs embedded in LOC<id> / ?|<id> names) > Ensembl ID > unique previous symbol > unique alias; otherwise keep the original name (method 'unmapped')",
+    "duplicate_gene_rule": "when several rows map to one HGNC symbol keep the row with the highest mean expression",
+    "sex_specific_genes": "chrY genes (GENCODE v36) plus XIST and TSIX; listed in sex_specific_genes.txt and removed from unsupervised gene sets",
+    "erbb2_amplicon_windows_bp": [
+      1000000,
+      1500000,
+      2000000
+    ],
+    "rppa": "primary tumours only; phospho/cleaved antibodies flagged and excluded from mRNA-protein concordance (not collapsed); pan-isoform antibodies flagged isoform_ambiguous",
+    "metabric_er_label": "ER_IHC ('Positve' typo fixed); blank = missing",
+    "metabric_her2_label": "HER2_SNP6 GAIN = gained; NEUTRAL/LOSS = not gained; UNDEF = missing",
+    "metabric_missing_values": "genes with >5% missing dropped; remaining missing values imputed by the gene median",
+    "low_library_rule": "flag (not drop) STAR samples with total counts below 25% of the median"
+  },
+  "run": {
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "umap-learn": "0.5.12",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "pyarrow": "26.0.0"
+    },
+    "seed": 42,
+    "run_utc": "2026-10-21T00:16:29Z"
+  }
+}

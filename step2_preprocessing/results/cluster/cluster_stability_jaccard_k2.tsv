@@ -1,0 +1,3 @@
+	ward	avgcorr	consensus	top2000_incl_PAM50	main_plus_all_PAM50	top5000_excl_PAM50	top1000_excl_PAM50	min	median
+C0	0.97	0.95	1.0	1.0	1.0	0.99	0.99	0.95	0.99
+C1	0.87	0.82	1.0	1.0	1.0	0.95	0.97	0.82	0.97

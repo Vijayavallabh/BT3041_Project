@@ -1,0 +1,6 @@
+	closest_Netanely2016_cluster	ward	avgcorr	consensus	top2000_incl_PAM50	main_plus_all_PAM50	top5000_excl_PAM50	top1000_excl_PAM50	min	median
+C0	mixed LumA/LumB	0.55	0.38	0.89	0.94	0.93	0.65	0.73	0.38	0.73
+C1	homogeneous LumA	0.78	0.65	1.0	0.96	0.96	0.86	0.88	0.65	0.88
+C2	basal	0.97	0.74	0.99	0.99	0.99	0.97	0.99	0.74	0.99
+C3	mixed LumA/LumB	0.62	0.36	0.95	0.95	0.96	0.68	0.79	0.36	0.79
+C4	HER2-enriched	0.4	0.2	0.75	0.86	0.85	0.54	0.65	0.2	0.65

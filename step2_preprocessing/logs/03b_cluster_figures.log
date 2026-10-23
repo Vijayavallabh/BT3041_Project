@@ -1,0 +1,120 @@
+saved fig7_k_selection
+saved fig8_contingency_k2
+saved figS7_contingency_k4
+saved figS7_contingency_k5
+saved fig9_ari_forest
+saved figS8_umap_clusters_k2
+saved figS8_umap_clusters_k5
+{
+ "k2": {
+  "cramers_V_vs_site": 0.161,
+  "p_site": 0.0809,
+  "cramers_V_vs_PAM50": 0.931,
+  "proxy_means_z": {
+   "C0": {
+    "adipocyte": 0.08,
+    "stromal": 0.12,
+    "immune": -0.06,
+    "proliferation": -0.19
+   },
+   "C1": {
+    "adipocyte": -0.32,
+    "stromal": -0.49,
+    "immune": 0.25,
+    "proliferation": 0.78
+   }
+  }
+ },
+ "k4": {
+  "cramers_V_vs_site": 0.212,
+  "p_site": 6.36e-10,
+  "cramers_V_vs_PAM50": 0.692,
+  "proxy_means_z": {
+   "C0": {
+    "adipocyte": 0.69,
+    "stromal": 0.46,
+    "immune": 0.34,
+    "proliferation": -0.68
+   },
+   "C1": {
+    "adipocyte": -0.33,
+    "stromal": -0.35,
+    "immune": -0.7,
+    "proliferation": -0.07
+   },
+   "C2": {
+    "adipocyte": -0.29,
+    "stromal": 0.28,
+    "immune": 0.29,
+    "proliferation": 0.4
+   },
+   "C3": {
+    "adipocyte": -0.3,
+    "stromal": -0.58,
+    "immune": 0.23,
+    "proliferation": 0.82
+   }
+  }
+ },
+ "k5": {
+  "cramers_V_vs_site": 0.2,
+  "p_site": 1.24e-09,
+  "cramers_V_vs_PAM50": 0.634,
+  "proxy_means_z": {
+   "C0": {
+    "adipocyte": -0.16,
+    "stromal": 0.41,
+    "immune": -0.29,
+    "proliferation": -0.05
+   },
+   "C1": {
+    "adipocyte": 0.79,
+    "stromal": 0.42,
+    "immune": 0.43,
+    "proliferation": -0.74
+   },
+   "C2": {
+    "adipocyte": -0.29,
+    "stromal": -0.58,
+    "immune": 0.23,
+    "proliferation": 0.81
+   },
+   "C3": {
+    "adipocyte": -0.44,
+    "stromal": -0.91,
+    "immune": -0.82,
+    "proliferation": -0.02
+   },
+   "C4": {
+    "adipocyte": -0.28,
+    "stromal": 0.11,
+    "immune": 0.51,
+    "proliferation": 0.52
+   }
+  }
+ }
+}
+cluster   n                                            PAM50  ILC_share closest_Netanely2016_cluster
+     C0 320                      LumA 68%; LumB 29%; Her2 2%      0.156              mixed LumA/LumB
+     C1 276                    LumA 88%; Normal 10%; LumB 2%      0.467             homogeneous LumA
+     C2 190                             Basal 97%; Normal 3%      0.011                        basal
+     C3 167                               LumA 51%; LumB 49%      0.078              mixed LumA/LumB
+     C4 135 Her2 55%; LumB 28%; LumA 9%; Normal 4%; Basal 4%      0.052                HER2-enriched
+k=2 best-match Jaccard per cluster:
+     ward  avgcorr  consensus  top2000_incl_PAM50  main_plus_all_PAM50  top5000_excl_PAM50  top1000_excl_PAM50   min  median
+C0  0.97     0.95        1.0                 1.0                  1.0                0.99                0.99  0.95    0.99
+C1  0.87     0.82        1.0                 1.0                  1.0                0.95                0.97  0.82    0.97
+k=4 best-match Jaccard per cluster:
+     ward  avgcorr  consensus  top2000_incl_PAM50  main_plus_all_PAM50  top5000_excl_PAM50  top1000_excl_PAM50   min  median
+C0  0.74     0.59       0.98                0.99                 0.97                0.79                0.88  0.59    0.88
+C1  0.51     0.55       0.98                0.98                 0.95                0.63                0.80  0.51    0.80
+C2  0.48     0.20       0.97                0.99                 0.96                0.51                0.74  0.20    0.74
+C3  0.98     0.75       1.00                1.00                 1.00                0.94                0.99  0.75    0.99
+k=5 best-match Jaccard per cluster:
+    closest_Netanely2016_cluster  ward  avgcorr  consensus  top2000_incl_PAM50  main_plus_all_PAM50  top5000_excl_PAM50  top1000_excl_PAM50   min  median
+C0              mixed LumA/LumB  0.55     0.38       0.89                0.94                 0.93                0.65                0.73  0.38    0.73
+C1             homogeneous LumA  0.78     0.65       1.00                0.96                 0.96                0.86                0.88  0.65    0.88
+C2                        basal  0.97     0.74       0.99                0.99                 0.99                0.97                0.99  0.74    0.99
+C3              mixed LumA/LumB  0.62     0.36       0.95                0.95                 0.96                0.68                0.79  0.36    0.79
+C4                HER2-enriched  0.40     0.20       0.75                0.86                 0.85                0.54                0.65  0.20    0.65
+done

@@ -1,0 +1,116 @@
+age top: ['MYC_TARGETS_V1', 'G2M_CHECKPOINT', 'E2F_TARGETS'] bottom: ['ESTROGEN_RESPONSE_EARLY', 'ESTROGEN_RESPONSE_LATE', 'BILE_ACID_METABOLISM']
+her2_drop_low_pos top: ['G2M_CHECKPOINT', 'E2F_TARGETS', 'MYC_TARGETS_V1'] bottom: ['ESTROGEN_RESPONSE_EARLY', 'ESTROGEN_RESPONSE_LATE', 'PANCREAS_BETA_CELLS']
+her2 top: ['G2M_CHECKPOINT', 'E2F_TARGETS', 'MYC_TARGETS_V1'] bottom: ['ESTROGEN_RESPONSE_EARLY', 'PANCREAS_BETA_CELLS', 'ESTROGEN_RESPONSE_LATE']
+idc_only top: ['ALLOGRAFT_REJECTION', 'G2M_CHECKPOINT', 'E2F_TARGETS'] bottom: ['ESTROGEN_RESPONSE_EARLY', 'ESTROGEN_RESPONSE_LATE', 'BILE_ACID_METABOLISM']
+main top: ['ALLOGRAFT_REJECTION', 'G2M_CHECKPOINT', 'E2F_TARGETS'] bottom: ['ESTROGEN_RESPONSE_EARLY', 'ESTROGEN_RESPONSE_LATE', 'BILE_ACID_METABOLISM']
+matched_erher2 top: ['G2M_CHECKPOINT', 'ALLOGRAFT_REJECTION', 'E2F_TARGETS'] bottom: ['ESTROGEN_RESPONSE_EARLY', 'ESTROGEN_RESPONSE_LATE', 'BILE_ACID_METABOLISM']
+strict_conf top: ['G2M_CHECKPOINT', 'ALLOGRAFT_REJECTION', 'E2F_TARGETS'] bottom: ['ESTROGEN_RESPONSE_EARLY', 'ESTROGEN_RESPONSE_LATE', 'PANCREAS_BETA_CELLS']
+phenotype check {'n_per_group': (157, 591), 'genes': 17061, 'NES_spearman_prerank_vs_phenotype': np.float64(0.919), 'sets_FDR_lt_0.05_phenotype': 0, 'sets_FDR_lt_0.05_prerank': 28, 'sign_agreement_among_prerank_FDR_lt_0.05': 1.0, 'selected': {'E2F_TARGETS': {'NES': np.float64(1.56), 'FDR_q': np.float64(0.39345894912958607)}, 'G2M_CHECKPOINT': {'NES': np.float64(1.57), 'FDR_q': np.float64(0.46321156833844557)}, 'MYC_TARGETS_V1': {'NES': np.float64(1.69), 'FDR_q': np.float64(0.5444767557662431)}, 'ESTROGEN_RESPONSE_EARLY': {'NES': np.float64(-1.74), 'FDR_q': np.float64(0.18058400610515324)}, 'ESTROGEN_RESPONSE_LATE': {'NES': np.float64(-1.55), 'FDR_q': np.float64(0.3987629031610234)}}}
+camera {'sets_q_lt_0.05': 1, 'prerank_FDR05_sets_also_camera_q05_same_sign': '1/28', 'median_inter_gene_corr': 0.06363224050874876, 'selected': {'E2F_TARGETS': {'inter_gene_corr': 0.2517, 'camera_t': 2.0126, 'q_BH': 0.4657}, 'G2M_CHECKPOINT': {'inter_gene_corr': 0.1923, 'camera_t': 1.9121, 'q_BH': 0.4657}, 'MYC_TARGETS_V1': {'inter_gene_corr': 0.1629, 'camera_t': 1.9892, 'q_BH': 0.4657}, 'ESTROGEN_RESPONSE_EARLY': {'inter_gene_corr': 0.0594, 'camera_t': -3.602, 'q_BH': 0.0158}, 'ESTROGEN_RESPONSE_LATE': {'inter_gene_corr': 0.0359, 'camera_t': -2.6852, 'q_BH': 0.1814}, 'INTERFERON_GAMMA_RESPONSE': {'inter_gene_corr': 0.2719, 'camera_t': 0.9094, 'q_BH': 0.7703}}}
+{
+ "gsea_main": {
+  "E2F_TARGETS": {
+   "NES": 3.11,
+   "FDR_q": 0.0
+  },
+  "G2M_CHECKPOINT": {
+   "NES": 2.88,
+   "FDR_q": 0.0
+  },
+  "MYC_TARGETS_V1": {
+   "NES": 2.74,
+   "FDR_q": 0.0
+  },
+  "MYC_TARGETS_V2": {
+   "NES": 2.38,
+   "FDR_q": 0.0
+  },
+  "ESTROGEN_RESPONSE_EARLY": {
+   "NES": -3.08,
+   "FDR_q": 0.0
+  },
+  "ESTROGEN_RESPONSE_LATE": {
+   "NES": -2.4,
+   "FDR_q": 0.0
+  },
+  "ANDROGEN_RESPONSE": {
+   "NES": -1.02,
+   "FDR_q": 0.4299853557541786
+  },
+  "INTERFERON_GAMMA_RESPONSE": {
+   "NES": 2.18,
+   "FDR_q": 0.0
+  },
+  "MTORC1_SIGNALING": {
+   "NES": 2.16,
+   "FDR_q": 0.0
+  }
+ },
+ "ora_main": {
+  "universe": 23385,
+  "up": 1483,
+  "down": 1252,
+  "sets_q_lt_0.05": {
+   "down_in_TNBC": [
+    "ESTROGEN_RESPONSE_EARLY",
+    "ESTROGEN_RESPONSE_LATE"
+   ],
+   "up_in_TNBC": [
+    "G2M_CHECKPOINT",
+    "KRAS_SIGNALING_DN",
+    "SPERMATOGENESIS",
+    "TNFA_SIGNALING_VIA_NFKB"
+   ]
+  }
+ },
+ "de_robustness_vs_main": {
+  "age": {
+   "DE_in_run": 2689,
+   "main_DEGs_tested_in_run": 2741,
+   "main_DEGs_still_DE_same_sign": 2587,
+   "fraction": 0.944,
+   "spearman_shrunk_LFC_all_genes": 0.998,
+   "sign_agreement_main_DEGs": 0.999
+  },
+  "her2_drop_low_pos": {
+   "DE_in_run": 189,
+   "main_DEGs_tested_in_run": 2670,
+   "main_DEGs_still_DE_same_sign": 95,
+   "fraction": 0.036,
+   "spearman_shrunk_LFC_all_genes": 0.485,
+   "sign_agreement_main_DEGs": 0.803
+  },
+  "her2": {
+   "DE_in_run": 148,
+   "main_DEGs_tested_in_run": 2614,
+   "main_DEGs_still_DE_same_sign": 76,
+   "fraction": 0.029,
+   "spearman_shrunk_LFC_all_genes": 0.503,
+   "sign_agreement_main_DEGs": 0.818
+  },
+  "idc_only": {
+   "DE_in_run": 2518,
+   "main_DEGs_tested_in_run": 2601,
+   "main_DEGs_still_DE_same_sign": 2360,
+   "fraction": 0.907,
+   "spearman_shrunk_LFC_all_genes": 0.992,
+   "sign_agreement_main_DEGs": 0.999
+  },
+  "matched_erher2": {
+   "DE_in_run": 2735,
+   "main_DEGs_tested_in_run": 2688,
+   "main_DEGs_still_DE_same_sign": 2579,
+   "fraction": 0.959,
+   "spearman_shrunk_LFC_all_genes": 0.997,
+   "sign_agreement_main_DEGs": 1.0
+  },
+  "strict_conf": {
+   "DE_in_run": 2536,
+   "main_DEGs_tested_in_run": 2728,
+   "main_DEGs_still_DE_same_sign": 2367,
+   "fraction": 0.868,
+   "spearman_shrunk_LFC_all_genes": 0.989,
+   "sign_agreement_main_DEGs": 1.0
+  }
+ }
+}

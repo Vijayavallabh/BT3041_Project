@@ -1,0 +1,436 @@
+tag	target	ablation	model	fold	model__C	select__k	model__n_components
+main	ER	a_all_genes	L1-logistic	0	0.1	50	
+main	ER	a_all_genes	L1-logistic	1	0.01	200	
+main	ER	a_all_genes	L1-logistic	2	0.01	1000	
+main	ER	a_all_genes	L1-logistic	3	0.01	50	
+main	ER	a_all_genes	L1-logistic	4	0.01	1000	
+main	ER	a_all_genes	L1-logistic	5	0.01	50	
+main	ER	a_all_genes	L1-logistic	6	0.01	50	
+main	ER	a_all_genes	L1-logistic	7	0.1	1000	
+main	ER	a_all_genes	L1-logistic	8	0.1	1000	
+main	ER	a_all_genes	L1-logistic	9	0.01	1000	
+main	ER	a_all_genes	L1-logistic	10	0.1	50	
+main	ER	a_all_genes	L1-logistic	11	0.01	1000	
+main	ER	a_all_genes	L1-logistic	12	0.1	50	
+main	ER	a_all_genes	L1-logistic	13	0.1	50	
+main	ER	a_all_genes	L1-logistic	14	0.01	50	
+main	ER	a_all_genes	linear SVM	0	0.005	50	
+main	ER	a_all_genes	linear SVM	1	0.0005	1000	
+main	ER	a_all_genes	linear SVM	2	0.05	50	
+main	ER	a_all_genes	linear SVM	3	0.005	50	
+main	ER	a_all_genes	linear SVM	4	0.0005	50	
+main	ER	a_all_genes	linear SVM	5	0.05	50	
+main	ER	a_all_genes	linear SVM	6	0.0005	50	
+main	ER	a_all_genes	linear SVM	7	0.005	50	
+main	ER	a_all_genes	linear SVM	8	0.05	50	
+main	ER	a_all_genes	linear SVM	9	0.005	50	
+main	ER	a_all_genes	linear SVM	10	0.005	50	
+main	ER	a_all_genes	linear SVM	11	0.0005	1000	
+main	ER	a_all_genes	linear SVM	12	0.005	50	
+main	ER	a_all_genes	linear SVM	13	0.05	50	
+main	ER	a_all_genes	linear SVM	14	0.0005	50	
+main	ER	a_all_genes	Random Forest	0		50	
+main	ER	a_all_genes	Random Forest	1		50	
+main	ER	a_all_genes	Random Forest	2		50	
+main	ER	a_all_genes	Random Forest	3		50	
+main	ER	a_all_genes	Random Forest	4		50	
+main	ER	a_all_genes	Random Forest	5		50	
+main	ER	a_all_genes	Random Forest	6		50	
+main	ER	a_all_genes	Random Forest	7		50	
+main	ER	a_all_genes	Random Forest	8		50	
+main	ER	a_all_genes	Random Forest	9		50	
+main	ER	a_all_genes	Random Forest	10		1000	
+main	ER	a_all_genes	Random Forest	11		50	
+main	ER	a_all_genes	Random Forest	12		1000	
+main	ER	a_all_genes	Random Forest	13		1000	
+main	ER	a_all_genes	Random Forest	14		50	
+main	ER	a_all_genes	PLS-DA	0		50	2.0
+main	ER	a_all_genes	PLS-DA	1		1000	5.0
+main	ER	a_all_genes	PLS-DA	2		50	10.0
+main	ER	a_all_genes	PLS-DA	3		50	10.0
+main	ER	a_all_genes	PLS-DA	4		50	2.0
+main	ER	a_all_genes	PLS-DA	5		50	10.0
+main	ER	a_all_genes	PLS-DA	6		50	10.0
+main	ER	a_all_genes	PLS-DA	7		1000	5.0
+main	ER	a_all_genes	PLS-DA	8		50	10.0
+main	ER	a_all_genes	PLS-DA	9		1000	5.0
+main	ER	a_all_genes	PLS-DA	10		50	5.0
+main	ER	a_all_genes	PLS-DA	11		1000	5.0
+main	ER	a_all_genes	PLS-DA	12		50	2.0
+main	ER	a_all_genes	PLS-DA	13		50	10.0
+main	ER	a_all_genes	PLS-DA	14		1000	5.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	0	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	1	0.1	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	2	0.1	200	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	3	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	4	0.01	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	5	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	6	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	7	0.1	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	8	0.1	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	9	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	10	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	11	0.1	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	12	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	13	0.1	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	14	0.1	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	0	0.005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	1	0.0005	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	2	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	3	0.0005	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	4	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	5	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	6	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	7	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	8	0.005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	9	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	10	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	11	0.0005	1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	12	0.005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	13	0.0005	200	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	14	0.0005	50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	0		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	1		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	2		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	3		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	4		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	5		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	6		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	7		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	8		50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	9		50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	10		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	11		50	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	12		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	13		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	14		1000	
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	0		50	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	1		1000	5.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	2		50	5.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	3		50	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	4		50	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	5		50	10.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	6		50	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	7		1000	5.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	8		50	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	9		50	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	10		1000	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	11		1000	5.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	12		50	2.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	13		200	5.0
+main	ER	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	14		1000	2.0
+main	HER2	a_all_genes	L1-logistic	0	0.1	50	
+main	HER2	a_all_genes	L1-logistic	1	0.1	1000	
+main	HER2	a_all_genes	L1-logistic	2	0.1	50	
+main	HER2	a_all_genes	L1-logistic	3	0.1	1000	
+main	HER2	a_all_genes	L1-logistic	4	0.1	50	
+main	HER2	a_all_genes	L1-logistic	5	0.1	1000	
+main	HER2	a_all_genes	L1-logistic	6	0.1	50	
+main	HER2	a_all_genes	L1-logistic	7	0.01	50	
+main	HER2	a_all_genes	L1-logistic	8	0.1	1000	
+main	HER2	a_all_genes	L1-logistic	9	0.1	1000	
+main	HER2	a_all_genes	L1-logistic	10	0.1	1000	
+main	HER2	a_all_genes	L1-logistic	11	0.1	50	
+main	HER2	a_all_genes	L1-logistic	12	0.1	50	
+main	HER2	a_all_genes	L1-logistic	13	0.1	1000	
+main	HER2	a_all_genes	L1-logistic	14	0.1	200	
+main	HER2	a_all_genes	linear SVM	0	0.005	50	
+main	HER2	a_all_genes	linear SVM	1	0.0005	200	
+main	HER2	a_all_genes	linear SVM	2	0.0005	200	
+main	HER2	a_all_genes	linear SVM	3	0.0005	1000	
+main	HER2	a_all_genes	linear SVM	4	0.0005	50	
+main	HER2	a_all_genes	linear SVM	5	0.0005	1000	
+main	HER2	a_all_genes	linear SVM	6	0.005	50	
+main	HER2	a_all_genes	linear SVM	7	0.0005	200	
+main	HER2	a_all_genes	linear SVM	8	0.0005	1000	
+main	HER2	a_all_genes	linear SVM	9	0.0005	200	
+main	HER2	a_all_genes	linear SVM	10	0.0005	1000	
+main	HER2	a_all_genes	linear SVM	11	0.0005	200	
+main	HER2	a_all_genes	linear SVM	12	0.0005	50	
+main	HER2	a_all_genes	linear SVM	13	0.0005	200	
+main	HER2	a_all_genes	linear SVM	14	0.0005	200	
+main	HER2	a_all_genes	Random Forest	0		50	
+main	HER2	a_all_genes	Random Forest	1		200	
+main	HER2	a_all_genes	Random Forest	2		1000	
+main	HER2	a_all_genes	Random Forest	3		1000	
+main	HER2	a_all_genes	Random Forest	4		1000	
+main	HER2	a_all_genes	Random Forest	5		1000	
+main	HER2	a_all_genes	Random Forest	6		50	
+main	HER2	a_all_genes	Random Forest	7		50	
+main	HER2	a_all_genes	Random Forest	8		1000	
+main	HER2	a_all_genes	Random Forest	9		50	
+main	HER2	a_all_genes	Random Forest	10		1000	
+main	HER2	a_all_genes	Random Forest	11		50	
+main	HER2	a_all_genes	Random Forest	12		50	
+main	HER2	a_all_genes	Random Forest	13		1000	
+main	HER2	a_all_genes	Random Forest	14		200	
+main	HER2	a_all_genes	PLS-DA	0		50	10.0
+main	HER2	a_all_genes	PLS-DA	1		200	2.0
+main	HER2	a_all_genes	PLS-DA	2		200	5.0
+main	HER2	a_all_genes	PLS-DA	3		1000	5.0
+main	HER2	a_all_genes	PLS-DA	4		50	5.0
+main	HER2	a_all_genes	PLS-DA	5		200	2.0
+main	HER2	a_all_genes	PLS-DA	6		50	10.0
+main	HER2	a_all_genes	PLS-DA	7		200	2.0
+main	HER2	a_all_genes	PLS-DA	8		50	10.0
+main	HER2	a_all_genes	PLS-DA	9		1000	5.0
+main	HER2	a_all_genes	PLS-DA	10		1000	5.0
+main	HER2	a_all_genes	PLS-DA	11		50	10.0
+main	HER2	a_all_genes	PLS-DA	12		200	2.0
+main	HER2	a_all_genes	PLS-DA	13		200	2.0
+main	HER2	a_all_genes	PLS-DA	14		50	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	0	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	1	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	2	0.1	200	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	3	1.0	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	4	0.1	50	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	5	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	6	0.1	50	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	7	0.1	200	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	8	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	9	0.1	200	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	10	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	11	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	12	0.1	50	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	13	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	14	0.1	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	0	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	1	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	2	0.0005	200	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	3	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	4	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	5	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	6	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	7	0.0005	200	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	8	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	9	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	10	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	11	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	12	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	13	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	14	0.0005	1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	0		50	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	1		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	2		200	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	3		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	4		50	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	5		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	6		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	7		50	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	8		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	9		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	10		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	11		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	12		50	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	13		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	Random Forest	14		1000	
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	0		1000	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	1		200	2.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	2		200	2.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	3		1000	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	4		1000	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	5		1000	2.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	6		1000	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	7		200	2.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	8		1000	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	9		1000	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	10		1000	5.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	11		200	2.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	12		1000	2.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	13		200	2.0
+main	HER2	b_no_receptor_amplicon1.5Mb_PAM50	PLS-DA	14		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	0	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	1	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	2	0.1	200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	3	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	4	0.1	50	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	5	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	6	0.1	50	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	7	0.1	200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	8	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	9	0.1	200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	10	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	11	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	12	0.1	50	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	13	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	L1-logistic	14	0.1	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	0	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	1	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	2	0.0005	200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	3	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	4	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	5	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	6	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	7	0.0005	200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	8	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	9	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	10	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	11	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	12	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	13	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	linear SVM	14	0.0005	1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	0		50	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	1		200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	2		200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	3		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	4		50	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	5		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	6		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	7		50	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	8		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	9		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	10		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	11		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	12		50	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	13		200	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	Random Forest	14		1000	
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	0		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	1		200	2.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	2		200	2.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	3		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	4		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	5		200	2.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	6		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	7		200	2.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	8		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	9		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	10		1000	5.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	11		200	2.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	12		1000	2.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	13		200	2.0
+main	HER2	c_no_receptor_amplicon2Mb_PAM50	PLS-DA	14		1000	5.0
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	0	0.1	1000	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	1	0.01	50	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	2	0.01	50	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	3	0.1	1000	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	4	0.1	50	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	5	0.1	200	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	6	0.01	50	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	7	0.1	200	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	8	0.1	1000	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	9	0.1	1000	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	10	0.1	1000	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	11	1.0	1000	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	12	0.1	50	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	13	0.01	1000	
+sens_drop_low_pos	HER2	a_all_genes	L1-logistic	14	0.1	50	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	0	0.0005	1000	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	1	0.0005	1000	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	2	0.0005	50	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	3	0.0005	50	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	4	0.0005	50	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	5	0.0005	200	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	6	0.0005	200	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	7	0.0005	200	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	8	0.0005	1000	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	9	0.0005	1000	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	10	0.0005	200	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	11	0.0005	1000	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	12	0.0005	200	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	13	0.0005	50	
+sens_drop_low_pos	HER2	a_all_genes	linear SVM	14	0.0005	50	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	0	1.0	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	1	1.0	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	2	0.1	50	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	3	0.1	50	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	4	0.1	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	5	0.1	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	6	0.1	200	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	7	0.1	200	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	8	0.1	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	9	0.1	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	10	0.1	200	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	11	0.1	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	12	1.0	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	13	0.1	50	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	14	0.1	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	0	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	1	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	2	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	3	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	4	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	5	0.0005	200	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	6	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	7	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	8	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	9	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	10	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	11	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	12	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	13	0.0005	1000	
+sens_drop_low_pos	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	14	0.0005	1000	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	0	0.1	200	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	1	0.01	50	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	2	0.01	50	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	3	0.1	200	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	4	0.1	200	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	5	0.1	200	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	6	0.1	1000	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	7	1.0	1000	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	8	0.01	50	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	9	0.1	200	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	10	0.1	1000	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	11	0.1	1000	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	12	0.1	50	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	13	1.0	200	
+sens_drop_low_all	HER2	a_all_genes	L1-logistic	14	0.1	50	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	0	0.0005	200	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	1	0.005	1000	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	2	0.0005	200	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	3	0.005	50	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	4	0.0005	200	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	5	0.0005	200	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	6	0.005	1000	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	7	0.0005	1000	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	8	0.0005	1000	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	9	0.005	50	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	10	0.0005	1000	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	11	0.0005	200	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	12	0.0005	1000	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	13	0.005	1000	
+sens_drop_low_all	HER2	a_all_genes	linear SVM	14	0.005	50	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	0	0.1	200	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	1	1.0	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	2	1.0	50	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	3	1.0	200	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	4	0.1	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	5	0.1	200	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	6	0.1	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	7	0.1	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	8	0.1	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	9	0.1	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	10	1.0	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	11	0.1	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	12	0.1	50	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	13	0.1	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	L1-logistic	14	1.0	50	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	0	0.0005	200	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	1	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	2	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	3	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	4	0.0005	200	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	5	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	6	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	7	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	8	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	9	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	10	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	11	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	12	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	13	0.0005	1000	
+sens_drop_low_all	HER2	b_no_receptor_amplicon1.5Mb_PAM50	linear SVM	14	0.0005	1000	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	0	0.1	50	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	1	0.1	200	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	2	0.1	200	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	3	0.1	50	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	4	0.1	50	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	5	0.1	1000	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	6	0.1	50	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	7	0.1	50	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	8	0.1	200	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	9	0.1	1000	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	10	0.1	50	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	11	0.1	200	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	12	0.1	50	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	13	0.1	200	
+transfer_target	ERneg_HER2neg	a_all_genes	L1-logistic	14	0.1	200	

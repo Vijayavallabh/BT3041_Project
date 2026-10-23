@@ -1,0 +1,562 @@
+{
+  "n_tumours": 1088,
+  "n_genes_main": 2000,
+  "pam50_genes_that_pass_top2000_variance_cut": 20,
+  "consensus_runtime_s": 515,
+  "k_scan": {
+    "2": {
+      "inertia": 1926631.505,
+      "silhouette": 0.1688,
+      "calinski_harabasz": 140.5636,
+      "PAC": 0.021
+    },
+    "3": {
+      "inertia": 1800560.1391,
+      "silhouette": 0.0766,
+      "calinski_harabasz": 113.1182,
+      "PAC": 0.0961
+    },
+    "4": {
+      "inertia": 1743205.5639,
+      "silhouette": 0.0723,
+      "calinski_harabasz": 89.71,
+      "PAC": 0.0895
+    },
+    "5": {
+      "inertia": 1707250.028,
+      "silhouette": 0.0557,
+      "calinski_harabasz": 74.3383,
+      "PAC": 0.1434
+    },
+    "6": {
+      "inertia": 1681737.172,
+      "silhouette": 0.0573,
+      "calinski_harabasz": 63.6,
+      "PAC": 0.2018
+    },
+    "7": {
+      "inertia": 1662151.1266,
+      "silhouette": 0.0496,
+      "calinski_harabasz": 55.698,
+      "PAC": 0.246
+    },
+    "8": {
+      "inertia": 1644407.4147,
+      "silhouette": 0.0298,
+      "calinski_harabasz": 49.8764,
+      "PAC": 0.2607
+    }
+  },
+  "k_star_lowest_PAC": 2,
+  "cluster_sizes": {
+    "kmeans_k2": [
+      871,
+      217
+    ],
+    "ward_k2": [
+      897,
+      191
+    ],
+    "avgcorr_k2": [
+      832,
+      256
+    ],
+    "consensus_k2": [
+      871,
+      217
+    ],
+    "kmeans_k3": [
+      477,
+      399,
+      212
+    ],
+    "ward_k3": [
+      634,
+      263,
+      191
+    ],
+    "avgcorr_k3": [
+      564,
+      268,
+      256
+    ],
+    "consensus_k3": [
+      468,
+      411,
+      209
+    ],
+    "kmeans_k4": [
+      336,
+      323,
+      238,
+      191
+    ],
+    "ward_k4": [
+      445,
+      263,
+      191,
+      189
+    ],
+    "avgcorr_k4": [
+      544,
+      268,
+      256,
+      20
+    ],
+    "consensus_k4": [
+      340,
+      315,
+      242,
+      191
+    ],
+    "kmeans_k5": [
+      320,
+      276,
+      190,
+      167,
+      135
+    ],
+    "ward_k5": [
+      390,
+      263,
+      191,
+      189,
+      55
+    ],
+    "avgcorr_k5": [
+      426,
+      268,
+      256,
+      118,
+      20
+    ],
+    "consensus_k5": [
+      346,
+      277,
+      188,
+      172,
+      105
+    ]
+  },
+  "method_agreement_ARI": {
+    "k2": {
+      "kmeans_vs_ward": 0.882,
+      "kmeans_vs_consensus": 1.0,
+      "kmeans_vs_avgcorr": 0.816
+    },
+    "k4": {
+      "kmeans_vs_ward": 0.502,
+      "kmeans_vs_consensus": 0.972,
+      "kmeans_vs_avgcorr": 0.393
+    },
+    "k5": {
+      "kmeans_vs_ward": 0.566,
+      "kmeans_vs_consensus": 0.911,
+      "kmeans_vs_avgcorr": 0.41
+    }
+  },
+  "sensitivity_ARI_vs_main": {
+    "top2000_incl_PAM50_k2": 1.0,
+    "top2000_incl_PAM50_k4": 0.981,
+    "top2000_incl_PAM50_k5": 0.934,
+    "main_plus_all_PAM50_k2": 1.0,
+    "main_plus_all_PAM50_k4": 0.95,
+    "main_plus_all_PAM50_k5": 0.929,
+    "top5000_excl_PAM50_k2": 0.954,
+    "top5000_excl_PAM50_k4": 0.583,
+    "top5000_excl_PAM50_k5": 0.673,
+    "top1000_excl_PAM50_k2": 0.971,
+    "top1000_excl_PAM50_k4": 0.782,
+    "top1000_excl_PAM50_k5": 0.754
+  },
+  "agreement_main": [
+    {
+      "clustering": "kmeans_k2",
+      "reference": "Clinical group",
+      "n": 919,
+      "ARI": 0.415,
+      "ARI_lo": 0.365,
+      "ARI_hi": 0.468,
+      "NMI": 0.371,
+      "NMI_lo": 0.318,
+      "NMI_hi": 0.43
+    },
+    {
+      "clustering": "kmeans_k2",
+      "reference": "PAM50 (no Normal-like)",
+      "n": 1048,
+      "ARI": 0.411,
+      "ARI_lo": 0.373,
+      "ARI_hi": 0.451,
+      "NMI": 0.533,
+      "NMI_lo": 0.503,
+      "NMI_hi": 0.569
+    },
+    {
+      "clustering": "kmeans_k2",
+      "reference": "TCGA 2012 SigClust",
+      "n": 519,
+      "ARI": 0.202,
+      "ARI_lo": 0.168,
+      "ARI_hi": 0.242,
+      "NMI": 0.321,
+      "NMI_lo": 0.284,
+      "NMI_hi": 0.371
+    },
+    {
+      "clustering": "kmeans_k2",
+      "reference": "ER status (IHC)",
+      "n": 1036,
+      "ARI": 0.669,
+      "ARI_lo": 0.609,
+      "ARI_hi": 0.727,
+      "NMI": 0.503,
+      "NMI_lo": 0.438,
+      "NMI_hi": 0.573
+    },
+    {
+      "clustering": "ward_k2",
+      "reference": "Clinical group",
+      "n": 919,
+      "ARI": 0.383,
+      "ARI_lo": 0.33,
+      "ARI_hi": 0.437,
+      "NMI": 0.358,
+      "NMI_lo": 0.301,
+      "NMI_hi": 0.418
+    },
+    {
+      "clustering": "ward_k2",
+      "reference": "PAM50 (no Normal-like)",
+      "n": 1048,
+      "ARI": 0.376,
+      "ARI_lo": 0.34,
+      "ARI_hi": 0.417,
+      "NMI": 0.542,
+      "NMI_lo": 0.509,
+      "NMI_hi": 0.579
+    },
+    {
+      "clustering": "ward_k2",
+      "reference": "TCGA 2012 SigClust",
+      "n": 519,
+      "ARI": 0.177,
+      "ARI_lo": 0.143,
+      "ARI_hi": 0.216,
+      "NMI": 0.306,
+      "NMI_lo": 0.267,
+      "NMI_hi": 0.354
+    },
+    {
+      "clustering": "ward_k2",
+      "reference": "ER status (IHC)",
+      "n": 1036,
+      "ARI": 0.608,
+      "ARI_lo": 0.551,
+      "ARI_hi": 0.675,
+      "NMI": 0.446,
+      "NMI_lo": 0.386,
+      "NMI_hi": 0.518
+    },
+    {
+      "clustering": "consensus_k2",
+      "reference": "Clinical group",
+      "n": 919,
+      "ARI": 0.415,
+      "ARI_lo": 0.365,
+      "ARI_hi": 0.468,
+      "NMI": 0.371,
+      "NMI_lo": 0.318,
+      "NMI_hi": 0.43
+    },
+    {
+      "clustering": "consensus_k2",
+      "reference": "PAM50 (no Normal-like)",
+      "n": 1048,
+      "ARI": 0.411,
+      "ARI_lo": 0.373,
+      "ARI_hi": 0.451,
+      "NMI": 0.533,
+      "NMI_lo": 0.503,
+      "NMI_hi": 0.569
+    },
+    {
+      "clustering": "consensus_k2",
+      "reference": "TCGA 2012 SigClust",
+      "n": 519,
+      "ARI": 0.202,
+      "ARI_lo": 0.168,
+      "ARI_hi": 0.242,
+      "NMI": 0.321,
+      "NMI_lo": 0.284,
+      "NMI_hi": 0.371
+    },
+    {
+      "clustering": "consensus_k2",
+      "reference": "ER status (IHC)",
+      "n": 1036,
+      "ARI": 0.669,
+      "ARI_lo": 0.609,
+      "ARI_hi": 0.727,
+      "NMI": 0.503,
+      "NMI_lo": 0.438,
+      "NMI_hi": 0.573
+    },
+    {
+      "clustering": "kmeans_k4",
+      "reference": "Clinical group",
+      "n": 919,
+      "ARI": 0.216,
+      "ARI_lo": 0.185,
+      "ARI_hi": 0.253,
+      "NMI": 0.286,
+      "NMI_lo": 0.249,
+      "NMI_hi": 0.328
+    },
+    {
+      "clustering": "kmeans_k4",
+      "reference": "PAM50 (no Normal-like)",
+      "n": 1048,
+      "ARI": 0.379,
+      "ARI_lo": 0.345,
+      "ARI_hi": 0.422,
+      "NMI": 0.527,
+      "NMI_lo": 0.5,
+      "NMI_hi": 0.559
+    },
+    {
+      "clustering": "kmeans_k4",
+      "reference": "TCGA 2012 SigClust",
+      "n": 519,
+      "ARI": 0.426,
+      "ARI_lo": 0.369,
+      "ARI_hi": 0.498,
+      "NMI": 0.468,
+      "NMI_lo": 0.437,
+      "NMI_hi": 0.53
+    },
+    {
+      "clustering": "kmeans_k4",
+      "reference": "ER status (IHC)",
+      "n": 1036,
+      "ARI": 0.205,
+      "ARI_lo": 0.178,
+      "ARI_hi": 0.231,
+      "NMI": 0.297,
+      "NMI_lo": 0.262,
+      "NMI_hi": 0.335
+    },
+    {
+      "clustering": "kmeans_k5",
+      "reference": "Clinical group",
+      "n": 919,
+      "ARI": 0.19,
+      "ARI_lo": 0.162,
+      "ARI_hi": 0.221,
+      "NMI": 0.279,
+      "NMI_lo": 0.248,
+      "NMI_hi": 0.32
+    },
+    {
+      "clustering": "kmeans_k5",
+      "reference": "PAM50 (no Normal-like)",
+      "n": 1048,
+      "ARI": 0.348,
+      "ARI_lo": 0.32,
+      "ARI_hi": 0.387,
+      "NMI": 0.507,
+      "NMI_lo": 0.484,
+      "NMI_hi": 0.538
+    },
+    {
+      "clustering": "kmeans_k5",
+      "reference": "TCGA 2012 SigClust",
+      "n": 519,
+      "ARI": 0.318,
+      "ARI_lo": 0.276,
+      "ARI_hi": 0.369,
+      "NMI": 0.434,
+      "NMI_lo": 0.407,
+      "NMI_hi": 0.484
+    },
+    {
+      "clustering": "kmeans_k5",
+      "reference": "ER status (IHC)",
+      "n": 1036,
+      "ARI": 0.189,
+      "ARI_lo": 0.164,
+      "ARI_hi": 0.215,
+      "NMI": 0.3,
+      "NMI_lo": 0.265,
+      "NMI_hi": 0.337
+    }
+  ],
+  "profile_kmeans_k2": [
+    {
+      "cluster": "C0",
+      "n": 871,
+      "n_with_clinical_group": 738,
+      "HR+/HER2-": 0.772,
+      "HER2+": 0.202,
+      "TNBC": 0.026,
+      "top_PAM50": "LumA",
+      "top_PAM50_share": 0.643,
+      "ILC_share": 0.227,
+      "ER_neg_share": 0.067,
+      "top_genes_up": "GATA3, AGR3, PRR15, TBC1D9, CA12, AGR2, SPDEF, SLC44A4, TFF3, CT62"
+    },
+    {
+      "cluster": "C1",
+      "n": 217,
+      "n_with_clinical_group": 181,
+      "HR+/HER2-": 0.144,
+      "HER2+": 0.094,
+      "TNBC": 0.762,
+      "top_PAM50": "Basal",
+      "top_PAM50_share": 0.866,
+      "ILC_share": 0.014,
+      "ER_neg_share": 0.869,
+      "top_genes_up": "ART3, FZD9, ROPN1, CT83, SRSF12, LEMD1, HORMAD1, VGLL1, A2ML1, CHODL"
+    }
+  ],
+  "profile_kmeans_k4": [
+    {
+      "cluster": "C0",
+      "n": 336,
+      "n_with_clinical_group": 290,
+      "HR+/HER2-": 0.862,
+      "HER2+": 0.11,
+      "TNBC": 0.028,
+      "top_PAM50": "LumA",
+      "top_PAM50_share": 0.89,
+      "ILC_share": 0.429,
+      "ER_neg_share": 0.037,
+      "top_genes_up": "CAVIN2, CLDN19, TMEM132C, ABCA10, SLC7A3, SCN2B, ABCA8, FXYD1, CCL14, NGFR"
+    },
+    {
+      "cluster": "C1",
+      "n": 323,
+      "n_with_clinical_group": 254,
+      "HR+/HER2-": 0.874,
+      "HER2+": 0.126,
+      "TNBC": 0.0,
+      "top_PAM50": "LumA",
+      "top_PAM50_share": 0.622,
+      "ILC_share": 0.118,
+      "ER_neg_share": 0.01,
+      "top_genes_up": "TMEM145, DNAJC12, CACNA2D2, KCNJ3, RGS22, THSD4, TBC1D9, TLCD3B, TMPRSS6, FLJ45983"
+    },
+    {
+      "cluster": "C2",
+      "n": 238,
+      "n_with_clinical_group": 213,
+      "HR+/HER2-": 0.484,
+      "HER2+": 0.437,
+      "TNBC": 0.08,
+      "top_PAM50": "LumB",
+      "top_PAM50_share": 0.366,
+      "ILC_share": 0.071,
+      "ER_neg_share": 0.256,
+      "top_genes_up": "KMO, ABCA12, SPINK8, MAB21L4, IYD, EPO, MMP1, PAX7, SILC1, KYNU"
+    },
+    {
+      "cluster": "C3",
+      "n": 191,
+      "n_with_clinical_group": 162,
+      "HR+/HER2-": 0.13,
+      "HER2+": 0.056,
+      "TNBC": 0.815,
+      "top_PAM50": "Basal",
+      "top_PAM50_share": 0.969,
+      "ILC_share": 0.01,
+      "ER_neg_share": 0.885,
+      "top_genes_up": "ROPN1, ART3, SRSF12, HORMAD1, LEMD1, CT83, FZD9, CHODL, VGLL1, ROPN1B"
+    }
+  ],
+  "profile_kmeans_k5": [
+    {
+      "cluster": "C0",
+      "n": 320,
+      "n_with_clinical_group": 269,
+      "HR+/HER2-": 0.796,
+      "HER2+": 0.204,
+      "TNBC": 0.0,
+      "top_PAM50": "LumA",
+      "top_PAM50_share": 0.684,
+      "ILC_share": 0.156,
+      "ER_neg_share": 0.017,
+      "top_genes_up": "COL10A1, COL11A1, AGR3, SLC24A2, CA12, GRPR, SYNDIG1, LRRC17, NPNT, SERPINA11"
+    },
+    {
+      "cluster": "C1",
+      "n": 276,
+      "n_with_clinical_group": 237,
+      "HR+/HER2-": 0.869,
+      "HER2+": 0.097,
+      "TNBC": 0.034,
+      "top_PAM50": "LumA",
+      "top_PAM50_share": 0.88,
+      "ILC_share": 0.467,
+      "ER_neg_share": 0.037,
+      "top_genes_up": "CAVIN2, SLC7A3, FXYD1, ABCA10, CLDN19, TMEM132C, CCL14, ECRG4, CD300LG, NGFR"
+    },
+    {
+      "cluster": "C2",
+      "n": 190,
+      "n_with_clinical_group": 161,
+      "HR+/HER2-": 0.137,
+      "HER2+": 0.056,
+      "TNBC": 0.807,
+      "top_PAM50": "Basal",
+      "top_PAM50_share": 0.968,
+      "ILC_share": 0.011,
+      "ER_neg_share": 0.879,
+      "top_genes_up": "ROPN1, ART3, SRSF12, HORMAD1, CT83, LEMD1, FZD9, CHODL, ROPN1B, VGLL1"
+    },
+    {
+      "cluster": "C3",
+      "n": 167,
+      "n_with_clinical_group": 133,
+      "HR+/HER2-": 0.895,
+      "HER2+": 0.105,
+      "TNBC": 0.0,
+      "top_PAM50": "LumA",
+      "top_PAM50_share": 0.515,
+      "ILC_share": 0.078,
+      "ER_neg_share": 0.006,
+      "top_genes_up": "MYT1, TMEM145, SPTBN4, KCNJ3, TLCD3B, RUNDC3A, CACNA2D2, CPLX2, ASCL1, SEZ6L"
+    },
+    {
+      "cluster": "C4",
+      "n": 135,
+      "n_with_clinical_group": 119,
+      "HR+/HER2-": 0.294,
+      "HER2+": 0.546,
+      "TNBC": 0.16,
+      "top_PAM50": "Her2",
+      "top_PAM50_share": 0.548,
+      "ILC_share": 0.052,
+      "ER_neg_share": 0.461,
+      "top_genes_up": "SILC1, KMO, CLCA2, KYNU, SPINK8, C2CD4A, MAB21L4, S100A8, ABCC2, PADI3"
+    }
+  ],
+  "silhouette_negative_fraction_kstar": 0.012,
+  "clinical_group_by_kmeans_k2": {
+    "HER2+": {
+      "0": 149,
+      "1": 17
+    },
+    "HR+/HER2-": {
+      "0": 570,
+      "1": 26
+    },
+    "Incomplete": {
+      "0": 133,
+      "1": 36
+    },
+    "TNBC": {
+      "0": 19,
+      "1": 138
+    }
+  }
+}

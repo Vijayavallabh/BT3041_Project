@@ -1,0 +1,5 @@
+ER {'k': 50, 'C': 0.01, 'n_train': 1024, 'n_pos': 789, 'nonzero_weights': 6}
+ER_ablated {'k': 50, 'C': 0.1, 'n_train': 1024, 'n_pos': 789, 'nonzero_weights': 20}
+HER2 {'k': 50, 'C': 0.1, 'n_train': 913, 'n_pos': 161, 'nonzero_weights': 19}
+HER2_ablated {'k': 1000, 'C': 0.1, 'n_train': 913, 'n_pos': 161, 'nonzero_weights': 143}
+ERneg_HER2neg {'k': 50, 'C': 0.1, 'n_train': 912, 'n_pos': 170, 'nonzero_weights': 13}

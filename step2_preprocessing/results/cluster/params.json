@@ -1,0 +1,61 @@
+{
+  "params": {
+    "samples": "primary tumours not excluded (see 01 exclusions); males included (unsupervised)",
+    "expressed_gene_filter": "mean log2 >= 1",
+    "main_gene_set": "top 2,000 variance genes after removing the 50 PAM50 genes and sex-specific genes (chrY, XIST, TSIX)",
+    "sensitivity_gene_sets": [
+      "top 2,000 incl. PAM50 genes (variance-ranked)",
+      "main 2,000 plus all 50 PAM50 genes forced in",
+      "top 5,000 excl. PAM50 genes",
+      "top 1,000 excl. PAM50 genes"
+    ],
+    "scaling": "z-score per gene across tumours",
+    "kmeans": {
+      "k": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "n_init": 50,
+      "random_state": 42
+    },
+    "hierarchical": [
+      "Ward linkage, Euclidean distance on z-scores",
+      "average linkage, 1 - Pearson correlation"
+    ],
+    "consensus": {
+      "base": "k-means (n_init=5, random_state = resample index)",
+      "resamples": 100,
+      "sample_fraction": 0.8,
+      "same subsample used for every k in a resample": true,
+      "final_partition": "average linkage on 1 - consensus, cut at k",
+      "PAC_interval": [
+        0.1,
+        0.9
+      ]
+    },
+    "k_selection_rule": "pre-specified: primary k = the k in 2..8 with the lowest PAC (Senbabaoglu 2014); k = 4 (next PAC minimum) and k = 5 (Netanely 2016 used K-means K = 5 with correlation distance on the top 2,000 genes, with adjacent normals included) also reported",
+    "agreement": "ARI and NMI against clinical group (3 classes), PanCan PAM50 without Normal-like (4 classes), TCGA 2012 SigClust clusters (13 levels) and IHC ER status; 95% CI from 1000 bootstrap resamples of tumours (seed 42). The CIs are conditional on the fitted partition (clusters are not re-fitted in each resample); clustering stability is reported separately (PAC, method and gene-set ARIs). ARI depends on the number of classes, so label-vs-label agreement is reported as a reference",
+    "cluster_ids": "relabelled by size: C0 = largest cluster"
+  },
+  "run": {
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "umap-learn": "0.5.12",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "pyarrow": "26.0.0"
+    },
+    "seed": 42,
+    "run_utc": "2026-10-21T00:36:22Z"
+  }
+}

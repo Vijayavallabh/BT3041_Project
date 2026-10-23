@@ -1,0 +1,4 @@
+ER a_all_genes {'stable_features': 2, 'universe': 4903, 'top_stable': ['ESR1', 'AGR3'], 'hallmarks_q_lt_0.05': []}
+ER b_no_receptor_amplicon1.5Mb_PAM50 {'stable_features': 4, 'universe': 4911, 'top_stable': ['AGR3', 'CYP2B7P', 'FLJ45983', 'DACH1'], 'hallmarks_q_lt_0.05': []}
+HER2 a_all_genes {'stable_features': 3, 'universe': 4900, 'top_stable': ['ERBB2', 'MIEN1', 'PGAP3'], 'hallmarks_q_lt_0.05': []}
+HER2 b_no_receptor_amplicon1.5Mb_PAM50 {'stable_features': 4, 'universe': 4911, 'top_stable': ['CBLC', 'KHDC1', 'C14orf184', 'ABCC2'], 'hallmarks_q_lt_0.05': []}

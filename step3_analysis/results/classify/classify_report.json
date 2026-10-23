@@ -1,0 +1,82 @@
+{
+  "genes_removed_per_ablation": {
+    "a_all_genes": 0,
+    "b_no_receptor_amplicon1.5Mb_PAM50": 135,
+    "c_no_receptor_amplicon2Mb_PAM50": 157
+  },
+  "controls": {
+    "ER": {
+      "shuffled_labels_L1_logistic": {
+        "AUC": 0.506015874676854,
+        "MCC": -0.008311122240370105,
+        "MCC_sd": 0.1169259914358862,
+        "balanced_acc": 0.49644140659174774
+      },
+      "majority_class": {
+        "accuracy": 0.7705078125,
+        "balanced_acc": 0.5,
+        "MCC": 0.0,
+        "AUC": 0.5
+      }
+    },
+    "HER2": {
+      "shuffled_labels_L1_logistic": {
+        "AUC": 0.505944101612148,
+        "MCC": 0.039828951340033905,
+        "MCC_sd": 0.05480420825411124,
+        "balanced_acc": 0.5221084437086093
+      },
+      "majority_class": {
+        "accuracy": 0.823658269441402,
+        "balanced_acc": 0.5,
+        "MCC": 0.0,
+        "AUC": 0.5
+      }
+    }
+  },
+  "pam50_secondary_benchmark": {
+    "4class_a_all_genes": {
+      "n": 1036,
+      "accuracy": 0.9102471200297287,
+      "macro_F1": 0.8977452641697792,
+      "kappa": 0.861430187581323,
+      "accuracy_sd": 0.02272197442704901
+    },
+    "4class_no_PAM50_genes": {
+      "n": 1036,
+      "accuracy": 0.909290226681531,
+      "macro_F1": 0.8940607759369457,
+      "kappa": 0.860087408146901,
+      "accuracy_sd": 0.021820921134804487
+    },
+    "5class_a_all_genes": {
+      "n": 1076,
+      "accuracy": 0.8792075796726959,
+      "macro_F1": 0.8273774656191735,
+      "kappa": 0.8222258869038643,
+      "accuracy_sd": 0.029803737004502343
+    },
+    "5class_no_PAM50_genes": {
+      "n": 1076,
+      "accuracy": 0.871774332472007,
+      "macro_F1": 0.820388429298152,
+      "kappa": 0.8116446034000445,
+      "accuracy_sd": 0.03801489893647503
+    }
+  },
+  "n_per_target": {
+    "ER": {
+      "n": 1024,
+      "pos": 789
+    },
+    "HER2": {
+      "n": 913,
+      "pos": 161
+    },
+    "ERneg_HER2neg": {
+      "n": 912,
+      "pos": 170
+    }
+  },
+  "runtime_min": 46.4
+}

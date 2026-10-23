@@ -1,0 +1,49 @@
+{
+  "params": {
+    "samples": "primary tumours not excluded (see 01 exclusions), HiSeqV2 log2(RSEM upper-quartile normalised + 1)",
+    "expressed_gene_filter": "mean log2 expression >= 1 across tumours",
+    "gene_exclusions": "sex-specific genes (chrY + XIST/TSIX) removed before variance ranking (12 male patients would otherwise drive a component)",
+    "n_top_variance_genes": 2000,
+    "scaling": "each gene centred and scaled to unit variance (z-score) across tumours",
+    "pca_components": 50,
+    "pc_orientation": "PC1 sign fixed so that ESR1 has a positive loading (ER-high tumours on the right in every PCA figure)",
+    "umap": {
+      "input": "first 30 PCs",
+      "n_neighbors": [
+        15,
+        30
+      ],
+      "min_dist": 0.3,
+      "metric": "euclidean",
+      "random_state": 42
+    },
+    "umap_island": "DBSCAN(eps=0.7, min_samples=10) on each UMAP; the island = the DBSCAN cluster with the most PAM50-Basal tumours",
+    "marker_tests": "two-sided Mann-Whitney U on float64 values, TNBC vs HR+/HER2- and HER2+ vs HR+/HER2-, BH-FDR over all 16 tests; effect = rank-biserial r = 2U/(n1 n2) - 1 (positive = higher in the first group); supervised set only",
+    "mrna_vs_status": "AUC of ESR1/PGR/ERBB2 mRNA for IHC ER/PR and HER2 (v1 rule), 1000 bootstrap 95% CI; Spearman reported with its prevalence ceiling sqrt(3p(1-p))",
+    "batch_metric": "eta-squared (one-way ANOVA R^2) of PC1-10 on tissue source site (sites with <10 tumours pooled as 'other'), clinical group, PAM50, histology, stage; chance level = 99th percentile of 1000 label permutations",
+    "pca_outlier_rule": "robust z (median, 1.4826*MAD) beyond 5 on any of PC1-5; flagged, not removed",
+    "heatmap_pam50": "z-score per gene, clipped to +/-3; rows ordered by average linkage on correlation; columns ordered by PAM50 then clinical group",
+    "rppa_spearman": "total-protein antibodies only (phospho/cleaved excluded), primary tumours with both RNA and protein; pan-isoform antibodies kept in the table but left out of the median",
+    "star_crosscheck": "same PCA pipeline on STAR log2(CPM+1) for the same tumours; per-PC |Pearson| between score vectors",
+    "tumour_normal_umap": "not made: the tumour+normal PCA (figS3) already separates normals; recorded here as a deliberate omission",
+    "figS1b_sites": "the six sites (pooled factor, >=10 tumours) with the largest share of the site eta-squared on the most site-associated PC",
+    "erbb2_auc_by_source": "ERBB2 mRNA AUC for HER2 status computed separately for each HER2_source (FISH, IHC score, IHC status text)",
+    "literature_like_for_like": "HER2E share among clinical HER2+ recomputed with the TCGA 2012 HER2 labels and PAM50 calls (BRCA_clinicalMatrix)"
+  },
+  "run": {
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "umap-learn": "0.5.12",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "pyarrow": "26.0.0"
+    },
+    "seed": 42,
+    "run_utc": "2026-10-21T00:17:23Z"
+  }
+}

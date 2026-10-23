@@ -1,0 +1,84 @@
+hiseq_raw_shape_genes_x_samples: [20530, 1218]
+hiseq_sample_types: {'01': 1097, '11': 114, '06': 7}
+HER2_label_source: {'FISH': 406, 'IHC score': 285, 'IHC status (no score)': 242, nan: 121, 'IHC 2+ without FISH -> missing': 25, 'conflict (status vs score) -> missing': 13, 'IHC 3+ vs FISH negative -> missing': 5}
+HER2_v0_rows_v1_cols: {'Negative': {'Negative': 763, 'Positive': 0, 'missing': 7}, 'Positive': {'Negative': 0, 'Positive': 168, 'missing': 17}, 'missing': {'Negative': 1, 'Positive': 1, 'missing': 140}}
+n_primary_tumours_hiseq: 1097
+n_adjacent_normals_hiseq: 114
+normals_paired_with_tumour: 114
+kappa_HER2_v1_vs_nature2012: {'n': 661, 'kappa': 0.881, 'agreement': 0.967}
+kappa_HER2_v0_vs_nature2012: {'n': 672, 'kappa': 0.829, 'agreement': 0.951}
+kappa_HER2_common_set: {'note': 'tumours labelled by v1, v0 and TCGA 2012 alike', 'v1': {'n': 661, 'kappa': 0.881, 'agreement': 0.967}, 'v0': {'n': 661, 'kappa': 0.881, 'agreement': 0.967}, 'v0_v1_opposite_calls': 0}
+note_label_sources: ER/PR nature2012 = EMR fields where both exist (kappa 1.0, same source) and Xena PAM50Call_RNAseq = PanCan Subtype_mRNA (kappa 1.0); these are not independent checks. Only HER2 (rule vs nature2012) is informative.
+kappa_ER_EMR_vs_nature2012: {'n': 778, 'kappa': 1.0, 'agreement': 1.0}
+kappa_PAM50_pancan_vs_xena: {'n': 844, 'kappa': 1.0, 'agreement': 1.0}
+xena_PAM50_calls_on_adjacent_normals: {'Normal': 95, 'LumA': 12}
+HiSeqV2_harmonisation: {'rows_in': 20530, 'approved': 17129, 'previous': 2579, 'entrez': 458, 'unmapped': 228, 'alias': 136, 'unique_hgnc_out': 20485}
+star_raw_shape_genes_x_samples: [60660, 1226]
+star_sample_types: {'01': 1106, '11': 113, '06': 7}
+star_fraction_non_integer_values_rounded: 0.00143
+star_columns_with_non_integer_values: {'TCGA-A7-A26J-01A': 20302, 'TCGA-A7-A26E-01A': 21450, 'TCGA-A7-A13E-01A': 22375, 'TCGA-A7-A13D-01A': 20998, 'TCGA-A7-A0DB-01A': 21314}
+star_vial_duplicates: {'TCGA-A7-A0DB-01': ['TCGA-A7-A0DB-01A', 'TCGA-A7-A0DB-01C'], 'TCGA-A7-A0DC-01': ['TCGA-A7-A0DC-01A', 'TCGA-A7-A0DC-01B'], 'TCGA-A7-A13D-01': ['TCGA-A7-A13D-01A', 'TCGA-A7-A13D-01B'], 'TCGA-A7-A13E-01': ['TCGA-A7-A13E-01A', 'TCGA-A7-A13E-01B'], 'TCGA-A7-A13G-01': ['TCGA-A7-A13G-01A', 'TCGA-A7-A13G-01B'], 'TCGA-A7-A26E-01': ['TCGA-A7-A26E-01A', 'TCGA-A7-A26E-01B'], 'TCGA-A7-A26F-01': ['TCGA-A7-A26F-01A', 'TCGA-A7-A26F-01B'], 'TCGA-A7-A26I-01': ['TCGA-A7-A26I-01A', 'TCGA-A7-A26I-01B'], 'TCGA-A7-A26J-01': ['TCGA-A7-A26J-01A', 'TCGA-A7-A26J-01B'], 'TCGA-AC-A2QH-01': ['TCGA-AC-A2QH-01A', 'TCGA-AC-A2QH-01B'], 'TCGA-AC-A3OD-01': ['TCGA-AC-A3OD-01A', 'TCGA-AC-A3OD-01B']}
+star_primary_tumours_after_dedup: 1095
+star_normals: 113
+star_tumours_not_in_hiseq: []
+hiseq_tumours_not_in_star: ['TCGA-AR-A0U1-01', 'TCGA-E2-A1IP-01']
+GENCODEv36_STAR_harmonisation: {'approved': 38252, 'unmapped': 18249, 'ensembl': 3991, 'previous': 105, 'alias': 63}
+star_low_library_flagged: []
+identity_qc: {'genes': 15862, 'self_rho_median': 0.93, 'between_patient_rho_median': 0.797, 'between_patient_rho_p99': 0.87, 'failed': {'TCGA-A7-A0DC-01': {'self_rho': 0.868, 'best_STAR_match': 'TCGA-A7-A0DC-01', 'best_match_rho': 0.868}, 'TCGA-A7-A13G-01': {'self_rho': 0.866, 'best_STAR_match': 'TCGA-A7-A0CH-01', 'best_match_rho': 0.887}, 'TCGA-AC-A2QH-01': {'self_rho': 0.848, 'best_STAR_match': 'TCGA-AC-A2QH-01', 'best_match_rho': 0.848}, 'TCGA-AC-A3OD-01': {'self_rho': 0.833, 'best_STAR_match': 'TCGA-A2-A3KC-01', 'best_match_rho': 0.876}, 'TCGA-AC-A3QQ-01': {'self_rho': 0.544, 'best_STAR_match': 'TCGA-AC-A3TM-01', 'best_match_rho': 0.848}}}
+vial_01A_matches_hiseq_best: 11/11
+sex_recorded_rows_expression_cols: {'Female': {'Female': 1080, 'Male': 0, 'unclear': 3}, 'Male': {'Female': 0, 'Male': 12, 'unclear': 0}, 'NA': {'Female': 2, 'Male': 0, 'unclear': 0}}
+excluded_tumours: {'TCGA-A7-A0DC-01': {'exclude_reason': 'identity unconfirmed; CDR redacted', 'clinical_group': 'HR+/HER2-'}, 'TCGA-A7-A13G-01': {'exclude_reason': 'identity unconfirmed (HiSeqV2 vs STAR)', 'clinical_group': 'HR+/HER2-'}, 'TCGA-AC-A2QH-01': {'exclude_reason': 'identity unconfirmed (HiSeqV2 vs STAR)', 'clinical_group': 'TNBC'}, 'TCGA-AC-A3OD-01': {'exclude_reason': 'identity unconfirmed (HiSeqV2 vs STAR)', 'clinical_group': 'HR+/HER2-'}, 'TCGA-AC-A3QQ-01': {'exclude_reason': 'identity unconfirmed (HiSeqV2 vs STAR)', 'clinical_group': 'HER2+'}, 'TCGA-AR-A0U1-01': {'exclude_reason': 'TCGA-CDR redacted', 'clinical_group': 'TNBC'}, 'TCGA-BH-A0HL-01': {'exclude_reason': 'TCGA-CDR redacted', 'clinical_group': 'HR+/HER2-'}, 'TCGA-BH-A0HN-01': {'exclude_reason': 'TCGA-CDR redacted', 'clinical_group': 'HR+/HER2-'}, 'TCGA-E9-A1NC-01': {'exclude_reason': 'TCGA-CDR redacted', 'clinical_group': 'HER2+'}}
+n_tumours_final: 1088
+n_supervised_set_final: 1076
+ER_counts_final: {'Positive': 801, 'Negative': 235, nan: 52}
+PR_counts_final: {'Positive': 692, 'Negative': 341, nan: 55}
+HER2_counts_final: {'Negative': 757, 'Positive': 167, nan: 164}
+clinical_group_final_all: {'HR+/HER2-': 596, 'Incomplete': 169, 'HER2+': 166, 'TNBC': 157}
+clinical_group_final_supervised: {'HR+/HER2-': 591, 'Incomplete': 168, 'HER2+': 160, 'TNBC': 157}
+ER_counts_final_supervised: {'Positive': 789, 'Negative': 235, nan: 52}
+HER2_counts_final_supervised: {'Negative': 752, nan: 163, 'Positive': 161}
+HER2_source_of_HER2pos_supervised: {'FISH': 72, 'IHC score': 58, 'IHC status (no score)': 30}
+clinical_group_v0_final_supervised: {'HR+/HER2-': 595, 'HER2+': 176, 'TNBC': 159, 'Incomplete': 146}
+clinical_group_final_supervised_star: {'HR+/HER2-': 591, 'Incomplete': 167, 'HER2+': 160, 'TNBC': 157}
+ERneg_HER2neg_vs_ERpos_HER2neg_supervised_star: {'ER-/HER2-': 170, 'ER+/HER2-': 582}
+histology_by_group_supervised_star: {'HER2+': {'IDC': 131, 'ILC': 21, 'Other': 8}, 'HR+/HER2-': {'IDC': 393, 'ILC': 141, 'Other': 57}, 'Incomplete': {'IDC': 110, 'ILC': 33, 'Other': 24}, 'TNBC': {'IDC': 134, 'ILC': 6, 'Other': 17}}
+ER_rows_HER2_cols_final: {'Negative': {'Negative': 170, 'Positive': 39}, 'Positive': {'Negative': 587, 'Positive': 127}}
+sex_final: {'Female': 1074, 'Male': 12, nan: 2}
+stage_final: {'II': 615, 'III-IV': 270, 'I': 179, None: 24}
+PAM50_pancan_final: {'LumA': 560, 'LumB': 217, 'Basal': 189, 'Her2': 82, 'Normal': 40}
+survival_events_final: {'OS': 151, 'PFI': 144, 'DSS': 83}
+survival_events_cox_set: {'definition': 'supervised set, complete clinical group, age and stage known', 'n': 895, 'OS': 100, 'PFI': 100, 'DSS': 55}
+hiseq_constant_genes_dropped: 284
+normals_excluded_cdr_redacted: ['TCGA-A7-A0DC-11']
+hiseq_tumour_matrix_samples_x_genes: [1088, 20201]
+star_normals_excluded_cdr_redacted: ['TCGA-A7-A0DC-11']
+star_min_samples: 157
+star_genes_passing_filter: 24660
+star_filtered_matrix_samples_x_genes: [1087, 24660]
+star_filtered_genes_sharing_a_symbol: 112
+ERBB2_coordinates_GRCh38: chr17:39687914-39730426
+amplicon_genes_within_1000kb: {'gencode': 108, 'in_hiseq': 51}
+amplicon_genes_within_1500kb: {'gencode': 161, 'in_hiseq': 88}
+amplicon_genes_within_2000kb: {'gencode': 215, 'in_hiseq': 112}
+PAM50_centroids_harmonisation: {'rows_in': 50, 'approved': 47, 'previous': 3, 'unique_hgnc_out': 50}
+pam50_genes_in_hiseq: 50
+hallmark_unique_genes_matched_hiseq_raw_vs_harmonised: [4191, 4378, 4384]
+rppa_shape_antibodies_x_samples: [131, 747]
+rppa_sample_types: {'01': 742, '06': 5}
+rppa_tumours_by_group_supervised: {'HR+/HER2-': 395, 'HER2+': 114, 'Incomplete': 112, 'TNBC': 109}
+rppa_antibodies_total_with_gene: 91
+rppa_antibodies_isoform_ambiguous: ['AKT', 'AMPKALPHA', 'CIAP', 'COLLAGENVI', 'GSK3ALPHABETA', 'HSP70']
+metabric_expression_raw_rows_x_samples: [20603, 1980]
+metabric_missing_value_fraction_overall: 0.0
+metabric_rows_dropped_gt5pct_missing: 0
+METABRIC_harmonisation: {'rows_in': 20603, 'approved': 19394, 'entrez': 801, 'unmapped': 379, 'previous': 25, 'alias': 4, 'unique_hgnc_out': 20193}
+metabric_pam50_coverage: {'present': 50, 'missing': []}
+genes_shared_tcga_hiseq_and_metabric: 18936
+metabric_samples_with_expression: 1980
+metabric_ER_IHC: {'Positive': 1498, 'Negative': 439, nan: 43}
+metabric_HER2_SNP6: {'NEUTRAL': 1436, 'GAIN': 438, 'LOSS': 101, 'UNDEF': 5}
+metabric_both_labels_known: 1932
+metabric_contrast_groups: {'ER+/HER2-notgained': 1220, 'HER2-gained': 426, 'ER-/HER2-notgained': 286}
+metabric_claudin_subtype: {'LumA': 700, 'LumB': 475, 'Her2': 224, 'claudin-low': 218, 'Basal': 209, 'Normal': 148, 'NC': 6}
+metabric_events: {'OS': 1143, 'BC_death': 646}
+done

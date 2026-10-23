@@ -1,0 +1,480 @@
+{
+  "gsea_main": {
+    "E2F_TARGETS": {
+      "NES": 3.11,
+      "FDR_q": 0.0
+    },
+    "G2M_CHECKPOINT": {
+      "NES": 2.88,
+      "FDR_q": 0.0
+    },
+    "MYC_TARGETS_V1": {
+      "NES": 2.74,
+      "FDR_q": 0.0
+    },
+    "MYC_TARGETS_V2": {
+      "NES": 2.38,
+      "FDR_q": 0.0
+    },
+    "ESTROGEN_RESPONSE_EARLY": {
+      "NES": -3.08,
+      "FDR_q": 0.0
+    },
+    "ESTROGEN_RESPONSE_LATE": {
+      "NES": -2.4,
+      "FDR_q": 0.0
+    },
+    "ANDROGEN_RESPONSE": {
+      "NES": -1.02,
+      "FDR_q": 0.4299853557541786
+    },
+    "INTERFERON_GAMMA_RESPONSE": {
+      "NES": 2.18,
+      "FDR_q": 0.0
+    },
+    "MTORC1_SIGNALING": {
+      "NES": 2.16,
+      "FDR_q": 0.0
+    }
+  },
+  "gsea_main_sets_FDR_lt_0.05": {
+    "positive_NES": 25,
+    "negative_NES": 3
+  },
+  "NES_spearman_vs_main": {
+    "age": 0.988,
+    "her2": 0.581,
+    "her2_drop_low_pos": 0.538,
+    "idc_only": 0.99,
+    "matched_erher2": 0.988,
+    "strict_conf": 0.986
+  },
+  "ora_main": {
+    "universe": 23385,
+    "up": 1483,
+    "down": 1252,
+    "sets_q_lt_0.05": {
+      "down_in_TNBC": [
+        "ESTROGEN_RESPONSE_EARLY",
+        "ESTROGEN_RESPONSE_LATE"
+      ],
+      "up_in_TNBC": [
+        "G2M_CHECKPOINT",
+        "KRAS_SIGNALING_DN",
+        "SPERMATOGENESIS",
+        "TNFA_SIGNALING_VIA_NFKB"
+      ]
+    }
+  },
+  "phenotype_permutation_check": {
+    "n_per_group": [
+      157,
+      591
+    ],
+    "genes": 17061,
+    "NES_spearman_prerank_vs_phenotype": 0.919,
+    "sets_FDR_lt_0.05_phenotype": 0,
+    "sets_FDR_lt_0.05_prerank": 28,
+    "sign_agreement_among_prerank_FDR_lt_0.05": 1.0,
+    "selected": {
+      "E2F_TARGETS": {
+        "NES": 1.56,
+        "FDR_q": 0.39345894912958607
+      },
+      "G2M_CHECKPOINT": {
+        "NES": 1.57,
+        "FDR_q": 0.46321156833844557
+      },
+      "MYC_TARGETS_V1": {
+        "NES": 1.69,
+        "FDR_q": 0.5444767557662431
+      },
+      "ESTROGEN_RESPONSE_EARLY": {
+        "NES": -1.74,
+        "FDR_q": 0.18058400610515324
+      },
+      "ESTROGEN_RESPONSE_LATE": {
+        "NES": -1.55,
+        "FDR_q": 0.3987629031610234
+      }
+    }
+  },
+  "camera_check": {
+    "sets_q_lt_0.05": 1,
+    "prerank_FDR05_sets_also_camera_q05_same_sign": "1/28",
+    "median_inter_gene_corr": 0.06363224050874876,
+    "selected": {
+      "E2F_TARGETS": {
+        "inter_gene_corr": 0.2517,
+        "camera_t": 2.0126,
+        "q_BH": 0.4657
+      },
+      "G2M_CHECKPOINT": {
+        "inter_gene_corr": 0.1923,
+        "camera_t": 1.9121,
+        "q_BH": 0.4657
+      },
+      "MYC_TARGETS_V1": {
+        "inter_gene_corr": 0.1629,
+        "camera_t": 1.9892,
+        "q_BH": 0.4657
+      },
+      "ESTROGEN_RESPONSE_EARLY": {
+        "inter_gene_corr": 0.0594,
+        "camera_t": -3.602,
+        "q_BH": 0.0158
+      },
+      "ESTROGEN_RESPONSE_LATE": {
+        "inter_gene_corr": 0.0359,
+        "camera_t": -2.6852,
+        "q_BH": 0.1814
+      },
+      "INTERFERON_GAMMA_RESPONSE": {
+        "inter_gene_corr": 0.2719,
+        "camera_t": 0.9094,
+        "q_BH": 0.7703
+      }
+    }
+  },
+  "de_robustness_vs_main": {
+    "age": {
+      "DE_in_run": 2689,
+      "main_DEGs_tested_in_run": 2741,
+      "main_DEGs_still_DE_same_sign": 2587,
+      "fraction": 0.944,
+      "spearman_shrunk_LFC_all_genes": 0.998,
+      "sign_agreement_main_DEGs": 0.999
+    },
+    "her2_drop_low_pos": {
+      "DE_in_run": 189,
+      "main_DEGs_tested_in_run": 2670,
+      "main_DEGs_still_DE_same_sign": 95,
+      "fraction": 0.036,
+      "spearman_shrunk_LFC_all_genes": 0.485,
+      "sign_agreement_main_DEGs": 0.803
+    },
+    "her2": {
+      "DE_in_run": 148,
+      "main_DEGs_tested_in_run": 2614,
+      "main_DEGs_still_DE_same_sign": 76,
+      "fraction": 0.029,
+      "spearman_shrunk_LFC_all_genes": 0.503,
+      "sign_agreement_main_DEGs": 0.818
+    },
+    "idc_only": {
+      "DE_in_run": 2518,
+      "main_DEGs_tested_in_run": 2601,
+      "main_DEGs_still_DE_same_sign": 2360,
+      "fraction": 0.907,
+      "spearman_shrunk_LFC_all_genes": 0.992,
+      "sign_agreement_main_DEGs": 0.999
+    },
+    "matched_erher2": {
+      "DE_in_run": 2735,
+      "main_DEGs_tested_in_run": 2688,
+      "main_DEGs_still_DE_same_sign": 2579,
+      "fraction": 0.959,
+      "spearman_shrunk_LFC_all_genes": 0.997,
+      "sign_agreement_main_DEGs": 1.0
+    },
+    "strict_conf": {
+      "DE_in_run": 2536,
+      "main_DEGs_tested_in_run": 2728,
+      "main_DEGs_still_DE_same_sign": 2367,
+      "fraction": 0.868,
+      "spearman_shrunk_LFC_all_genes": 0.989,
+      "sign_agreement_main_DEGs": 1.0
+    }
+  },
+  "de_summary": {
+    "age": {
+      "contrast": "TNBC vs HRpos",
+      "formula": "~age_z + histology + group",
+      "n_test": 157,
+      "n_ref": 591,
+      "genes_tested": 23439,
+      "DE_lfc1_padj05": 2689,
+      "DE_up": 1474,
+      "DE_down": 1215,
+      "wald_padj05_no_threshold": 18573
+    },
+    "her2_drop_low_pos": {
+      "contrast": "HER2pos vs HRpos",
+      "formula": "~histology + group",
+      "n_test": 130,
+      "n_ref": 591,
+      "genes_tested": 23809,
+      "DE_lfc1_padj05": 189,
+      "DE_up": 108,
+      "DE_down": 81,
+      "wald_padj05_no_threshold": 10718
+    },
+    "her2": {
+      "contrast": "HER2pos vs HRpos",
+      "formula": "~histology + group",
+      "n_test": 160,
+      "n_ref": 591,
+      "genes_tested": 23276,
+      "DE_lfc1_padj05": 148,
+      "DE_up": 96,
+      "DE_down": 52,
+      "wald_padj05_no_threshold": 11029
+    },
+    "idc_only": {
+      "contrast": "TNBC vs HRpos",
+      "formula": "~group",
+      "n_test": 134,
+      "n_ref": 393,
+      "genes_tested": 22707,
+      "DE_lfc1_padj05": 2518,
+      "DE_up": 1269,
+      "DE_down": 1249,
+      "wald_padj05_no_threshold": 17743
+    },
+    "main": {
+      "contrast": "TNBC vs HRpos",
+      "formula": "~histology + group",
+      "n_test": 157,
+      "n_ref": 591,
+      "genes_tested": 23439,
+      "DE_lfc1_padj05": 2741,
+      "DE_up": 1484,
+      "DE_down": 1257,
+      "wald_padj05_no_threshold": 18604
+    },
+    "matched_erher2": {
+      "contrast": "ERneg vs ERpos",
+      "formula": "~histology + group",
+      "n_test": 170,
+      "n_ref": 582,
+      "genes_tested": 23212,
+      "DE_lfc1_padj05": 2735,
+      "DE_up": 1516,
+      "DE_down": 1219,
+      "wald_padj05_no_threshold": 18508
+    },
+    "strict_conf": {
+      "contrast": "TNBC vs HRpos",
+      "formula": "~histology + group",
+      "n_test": 111,
+      "n_ref": 431,
+      "genes_tested": 23487,
+      "DE_lfc1_padj05": 2536,
+      "DE_up": 1363,
+      "DE_down": 1173,
+      "wald_padj05_no_threshold": 17691
+    }
+  },
+  "named_genes_main": {
+    "ESR1": {
+      "log2FC_shrunk": -5.12,
+      "padj_lfc1": 7.336907515815547e-204,
+      "DE": true
+    },
+    "PGR": {
+      "log2FC_shrunk": -4.39,
+      "padj_lfc1": 1.324334723370837e-66,
+      "DE": true
+    },
+    "FOXA1": {
+      "log2FC_shrunk": -2.91,
+      "padj_lfc1": 3.941456820182381e-46,
+      "DE": true
+    },
+    "GATA3": {
+      "log2FC_shrunk": -3.26,
+      "padj_lfc1": 1.2275892114143136e-104,
+      "DE": true
+    },
+    "XBP1": {
+      "log2FC_shrunk": -2.41,
+      "padj_lfc1": 1.637482139051446e-58,
+      "DE": true
+    },
+    "AGR3": {
+      "log2FC_shrunk": -4.85,
+      "padj_lfc1": 1.8074740238328535e-106,
+      "DE": true
+    },
+    "MLPH": {
+      "log2FC_shrunk": -3.0,
+      "padj_lfc1": 8.868634954251617e-66,
+      "DE": true
+    },
+    "SLC39A6": {
+      "log2FC_shrunk": -3.17,
+      "padj_lfc1": 3.4096847644100354e-73,
+      "DE": true
+    },
+    "BCL2": {
+      "log2FC_shrunk": -1.99,
+      "padj_lfc1": 2.5504590436167883e-22,
+      "DE": true
+    },
+    "FOXC1": {
+      "log2FC_shrunk": 3.1,
+      "padj_lfc1": 1.6296186902235245e-50,
+      "DE": true
+    },
+    "KRT5": {
+      "log2FC_shrunk": 2.36,
+      "padj_lfc1": 1.8091385706743806e-09,
+      "DE": true
+    },
+    "KRT6B": {
+      "log2FC_shrunk": 2.74,
+      "padj_lfc1": 4.3541608614466784e-13,
+      "DE": true
+    },
+    "KRT17": {
+      "log2FC_shrunk": 2.44,
+      "padj_lfc1": 1.103039361469654e-12,
+      "DE": true
+    },
+    "MKI67": {
+      "log2FC_shrunk": 1.1,
+      "padj_lfc1": 1.0,
+      "DE": false
+    },
+    "BIRC5": {
+      "log2FC_shrunk": 1.19,
+      "padj_lfc1": 0.4523847585574859,
+      "DE": false
+    },
+    "CCNB1": {
+      "log2FC_shrunk": 0.69,
+      "padj_lfc1": 1.0,
+      "DE": false
+    },
+    "UBE2C": {
+      "log2FC_shrunk": 1.31,
+      "padj_lfc1": 0.0334274348105048,
+      "DE": true
+    },
+    "EN1": {
+      "log2FC_shrunk": 4.07,
+      "padj_lfc1": 1.7746258122754703e-75,
+      "DE": true
+    },
+    "SOX10": {
+      "log2FC_shrunk": 3.79,
+      "padj_lfc1": 1.5256455836370026e-34,
+      "DE": true
+    },
+    "VGLL1": {
+      "log2FC_shrunk": 4.91,
+      "padj_lfc1": 3.882882706046669e-57,
+      "DE": true
+    },
+    "ART3": {
+      "log2FC_shrunk": 4.89,
+      "padj_lfc1": 8.212551302691199e-57,
+      "DE": true
+    },
+    "FABP7": {
+      "log2FC_shrunk": 4.69,
+      "padj_lfc1": 1.6282938854746261e-53,
+      "DE": true
+    },
+    "TFF1": {
+      "log2FC_shrunk": -4.85,
+      "padj_lfc1": 1.053537665517025e-55,
+      "DE": true
+    },
+    "TFF3": {
+      "log2FC_shrunk": -3.64,
+      "padj_lfc1": 5.521639795904133e-40,
+      "DE": true
+    },
+    "CA12": {
+      "log2FC_shrunk": -3.51,
+      "padj_lfc1": 4.5657537376785216e-88,
+      "DE": true
+    },
+    "AR": {
+      "log2FC_shrunk": -1.99,
+      "padj_lfc1": 2.7256153630652277e-12,
+      "DE": true
+    },
+    "ERBB2": {
+      "log2FC_shrunk": -0.71,
+      "padj_lfc1": 1.0,
+      "DE": false
+    }
+  },
+  "top_up_TNBC_by_padj": [
+    "COL9A1",
+    "MPZ",
+    "GFRA3",
+    "CLDN10",
+    "CLDN6",
+    "EN1",
+    "LINP1",
+    "COL9A3",
+    "RASGEF1C",
+    "COL11A2",
+    "KRT79",
+    "SRSF12",
+    "TTYH1",
+    "C1QL2",
+    "MMP7"
+  ],
+  "top_down_TNBC_by_padj": [
+    "KCNJ3",
+    "CPB1",
+    "NAT1",
+    "FSIP1",
+    "TRH",
+    "TBC1D9",
+    "C5AR2",
+    "CCDC170",
+    "POTEKP",
+    "AGR3",
+    "SERPINA6",
+    "GATA3",
+    "TPSG1",
+    "CT62",
+    "CST5"
+  ],
+  "cross_assay_agreement": [
+    {
+      "comparison": "TNBC vs PAM50 Basal",
+      "both": 130,
+      "only_clinical": 27,
+      "only_PAM50": 30,
+      "neither": 721,
+      "pct_clinical_called_PAM50": 82.8,
+      "pct_PAM50_with_clinical": 81.2,
+      "odds_ratio": 112.3,
+      "OR_CI": [
+        64.9,
+        194.2
+      ],
+      "kappa": 0.782,
+      "fisher_p": 4.6870115704493194e-99
+    },
+    {
+      "comparison": "clinical HER2+ vs PAM50 HER2-enriched",
+      "both": 53,
+      "only_clinical": 107,
+      "only_PAM50": 16,
+      "neither": 732,
+      "pct_clinical_called_PAM50": 33.1,
+      "pct_PAM50_with_clinical": 76.8,
+      "odds_ratio": 22.1,
+      "OR_CI": [
+        12.3,
+        39.8
+      ],
+      "kappa": 0.399,
+      "fisher_p": 6.941130554728576e-30
+    },
+    {
+      "comparison": "ER+ tumours called non-luminal (Basal or Her2)",
+      "n_ER_pos": 789,
+      "non_luminal": 50,
+      "pct": 6.3,
+      "pct_incl_Normal_like": 9.3
+    }
+  ]
+}
